@@ -88,7 +88,7 @@
     _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     _bannerView.adUnitID = @"ca-app-pub-3441529924836552/8889032633";
     _bannerView.rootViewController = (id)self;
-    _bannerView.backgroundColor = cwhite;
+    _bannerView.backgroundColor = c03;
     _bannerView.delegate = (id<GADBannerViewDelegate>)self;
     _bannerView.frame = CGRectMake(0, ScreenHeight - STHeight(48), ScreenWidth , STHeight(48));
     [_bannerView loadRequest:request];

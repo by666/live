@@ -8,82 +8,94 @@
 
 #import "MainView.h"
 #import "STTabBarView.h"
+#import "MainCell.h"
 
-@interface MainView()<UIScrollViewDelegate>
+@interface MainView()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property(strong, nonatomic)MainViewModel *mViewModel;
-@property(strong, nonatomic)STTabBarView *tabBarView;
-@property(strong, nonatomic)UIScrollView *scrollView;
+@property(strong, nonatomic)UICollectionView *collectionView;
+
 
 @end
 
-@implementation MainView{
-    NSInteger mIndex;
-}
+@implementation MainView
 
 -(instancetype)initWithViewModel:(MainViewModel *)viewModel {
     if(self == [super init]){
         _mViewModel = viewModel;
-        mIndex = 0;
         [self initView];
     }
     return self;
 }
 
 -(void)initView{
-//    NSArray *titles = @[MSG_INFO_TITLE,MSG_SCHEDULE_TITLE];
-    NSArray *titles = @[MSG_SCHEDULE_TITLE];
-    NSArray *images = @[@"ic_info_normal",@"ic_info_select",@"ic_schedule_normal",@"ic_schedule_select"];
-    _tabBarView = [[STTabBarView alloc]initWithTitles:titles images:images];
-    _tabBarView.hidden = YES;
-    [_tabBarView setData:c05 SelectColor:c04 Font:[UIFont systemFontOfSize:STFont(14)]];
-    [self addSubview:_tabBarView];
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
     
-    WS(weakSelf)
-    [_tabBarView getViewIndex:^(NSString *title, NSInteger index) {
-        [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.scrollView.contentOffset = CGPointMake(index * ScreenWidth, 0);
-        }];
-    }];
+    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) collectionViewLayout:layout];
+    _collectionView.delegate = self;
+    _collectionView.dataSource = self;
+    _collectionView.backgroundColor = cwhite;
+    [self addSubview:_collectionView];
     
-    [_tabBarView setIndexBlock:^(NSString *title, NSInteger index) {
-        [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.scrollView.contentOffset = CGPointMake(index * ScreenWidth, 0);
-        }];
-    }];
+    [_collectionView registerClass:[MainCell class] forCellWithReuseIdentifier:[MainCell identify]];
     
-    [_tabBarView setViewIndex:mIndex];
-    
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight - STHeight(48))];
-    _scrollView.delegate = self;
-    _scrollView.pagingEnabled = YES;
-    _scrollView.bounces = NO;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.showsVerticalScrollIndicator = NO;
-    _scrollView.contentSize = CGSizeMake([titles count]*ScreenWidth, 0);
-    [self addSubview:_scrollView];
-    
-//    _infoView = [[InfoView alloc]init];
-//    _infoView.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight - STHeight(48));
-//    [_scrollView addSubview:_infoView];
-    
-//    _scheduleView = [[ScheduleView alloc]initWithViewModel:_mScheduleViewModel];
-//    _scheduleView.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight - STHeight(48));
-//    [_scrollView addSubview:_scheduleView];
-    
-    
-}
-
-
-
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSInteger index = scrollView.contentOffset.x / ScreenWidth;
-    [_tabBarView setViewIndex:index];
     if(_mViewModel){
-        [_mViewModel changeTab:index];
+        [_mViewModel requestData];
     }
+    
 }
 
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return [_mViewModel.datas count];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    MainCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MainCell identify] forIndexPath:indexPath];
+    if(_mViewModel && !IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
+        MainModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+        [cell setData:model];
+    }
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+
+
+- (CGSize)collectionView:(UICollectionView *)collectionView  layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    return CGSizeMake(ScreenWidth/3, ScreenWidth/3 + STHeight(30));
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 0;
+}
+
+
+-(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
+    return UIEdgeInsetsMake(0 , 0, 0, 0);
+}
+
+-(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    if(_mViewModel){
+    
+    }
+    
+}
+
+
+
+-(void)updateView{
+    [_collectionView reloadData];
+}
 
 
 

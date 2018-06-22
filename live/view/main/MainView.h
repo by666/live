@@ -12,6 +12,6 @@
 @interface MainView : UIView
 
 -(instancetype)initWithViewModel:(MainViewModel *)viewModel;
--(void)updateScheduleView;
+-(void)updateView;
 
 @end

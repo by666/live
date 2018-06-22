@@ -8,17 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol MainViewDelegate
+@protocol MainViewDelegate<BaseRequestDelegate>
 
--(void)onChangeTab:(NSInteger)index;
 
 @end
 
 @interface MainViewModel : NSObject
 
 @property(weak, nonatomic)id<MainViewDelegate> delegate;
+@property(strong, nonatomic)NSMutableArray *datas;
 
--(void)changeTab:(NSInteger)index;
-
+-(instancetype)init;
+-(void)requestData;
 
 @end

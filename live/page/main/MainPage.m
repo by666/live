@@ -8,7 +8,7 @@
 
 #import "MainPage.h"
 #import "MainView.h"
-
+#import "STToastUtil.h"
 @interface MainPage ()<MainViewDelegate>
 
 @property(strong, nonatomic)MainView *mainView;
@@ -20,7 +20,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
-    [self showSTNavigationBar:MSG_SCHEDULE_TITLE needback:NO];
+    [self showSTNavigationBar:MSG_MAIN_TITLE needback:NO];
     [self initView];
     [self initAdmob];
 }
@@ -28,7 +28,7 @@
 -(void)viewWillAppear:(BOOL)animated{ 
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c03];
+    [self setStatuBarBackgroud:c18];
 }
 
 
@@ -46,18 +46,23 @@
 }
 
 
--(void)onRequestCallback:(Boolean)success errorMsg:(NSString *)errorMsg{
-    if(_mainView){
-        [_mainView updateScheduleView];
-    }
+
+-(void)onRequestBegin{
+    WS(weakSelf)
+    dispatch_main_async_safe(^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+    })
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    [MBProgressHUD hideHUDForView:self.view animated:YES];
+    [STToastUtil showFailureAlertSheet:msg];
 }
 
 
--(void)onChangeTab:(NSInteger)index{
-    if(index == 0){
-        [self.navigationView setTitle:MSG_INFO_TITLE];
-    }else{
-        [self.navigationView setTitle:MSG_SCHEDULE_TITLE];
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    if(_mainView){
+        [_mainView updateView];
     }
 }
 

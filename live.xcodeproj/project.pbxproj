@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		001965EC20DCEE4100776E46 /* MainModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 001965EB20DCEE4100776E46 /* MainModel.m */; };
+		001965F020DCF6BF00776E46 /* MainCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 001965EE20DCF6BF00776E46 /* MainCell.m */; };
+		001965F820DCF91D00776E46 /* STAlertSheet.m in Sources */ = {isa = PBXBuildFile; fileRef = 001965F320DCF91D00776E46 /* STAlertSheet.m */; };
+		001965F920DCF91D00776E46 /* STExtendedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 001965F520DCF91D00776E46 /* STExtendedLabel.m */; };
+		001965FA20DCF91D00776E46 /* STToastUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 001965F720DCF91D00776E46 /* STToastUtil.m */; };
 		0038F17C20CE294800094EB9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F17520CE294800094EB9 /* MainView.m */; };
 		0038F18720CE295C00094EB9 /* MainPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F18220CE295C00094EB9 /* MainPage.m */; };
 		0038F19620CE298600094EB9 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F18B20CE298500094EB9 /* RespondModel.m */; };
@@ -63,6 +68,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		001965EA20DCEE4100776E46 /* MainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
+		001965EB20DCEE4100776E46 /* MainModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainModel.m; sourceTree = "<group>"; };
+		001965ED20DCEEE600776E46 /* BaseRequestDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequestDelegate.h; sourceTree = "<group>"; };
+		001965EE20DCF6BF00776E46 /* MainCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCell.m; sourceTree = "<group>"; };
+		001965EF20DCF6BF00776E46 /* MainCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainCell.h; sourceTree = "<group>"; };
+		001965F220DCF91D00776E46 /* STAlertSheet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STAlertSheet.h; sourceTree = "<group>"; };
+		001965F320DCF91D00776E46 /* STAlertSheet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STAlertSheet.m; sourceTree = "<group>"; };
+		001965F420DCF91D00776E46 /* STExtendedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STExtendedLabel.h; sourceTree = "<group>"; };
+		001965F520DCF91D00776E46 /* STExtendedLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STExtendedLabel.m; sourceTree = "<group>"; };
+		001965F620DCF91D00776E46 /* STToastUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STToastUtil.h; sourceTree = "<group>"; };
+		001965F720DCF91D00776E46 /* STToastUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STToastUtil.m; sourceTree = "<group>"; };
 		0038F17420CE294800094EB9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainView.h; sourceTree = "<group>"; };
 		0038F17520CE294800094EB9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainView.m; sourceTree = "<group>"; };
 		0038F18120CE295C00094EB9 /* MainPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainPage.h; sourceTree = "<group>"; };
@@ -194,9 +210,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		001965F120DCF91D00776E46 /* toast */ = {
+			isa = PBXGroup;
+			children = (
+				001965F220DCF91D00776E46 /* STAlertSheet.h */,
+				001965F320DCF91D00776E46 /* STAlertSheet.m */,
+				001965F420DCF91D00776E46 /* STExtendedLabel.h */,
+				001965F520DCF91D00776E46 /* STExtendedLabel.m */,
+				001965F620DCF91D00776E46 /* STToastUtil.h */,
+				001965F720DCF91D00776E46 /* STToastUtil.m */,
+			);
+			path = toast;
+			sourceTree = "<group>";
+		};
 		0038F17320CE294800094EB9 /* main */ = {
 			isa = PBXGroup;
 			children = (
+				001965EF20DCF6BF00776E46 /* MainCell.h */,
+				001965EE20DCF6BF00776E46 /* MainCell.m */,
 				0038F17420CE294800094EB9 /* MainView.h */,
 				0038F17520CE294800094EB9 /* MainView.m */,
 			);
@@ -275,6 +306,7 @@
 		003EDB3920C551AF00CFCFE9 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				001965ED20DCEEE600776E46 /* BaseRequestDelegate.h */,
 				003EDB3A20C551AF00CFCFE9 /* BaseViewController.h */,
 				003EDB3B20C551AF00CFCFE9 /* BaseViewController.m */,
 			);
@@ -448,6 +480,7 @@
 		003EDB8720C551AF00CFCFE9 /* common */ = {
 			isa = PBXGroup;
 			children = (
+				001965F120DCF91D00776E46 /* toast */,
 				003EDB9620C551AF00CFCFE9 /* CircularProgressView.h */,
 				003EDB9720C551AF00CFCFE9 /* CircularProgressView.m */,
 				003EDBA820C551AF00CFCFE9 /* STEdgeLabel.h */,
@@ -482,6 +515,8 @@
 			isa = PBXGroup;
 			children = (
 				0038F18920CE298500094EB9 /* net */,
+				001965EA20DCEE4100776E46 /* MainModel.h */,
+				001965EB20DCEE4100776E46 /* MainModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -670,13 +705,17 @@
 				003EDB2820C5360E00CFCFE9 /* ViewController.m in Sources */,
 				003EDBE820C551AF00CFCFE9 /* STResultView.m in Sources */,
 				0038F17C20CE294800094EB9 /* MainView.m in Sources */,
+				001965F820DCF91D00776E46 /* STAlertSheet.m in Sources */,
 				003EDBC620C551AF00CFCFE9 /* STRuntimeUtil.m in Sources */,
+				001965F020DCF6BF00776E46 /* MainCell.m in Sources */,
 				003EDBBA20C551AF00CFCFE9 /* BaseViewController.m in Sources */,
+				001965F920DCF91D00776E46 /* STExtendedLabel.m in Sources */,
 				003EDBEC20C551AF00CFCFE9 /* TouchScrollView.m in Sources */,
 				003EDBC420C551AF00CFCFE9 /* STNetUtil.m in Sources */,
 				003EDB3320C5361700CFCFE9 /* main.m in Sources */,
 				003EDBE420C551AF00CFCFE9 /* STEdgeLabel.m in Sources */,
 				003EDBC920C551AF00CFCFE9 /* STAlertUtil.m in Sources */,
+				001965EC20DCEE4100776E46 /* MainModel.m in Sources */,
 				0038F18720CE295C00094EB9 /* MainPage.m in Sources */,
 				003EDBE520C551AF00CFCFE9 /* STLayerView.m in Sources */,
 				003EDBC220C551AF00CFCFE9 /* STUserDefaults.m in Sources */,
@@ -689,6 +728,7 @@
 				0038F1AA20CE29AC00094EB9 /* MainViewModel.m in Sources */,
 				003EDBDC20C551AF00CFCFE9 /* CircularProgressView.m in Sources */,
 				003EDBE720C551AF00CFCFE9 /* STRefreshTableView.m in Sources */,
+				001965FA20DCF91D00776E46 /* STToastUtil.m in Sources */,
 				003EDBCC20C551AF00CFCFE9 /* STPUtil.m in Sources */,
 				003EDBBE20C551AF00CFCFE9 /* STObserver.m in Sources */,
 				003EDBCF20C551AF00CFCFE9 /* UILabel+ContentSize.m in Sources */,

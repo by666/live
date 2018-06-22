@@ -7,13 +7,31 @@
 //
 
 #import "MainViewModel.h"
-
+#import "STNetUtil.h"
+#import "MainModel.h"
 @implementation MainViewModel
 
+-(instancetype)init{
+    if(self == [super init]){
+        _datas = [[NSMutableArray alloc]init];
+    }
+    return self;
+}
 
--(void)changeTab:(NSInteger)index{
+
+-(void)requestData{
     if(_delegate){
-        [_delegate onChangeTab:index];
+        [_delegate onRequestBegin];
+        
+        WS(weakSelf)
+        [STNetUtil get:URL_LIVE_LIST parameters:nil success:^(RespondModel *respondModel) {
+            weakSelf.datas = [MainModel mj_objectArrayWithKeyValuesArray:respondModel.data];
+            [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.datas];
+        } failure:^(int errorCode) {
+            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+        }];
     }
 }
+
+
 @end
