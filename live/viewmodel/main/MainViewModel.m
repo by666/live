@@ -8,7 +8,7 @@
 
 #import "MainViewModel.h"
 #import "STNetUtil.h"
-#import "MainModel.h"
+
 @implementation MainViewModel
 
 -(instancetype)init{
@@ -30,6 +30,13 @@
         } failure:^(int errorCode) {
             [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
         }];
+    }
+}
+
+
+-(void)goDetailPage:(MainModel *)mainModel{
+    if(_delegate){
+        [_delegate onGoDetailPage:mainModel];
     }
 }
 

@@ -9,6 +9,7 @@
 #import "MainPage.h"
 #import "MainView.h"
 #import "STToastUtil.h"
+#import "DetailPage.h"
 @interface MainPage ()<MainViewDelegate>
 
 @property(strong, nonatomic)MainView *mainView;
@@ -64,6 +65,10 @@
     if(_mainView){
         [_mainView updateView];
     }
+}
+
+-(void)onGoDetailPage:(MainModel *)mainModel{
+    [DetailPage show:mainModel controller:self];
 }
 
 @end

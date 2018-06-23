@@ -86,7 +86,7 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     if(_mViewModel){
-    
+        [_mViewModel goDetailPage: [_mViewModel.datas objectAtIndex:indexPath.row]];
     }
     
 }

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MainModel.h"
 
 @protocol MainViewDelegate<BaseRequestDelegate>
 
+-(void)onGoDetailPage:(MainModel *)mainModel;
 
 @end
 
@@ -20,5 +22,6 @@
 
 -(instancetype)init;
 -(void)requestData;
+-(void)goDetailPage:(MainModel *)mainModel;
 
 @end
