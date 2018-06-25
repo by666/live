@@ -42,7 +42,7 @@
     
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:_mViewModel.detailModel.live_url] withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.player.view.frame = CGRectMake(0, 0, ScreenWidth, ContentHeight);
+    self.player.view.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.shouldAutoplay = YES;
     

@@ -35,7 +35,7 @@
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    _collectionView.backgroundColor = cwhite;
+    _collectionView.backgroundColor = c15;
     [self addSubview:_collectionView];
     
     [_collectionView registerClass:[MainCell class] forCellWithReuseIdentifier:[MainCell identify]];
@@ -66,7 +66,9 @@
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView  layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    return CGSizeMake(ScreenWidth/3, ScreenWidth/3 + STHeight(30));
+    CGFloat width = (ScreenWidth - STWidth(30))/2;
+    CGFloat height = width * 4 / 3;
+    return CGSizeMake(width, height  + STHeight(60));
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
@@ -81,7 +83,7 @@
 
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0 , 0, 0, 0);
+    return UIEdgeInsetsMake(STHeight(10) , STWidth(10), 0, STWidth(10));
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
