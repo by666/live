@@ -32,6 +32,7 @@
 #import "NSString+Extension.h"
 #import "UIImageView+WebCache.h"
 #import "BaseRequestDelegate.h"
+#import "UITableView+Init.h"
 @import GoogleMobileAds;
 
 
@@ -40,6 +41,7 @@
 #define STWidth(width) ([STPUtil getActualWidth:width])
 #define STHeight(height) ([STPUtil getActualHeight:height])
 #define STFont(font) ([STPUtil getActualHeight:font])
+#define VideoHeight (ScreenWidth * 3 / 4)
 
 //获取当前屏幕的高度
 #define ScreenHeight ([[UIScreen mainScreen] bounds].size.height)

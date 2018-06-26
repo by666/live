@@ -3,7 +3,6 @@
 @interface STTabBarView()
 
 @property (nonatomic, strong) NSArray *mTitles;
-@property (nonatomic, strong) NSArray *mImages;
 @property (nonatomic, strong) UIView *lineView;
 @property (nonatomic, strong) UIButton *selectedBtn;
 
@@ -13,14 +12,13 @@
 
 
 
-- (instancetype)initWithTitles:(NSArray *)titles images:(NSArray *)images
+- (instancetype)initWithTitles:(NSArray *)titles
 {
     self = [super init];
     if (self) {
         _mTitles = titles;
-        _mImages = images;
-        self.frame = CGRectMake(0, ContentHeight - STHeight(48), ScreenWidth, STHeight(48));
-        self.backgroundColor = cwhite;
+        self.frame = CGRectMake(0, ScreenWidth * 3 / 4, ScreenWidth, STHeight(44));
+        self.backgroundColor = [UIColor whiteColor];
     }
     return self;
 }
@@ -32,24 +30,26 @@
     
     for (int i=0; i<_mTitles.count; i++) {
         UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
-        item.frame = CGRectMake(i * width, 0, width, STHeight(48));
+        item.frame = CGRectMake(i * width, 0, width, STHeight(44));
         [item setTitle:_mTitles[i] forState:UIControlStateNormal];
         [item setTitleColor:normal_color forState:UIControlStateNormal];
         [item setTitleColor:select_color forState:UIControlStateSelected];
-        [item setImage:[UIImage imageNamed:_mImages[i * 2]] forState:UIControlStateNormal];
-        [item setImage:[UIImage imageNamed:_mImages[i * 2 + 1]] forState:UIControlStateSelected];
         item.titleLabel.font = font;
         item.tag = i + 10;
-        item.titleEdgeInsets = UIEdgeInsetsMake(item.imageView.frame.size.height+STHeight(5), -item.imageView.frame.size.width, 0, 0);
-        item.imageEdgeInsets = UIEdgeInsetsMake(-item.titleLabel.bounds.size.height- STHeight(5),  0,  0, -item.titleLabel.bounds.size.width);
         [item addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:item];
- 
+        
+        if (i == 0) {
+            
+            item.selected = YES;
+            self.selectedBtn = item;
+            self.lineView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 3, width, 3)];
+            self.lineView.layer.cornerRadius = 3.0;
+            self.lineView.backgroundColor = c19;
+            self.lineView.layer.masksToBounds = YES;
+            [self addSubview:self.lineView];
+        }
     }
-    
-    self.lineView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, LineHeight)];
-    self.lineView.backgroundColor = c07;
-    [self addSubview:self.lineView];
     
 }
 
@@ -63,7 +63,20 @@
 }
 
 
+- (void)setLineColor:(UIColor *)lineColor{
+    self.lineView.backgroundColor = lineColor;
+}
 
+- (void)setLineHeight:(CGFloat)lineHeight{
+    CGRect frame = self.lineView.frame;
+    frame.size.height = lineHeight;
+    frame.origin.y = CGRectGetHeight(self.frame) - lineHeight;
+    self.lineView.frame = frame;
+}
+
+- (void)setLineCornerRadius:(CGFloat)lineCornerRadius{
+    self.lineView.layer.cornerRadius = lineCornerRadius;
+}
 
 
 - (void)getViewIndex:(IndexBlock)block{
@@ -91,6 +104,12 @@
     tempBtn.selected = YES;
     self.selectedBtn = tempBtn;
     
+    CGFloat x = index * (ScreenWidth / _mTitles.count);
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect frame = self.lineView.frame;
+        frame.origin.x = x;
+        self.lineView.frame = frame;
+    }];
 }
 
 

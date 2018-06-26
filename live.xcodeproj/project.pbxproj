@@ -64,6 +64,10 @@
 		003EDC0620C5537000CFCFE9 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003EDC0520C5537000CFCFE9 /* AssetsLibrary.framework */; };
 		003EDC0820C5537600CFCFE9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003EDC0720C5537600CFCFE9 /* SystemConfiguration.framework */; };
 		003EDC3E20C78C1C00CFCFE9 /* libUMessage_Sdk_1.5.0a.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003EDC3C20C78C1C00CFCFE9 /* libUMessage_Sdk_1.5.0a.a */; };
+		0055784020E2378E003B8DB6 /* ChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0055783F20E2378E003B8DB6 /* ChatView.m */; };
+		0055784520E23796003B8DB6 /* GiftView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0055784420E23796003B8DB6 /* GiftView.m */; };
+		0055784820E243F7003B8DB6 /* UITableView+Init.m in Sources */ = {isa = PBXBuildFile; fileRef = 0055784720E243F7003B8DB6 /* UITableView+Init.m */; };
+		0055784B20E24633003B8DB6 /* ChatModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0055784A20E24633003B8DB6 /* ChatModel.m */; };
 		83707B895F078A657C64F156 /* Pods_live.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE5F5B46D5EA21EF0AD8E05 /* Pods_live.framework */; };
 		CF43E41520CDA3230069AAFA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43E41420CDA3230069AAFA /* Launch Screen.storyboard */; };
 		CF8C5F5F20DEA8D1001348A2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F5E20DEA8D1001348A2 /* AudioToolbox.framework */; };
@@ -227,6 +231,14 @@
 		003EDC0720C5537600CFCFE9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		003EDC3C20C78C1C00CFCFE9 /* libUMessage_Sdk_1.5.0a.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUMessage_Sdk_1.5.0a.a; sourceTree = "<group>"; };
 		003EDC3D20C78C1C00CFCFE9 /* UMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UMessage.h; sourceTree = "<group>"; };
+		0055783E20E2378E003B8DB6 /* ChatView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatView.h; sourceTree = "<group>"; };
+		0055783F20E2378E003B8DB6 /* ChatView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatView.m; sourceTree = "<group>"; };
+		0055784320E23796003B8DB6 /* GiftView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiftView.h; sourceTree = "<group>"; };
+		0055784420E23796003B8DB6 /* GiftView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiftView.m; sourceTree = "<group>"; };
+		0055784620E243F7003B8DB6 /* UITableView+Init.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+Init.h"; sourceTree = "<group>"; };
+		0055784720E243F7003B8DB6 /* UITableView+Init.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+Init.m"; sourceTree = "<group>"; };
+		0055784920E24633003B8DB6 /* ChatModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatModel.h; sourceTree = "<group>"; };
+		0055784A20E24633003B8DB6 /* ChatModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatModel.m; sourceTree = "<group>"; };
 		0BE5F5B46D5EA21EF0AD8E05 /* Pods_live.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_live.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B663E8DAD9BB96CBB69816 /* Pods-live.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live.debug.xcconfig"; path = "Pods/Target Support Files/Pods-live/Pods-live.debug.xcconfig"; sourceTree = "<group>"; };
 		CF43E41420CDA3230069AAFA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -400,12 +412,12 @@
 		003EDB3E20C551AF00CFCFE9 /* macro */ = {
 			isa = PBXGroup;
 			children = (
+				003EDB4420C551AF00CFCFE9 /* STPrefixHeader.pch */,
 				003EDB3F20C551AF00CFCFE9 /* APIMacro.h */,
 				003EDB4020C551AF00CFCFE9 /* ColorMacro.h */,
 				003EDB4120C551AF00CFCFE9 /* Constant.h */,
 				003EDB4220C551AF00CFCFE9 /* EnumMacro.h */,
 				003EDB4320C551AF00CFCFE9 /* NotifyMacro.h */,
-				003EDB4420C551AF00CFCFE9 /* STPrefixHeader.pch */,
 				003EDB4520C551AF00CFCFE9 /* ThreePartyMacro.h */,
 			);
 			path = macro;
@@ -543,6 +555,8 @@
 		003EDB7820C551AF00CFCFE9 /* categories */ = {
 			isa = PBXGroup;
 			children = (
+				0055784620E243F7003B8DB6 /* UITableView+Init.h */,
+				0055784720E243F7003B8DB6 /* UITableView+Init.m */,
 				003EDB7920C551AF00CFCFE9 /* NSString+Extension.h */,
 				003EDB7A20C551AF00CFCFE9 /* NSString+Extension.m */,
 				003EDB7B20C551AF00CFCFE9 /* UIButton+Init.h */,
@@ -604,6 +618,8 @@
 				001965EB20DCEE4100776E46 /* MainModel.m */,
 				CF8C5F7D20DEAED8001348A2 /* DetailModel.h */,
 				CF8C5F7E20DEAED8001348A2 /* DetailModel.m */,
+				0055784920E24633003B8DB6 /* ChatModel.h */,
+				0055784A20E24633003B8DB6 /* ChatModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -685,6 +701,10 @@
 			children = (
 				CF8C5F7620DEAB37001348A2 /* DetailView.h */,
 				CF8C5F7720DEAB37001348A2 /* DetailView.m */,
+				0055783E20E2378E003B8DB6 /* ChatView.h */,
+				0055783F20E2378E003B8DB6 /* ChatView.m */,
+				0055784320E23796003B8DB6 /* GiftView.h */,
+				0055784420E23796003B8DB6 /* GiftView.m */,
 			);
 			path = detail;
 			sourceTree = "<group>";
@@ -859,9 +879,11 @@
 				003EDBC120C551AF00CFCFE9 /* STFileUtil.m in Sources */,
 				003EDBBF20C551AF00CFCFE9 /* STObserverManager.m in Sources */,
 				003EDB2820C5360E00CFCFE9 /* ViewController.m in Sources */,
+				0055784B20E24633003B8DB6 /* ChatModel.m in Sources */,
 				003EDBE820C551AF00CFCFE9 /* STResultView.m in Sources */,
 				0038F17C20CE294800094EB9 /* MainView.m in Sources */,
 				001965F820DCF91D00776E46 /* STAlertSheet.m in Sources */,
+				0055784020E2378E003B8DB6 /* ChatView.m in Sources */,
 				003EDBC620C551AF00CFCFE9 /* STRuntimeUtil.m in Sources */,
 				001965F020DCF6BF00776E46 /* MainCell.m in Sources */,
 				003EDBBA20C551AF00CFCFE9 /* BaseViewController.m in Sources */,
@@ -876,6 +898,7 @@
 				0038F18720CE295C00094EB9 /* MainPage.m in Sources */,
 				003EDBE520C551AF00CFCFE9 /* STLayerView.m in Sources */,
 				003EDBC220C551AF00CFCFE9 /* STUserDefaults.m in Sources */,
+				0055784820E243F7003B8DB6 /* UITableView+Init.m in Sources */,
 				CF8C5F7820DEAB37001348A2 /* DetailView.m in Sources */,
 				003EDBD120C551AF00CFCFE9 /* UILabel+StringFrame.m in Sources */,
 				003EDBC320C551AF00CFCFE9 /* STLog.m in Sources */,
@@ -891,6 +914,7 @@
 				003EDBCC20C551AF00CFCFE9 /* STPUtil.m in Sources */,
 				003EDBBE20C551AF00CFCFE9 /* STObserver.m in Sources */,
 				003EDBCF20C551AF00CFCFE9 /* UILabel+ContentSize.m in Sources */,
+				0055784520E23796003B8DB6 /* GiftView.m in Sources */,
 				003EDBD020C551AF00CFCFE9 /* UILabel+Init.m in Sources */,
 				003EDBC720C551AF00CFCFE9 /* STSoundUtil.m in Sources */,
 				003EDBC020C551AF00CFCFE9 /* STDataBaseUtil.m in Sources */,

@@ -53,6 +53,13 @@
     [self.view addSubview:_navigationView];
 }
 
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback backgroudColor:(UIColor *)backgroudColor{
+    _navigationView = [[STNavigationView alloc]initWithTitle:title needBack:needback];
+    _navigationView.delegate = self;
+    _navigationView.backgroundColor = backgroudColor;
+    [self.view addSubview:_navigationView];
+}
+
 -(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightBtn:(NSString *)rightStr block:(void (^)(void))click{
     _onRightBtnClick = click;
     _navigationView = [[STNavigationView alloc]initWithTitle:title needBack:needback rightBtn:rightStr];

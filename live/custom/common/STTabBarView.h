@@ -10,7 +10,7 @@ typedef void (^IndexBlock)(NSString *title,NSInteger index);
 @property (nonatomic, copy  ) IndexBlock indexBlock;
 
 
-- (instancetype)initWithTitles:(NSArray *)titles images:(NSArray *)images;
+-(instancetype)initWithTitles:(NSArray *)titles;
 -(void)setData:(UIColor *)normal_color SelectColor:(UIColor *)select_color Font:(UIFont *)font;
 -(void)getViewIndex:(IndexBlock)block;
 -(void)setViewIndex:(NSInteger)index;

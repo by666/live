@@ -26,7 +26,6 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self showSTNavigationBar:_mMainModel.nick needback:YES];
     self.view.backgroundColor = cwhite;
     [self initView];
 }
@@ -35,7 +34,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c18];
+    [self setStatuBarBackgroud:c02];
 }
 
 
@@ -44,9 +43,13 @@
     viewModel.delegate = self;
     
     _detailView = [[DetailView alloc]initWithViewModel:viewModel];
-    _detailView.frame = CGRectMake(0,StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    _detailView.frame = CGRectMake(0,0, ScreenWidth, ScreenHeight);
     _detailView.backgroundColor = cwhite;
     [self.view addSubview:_detailView];
+    
+    [self showSTNavigationBar:_mMainModel.nick needback:YES backgroudColor:[UIColor clearColor]];
+
+    
 }
 
 -(void)onRequestBegin{

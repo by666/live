@@ -20,6 +20,7 @@
     if(self == [super init]){
         _mMainModel = mainModel;
         _detailModel = [[DetailModel alloc]init];
+        _chatDatas = [[NSMutableArray alloc]init];
     }
     return self;
 }

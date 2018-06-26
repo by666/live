@@ -20,6 +20,8 @@
 @property(weak, nonatomic)id<DetailViewDelegate> delegate;
 @property(strong, nonatomic)DetailModel *detailModel;
 
+@property(strong, nonatomic)NSMutableArray *chatDatas;
+
 -(instancetype)initWithMainModel:(MainModel *)mainModel;
 -(void)requestData;
 

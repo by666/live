@@ -28,6 +28,9 @@
 
 #define MSG_MAIN_TITLE @"小草Live"
 
+#define MSG_DETAIL_CHAT @"聊天"
+#define MSG_DETAIL_GIFT @"礼物"
+
 
 
 
