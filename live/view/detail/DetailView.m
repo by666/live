@@ -39,12 +39,10 @@
 
 
 -(void)initView{
-
     
-    
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenWidth * 3 /4)];
-    view.backgroundColor = c02;
-    [self addSubview:view];
+    UILabel *waitLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"主播正在快马加鞭赶来..." textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c16 multiLine:NO];
+    waitLabel.frame = CGRectMake(0, 0, ScreenWidth, VideoHeight);
+    [self addSubview:waitLabel];
     
     NSArray *titles = @[MSG_DETAIL_CHAT,MSG_DETAIL_GIFT];
     _tabBarView = [[STTabBarView alloc]initWithTitles:titles];
@@ -67,8 +65,8 @@
     
     [_tabBarView setViewIndex:0];
     
-    CGFloat scrollHeight = ScreenHeight - STHeight(44) - ScreenWidth * 3 /4;
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, ScreenWidth * 3 /4 + STHeight(44) , ScreenWidth, scrollHeight)];
+    CGFloat scrollHeight = ScreenHeight - STHeight(44) - VideoHeight;
+    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, VideoHeight + STHeight(44) , ScreenWidth, scrollHeight)];
     _scrollView.delegate = self;
     _scrollView.pagingEnabled = YES;
     _scrollView.bounces = NO;
@@ -100,7 +98,7 @@
     
     self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:_mViewModel.detailModel.live_url] withOptions:options];
     self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.player.view.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    self.player.view.frame = CGRectMake(0, 0, ScreenWidth, VideoHeight);
     self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
     self.player.shouldAutoplay = YES;
 
@@ -109,6 +107,10 @@
     [self installMovieNotificationObservers];
     [self.player prepareToPlay];
     [self.player play];
+    
+    if(_mViewModel){
+        [_mViewModel showNavigationBar];
+    }
 
 }
 
@@ -206,6 +208,9 @@
         }
         case IJKMPMoviePlaybackStatePaused: {
             NSLog(@"IJKMPMoviePlayBackStateDidChange %d: paused", (int)_player.playbackState);
+            if(_mViewModel){
+                [_mViewModel useroffline];
+            }
             break;
         }
         case IJKMPMoviePlaybackStateInterrupted: {

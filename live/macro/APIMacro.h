@@ -13,6 +13,9 @@
 #pragma mark 定义API相关
 
 #define RootUrl @"https://scrats.cn/live"
-#define URL_LIVE_LIST [RootUrl stringByAppendingString:@"/api/live_list"]
-#define URL_LIVE_DETAIL [RootUrl stringByAppendingString:@"/api/live"]
+//#define URL_LIVE_LIST [RootUrl stringByAppendingString:@"/api/live_list"]
+#define URL_LIVE_LIST [RootUrl stringByAppendingString:@"/api/kktv_list"]
+
+#define URL_LIVE_DETAIL [RootUrl stringByAppendingString:@"/api/kktv"]
+//#define URL_LIVE_DETAIL [RootUrl stringByAppendingString:@"/api/live"]
 

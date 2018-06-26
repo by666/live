@@ -45,4 +45,16 @@
         }];
     }
 }
+
+-(void)useroffline{
+    if(_delegate){
+        [_delegate onUserOffline];
+    }
+}
+
+-(void)showNavigationBar{
+    if(_delegate){
+        [_delegate onShowNavigationBar];
+    }
+}
 @end

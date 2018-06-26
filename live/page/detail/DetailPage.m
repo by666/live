@@ -34,8 +34,9 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c02];
+    [self setStatuBarBackgroud:c18];
 }
+
 
 
 -(void)initView{
@@ -47,7 +48,6 @@
     _detailView.backgroundColor = cwhite;
     [self.view addSubview:_detailView];
     
-    [self showSTNavigationBar:_mMainModel.nick needback:YES backgroudColor:[UIColor clearColor]];
 
     
 }
@@ -78,5 +78,16 @@
         [_detailView removeView];
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+-(void)onUserOffline{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:@"提醒" content:@"主播已下播，看看其他主播吧！" controller:self confirm:^{
+        [weakSelf backLastPage];
+    }];
+}
+
+-(void)onShowNavigationBar{
+    [self showSTNavigationBar:_mMainModel.nick needback:YES backgroudColor:[UIColor clearColor]];
 }
 @end

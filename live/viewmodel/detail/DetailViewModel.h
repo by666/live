@@ -12,7 +12,8 @@
 
 @protocol DetailViewDelegate<BaseRequestDelegate>
 
-
+-(void)onUserOffline;
+-(void)onShowNavigationBar;
 @end
 
 @interface DetailViewModel : NSObject
@@ -24,5 +25,7 @@
 
 -(instancetype)initWithMainModel:(MainModel *)mainModel;
 -(void)requestData;
+-(void)useroffline;
+-(void)showNavigationBar;
 
 @end

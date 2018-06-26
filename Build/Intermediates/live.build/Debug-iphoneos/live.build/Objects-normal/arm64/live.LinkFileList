@@ -1,9 +1,11 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STFileUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STObserverManager.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ViewController.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ChatModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STResultView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MainView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STAlertSheet.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ChatView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STRuntimeUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MainCell.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/BaseViewController.o
@@ -18,6 +20,7 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MainPage.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STLayerView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STUserDefaults.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UITableView+Init.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/DetailView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UILabel+StringFrame.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STLog.o
@@ -33,6 +36,7 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STPUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STObserver.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UILabel+ContentSize.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/GiftView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UILabel+Init.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STSoundUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STDataBaseUtil.o
