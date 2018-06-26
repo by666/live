@@ -40,18 +40,18 @@
     [IJKFFMoviePlayerController checkIfFFmpegVersionMatch:YES];
     IJKFFOptions *options = [IJKFFOptions optionsByDefault];
     
-    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:_mViewModel.detailModel.live_url] withOptions:options];
-    self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    self.player.view.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
-    self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
-    self.player.shouldAutoplay = YES;
-    
-    self.autoresizesSubviews = YES;
-    [self addSubview:self.player.view];
-    [self installMovieNotificationObservers];
-    [self.player prepareToPlay];
-
-    [self.player play];
+//    self.player = [[IJKFFMoviePlayerController alloc] initWithContentURL:[NSURL URLWithString:_mViewModel.detailModel.live_url] withOptions:options];
+//    self.player.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+//    self.player.view.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+//    self.player.scalingMode = IJKMPMovieScalingModeAspectFit;
+//    self.player.shouldAutoplay = YES;
+//    
+//    self.autoresizesSubviews = YES;
+//    [self addSubview:self.player.view];
+//    [self installMovieNotificationObservers];
+//    [self.player prepareToPlay];
+//
+//    [self.player play];
 
 }
 

@@ -16,6 +16,7 @@
 #import "STUpdateUtil.h"
 #import "UMessage.h"
 #import "UMMobClick/MobClick.h"
+#import "DetailPage.h"
 
 @interface AppDelegate ()
 
