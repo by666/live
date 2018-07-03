@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "live/view/detail/DetailView.m"
-            timestampString = "551726229.17211"
+            filePath = "live/general/mob/AdMobManager.m"
+            timestampString = "552135266.730024"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "-initView"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "-rewardBasedVideoAd:didRewardUserWithReward:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "live/view/detail/DetailView.m"
-            timestampString = "551726229.172451"
+            filePath = "live/general/mob/AdMobManager.m"
+            timestampString = "552135266.730318"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "-initView"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-rewardBasedVideoAdDidOpen:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,45 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "live/view/detail/DetailView.m"
-            timestampString = "551726229.172686"
+            filePath = "live/general/mob/AdMobManager.m"
+            timestampString = "552135266.730372"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "-installMovieNotificationObservers"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "live/view/detail/DetailView.m"
-            timestampString = "551726229.172909"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
-            landmarkName = "-loadStateDidChange:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "live/view/detail/DetailView.m"
-            timestampString = "551726229.173126"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "-moviePlayBackStateDidChange:"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "-rewardBasedVideoAdDidReceiveAd:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

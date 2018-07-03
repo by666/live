@@ -10,6 +10,7 @@
 #import "MainView.h"
 #import "STToastUtil.h"
 #import "DetailPage.h"
+#import "MinePage.h"
 @interface MainPage ()<MainViewDelegate>
 
 @property(strong, nonatomic)MainView *mainView;
@@ -21,9 +22,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
-    [self showSTNavigationBar:MSG_MAIN_TITLE needback:NO];
     [self initView];
     [self initAdmob];
+    WS(weakSelf)
+    [self showSTNavigationBar:MSG_MAIN_TITLE needback:NO rightImage:[UIImage imageNamed:@"ic_mine"] block:^{
+        [MinePage show:weakSelf];
+    }];
 }
 
 -(void)viewWillAppear:(BOOL)animated{ 
@@ -40,7 +44,6 @@
     MainViewModel *viewModel = [[MainViewModel alloc]init];
     viewModel.delegate = self;
 
-    
     _mainView = [[MainView alloc]initWithViewModel:viewModel];
     _mainView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     [self.view addSubview:_mainView];

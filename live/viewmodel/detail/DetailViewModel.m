@@ -57,4 +57,5 @@
         [_delegate onShowNavigationBar];
     }
 }
+
 @end

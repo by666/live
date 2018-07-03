@@ -90,4 +90,6 @@
 -(void)onShowNavigationBar{
     [self showSTNavigationBar:_mMainModel.nick needback:YES backgroudColor:[UIColor clearColor]];
 }
+
+
 @end

@@ -83,6 +83,17 @@
 		CF8C5F7C20DEAB5E001348A2 /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5F7B20DEAB5E001348A2 /* DetailViewModel.m */; };
 		CF8C5F7F20DEAED8001348A2 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5F7E20DEAED8001348A2 /* DetailModel.m */; };
 		CF8C5F9820E29F60001348A2 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F9120E29F58001348A2 /* IJKMediaFramework.framework */; };
+		CF8C5F9D20E7EC72001348A2 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F9A20E7EC71001348A2 /* GoogleMobileAds.framework */; };
+		CF8C5FA420E8B076001348A2 /* MinePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA320E8B076001348A2 /* MinePage.m */; };
+		CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */; };
+		CF8C5FAC20E8B17A001348A2 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FAB20E8B17A001348A2 /* MineView.m */; };
+		CFF73B0C20E8CC5400091033 /* MineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B0B20E8CC5400091033 /* MineViewCell.m */; };
+		CFF73B1220E8CCB600091033 /* TitleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1020E8CCB600091033 /* TitleContentModel.m */; };
+		CFF73B1520E8D46900091033 /* AboutPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1420E8D46900091033 /* AboutPage.m */; };
+		CFF73B1820E8D48B00091033 /* AgreementPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1720E8D48B00091033 /* AgreementPage.m */; };
+		CFF73B1B20E8D4A400091033 /* DisclaimerPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1A20E8D4A400091033 /* DisclaimerPage.m */; };
+		CFF73B1F20E8D72C00091033 /* AdMobManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1E20E8D72C00091033 /* AdMobManager.m */; };
+		CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B2120E8D97400091033 /* AdMobModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,6 +270,27 @@
 		CF8C5F7D20DEAED8001348A2 /* DetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		CF8C5F7E20DEAED8001348A2 /* DetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
 		CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		CF8C5F9A20E7EC71001348A2 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
+		CF8C5FA220E8B076001348A2 /* MinePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinePage.h; sourceTree = "<group>"; };
+		CF8C5FA320E8B076001348A2 /* MinePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinePage.m; sourceTree = "<group>"; };
+		CF8C5FA720E8B0D6001348A2 /* MineViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewModel.h; sourceTree = "<group>"; };
+		CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewModel.m; sourceTree = "<group>"; };
+		CF8C5FAA20E8B17A001348A2 /* MineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
+		CF8C5FAB20E8B17A001348A2 /* MineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
+		CFF73B0A20E8CC5400091033 /* MineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewCell.h; sourceTree = "<group>"; };
+		CFF73B0B20E8CC5400091033 /* MineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewCell.m; sourceTree = "<group>"; };
+		CFF73B1020E8CCB600091033 /* TitleContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleContentModel.m; sourceTree = "<group>"; };
+		CFF73B1120E8CCB600091033 /* TitleContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TitleContentModel.h; sourceTree = "<group>"; };
+		CFF73B1320E8D46900091033 /* AboutPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AboutPage.h; sourceTree = "<group>"; };
+		CFF73B1420E8D46900091033 /* AboutPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AboutPage.m; sourceTree = "<group>"; };
+		CFF73B1620E8D48B00091033 /* AgreementPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AgreementPage.h; sourceTree = "<group>"; };
+		CFF73B1720E8D48B00091033 /* AgreementPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AgreementPage.m; sourceTree = "<group>"; };
+		CFF73B1920E8D4A400091033 /* DisclaimerPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DisclaimerPage.h; sourceTree = "<group>"; };
+		CFF73B1A20E8D4A400091033 /* DisclaimerPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DisclaimerPage.m; sourceTree = "<group>"; };
+		CFF73B1D20E8D72C00091033 /* AdMobManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMobManager.h; sourceTree = "<group>"; };
+		CFF73B1E20E8D72C00091033 /* AdMobManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobManager.m; sourceTree = "<group>"; };
+		CFF73B2020E8D97400091033 /* AdMobModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMobModel.h; sourceTree = "<group>"; };
+		CFF73B2120E8D97400091033 /* AdMobModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobModel.m; sourceTree = "<group>"; };
 		F215627FF075B719AEDD0E1D /* Pods-live.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live.release.xcconfig"; path = "Pods/Target Support Files/Pods-live/Pods-live.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -280,6 +312,7 @@
 				CF8C5F6120DEA8D5001348A2 /* AVFoundation.framework in Frameworks */,
 				CF8C5F5F20DEA8D1001348A2 /* AudioToolbox.framework in Frameworks */,
 				003EDC0820C5537600CFCFE9 /* SystemConfiguration.framework in Frameworks */,
+				CF8C5F9D20E7EC72001348A2 /* GoogleMobileAds.framework in Frameworks */,
 				003EDC0620C5537000CFCFE9 /* AssetsLibrary.framework in Frameworks */,
 				003EDC3E20C78C1C00CFCFE9 /* libUMessage_Sdk_1.5.0a.a in Frameworks */,
 				003EDC0020C5535800CFCFE9 /* Foundation.framework in Frameworks */,
@@ -416,6 +449,7 @@
 		003EDB4620C551AF00CFCFE9 /* general */ = {
 			isa = PBXGroup;
 			children = (
+				CFF73B1C20E8D71A00091033 /* mob */,
 				003EDB4920C551AF00CFCFE9 /* data */,
 				003EDB5020C551AF00CFCFE9 /* db */,
 				003EDB5920C551AF00CFCFE9 /* log */,
@@ -594,6 +628,7 @@
 		003EDBED20C5523E00CFCFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C5FA520E8B0BF001348A2 /* mine */,
 				CF8C5F7520DEAB2C001348A2 /* detail */,
 				0038F17320CE294800094EB9 /* main */,
 			);
@@ -603,6 +638,7 @@
 		003EDBEE20C5524200CFCFE9 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				CFF73B0F20E8CC9900091033 /* extra */,
 				0038F18920CE298500094EB9 /* net */,
 				001965EA20DCEE4100776E46 /* MainModel.h */,
 				001965EB20DCEE4100776E46 /* MainModel.m */,
@@ -617,6 +653,7 @@
 		003EDBEF20C5524500CFCFE9 /* page */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C5F9F20E8B06A001348A2 /* mine */,
 				CF8C5F7120DEA996001348A2 /* detail */,
 				0038F18020CE295C00094EB9 /* main */,
 			);
@@ -626,6 +663,7 @@
 		003EDBF020C5524B00CFCFE9 /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C5FA620E8B0C4001348A2 /* mine */,
 				CF8C5F7920DEAB55001348A2 /* detail */,
 				0038F1A420CE29AC00094EB9 /* main */,
 			);
@@ -644,6 +682,7 @@
 		3E592FEA5C30DC9688CF0142 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CF8C5F9A20E7EC71001348A2 /* GoogleMobileAds.framework */,
 				CF8C5F6E20DEA905001348A2 /* VideoToolbox.framework */,
 				CF8C5F6C20DEA8FA001348A2 /* OpenGLES.framework */,
 				CF8C5F6A20DEA8EE001348A2 /* MediaPlayer.framework */,
@@ -716,6 +755,61 @@
 				CF8C5F9520E29F58001348A2 /* IJKMediaFrameworkTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		CF8C5F9F20E8B06A001348A2 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5FA220E8B076001348A2 /* MinePage.h */,
+				CF8C5FA320E8B076001348A2 /* MinePage.m */,
+				CFF73B1320E8D46900091033 /* AboutPage.h */,
+				CFF73B1420E8D46900091033 /* AboutPage.m */,
+				CFF73B1620E8D48B00091033 /* AgreementPage.h */,
+				CFF73B1720E8D48B00091033 /* AgreementPage.m */,
+				CFF73B1920E8D4A400091033 /* DisclaimerPage.h */,
+				CFF73B1A20E8D4A400091033 /* DisclaimerPage.m */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		CF8C5FA520E8B0BF001348A2 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5FAA20E8B17A001348A2 /* MineView.h */,
+				CF8C5FAB20E8B17A001348A2 /* MineView.m */,
+				CFF73B0A20E8CC5400091033 /* MineViewCell.h */,
+				CFF73B0B20E8CC5400091033 /* MineViewCell.m */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		CF8C5FA620E8B0C4001348A2 /* mine */ = {
+			isa = PBXGroup;
+			children = (
+				CF8C5FA720E8B0D6001348A2 /* MineViewModel.h */,
+				CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */,
+			);
+			path = mine;
+			sourceTree = "<group>";
+		};
+		CFF73B0F20E8CC9900091033 /* extra */ = {
+			isa = PBXGroup;
+			children = (
+				CFF73B1120E8CCB600091033 /* TitleContentModel.h */,
+				CFF73B1020E8CCB600091033 /* TitleContentModel.m */,
+			);
+			path = extra;
+			sourceTree = "<group>";
+		};
+		CFF73B1C20E8D71A00091033 /* mob */ = {
+			isa = PBXGroup;
+			children = (
+				CFF73B1D20E8D72C00091033 /* AdMobManager.h */,
+				CFF73B1E20E8D72C00091033 /* AdMobManager.m */,
+				CFF73B2020E8D97400091033 /* AdMobModel.h */,
+				CFF73B2120E8D97400091033 /* AdMobModel.m */,
+			);
+			path = mob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -883,17 +977,21 @@
 				003EDBE820C551AF00CFCFE9 /* STResultView.m in Sources */,
 				0038F17C20CE294800094EB9 /* MainView.m in Sources */,
 				001965F820DCF91D00776E46 /* STAlertSheet.m in Sources */,
+				CFF73B1220E8CCB600091033 /* TitleContentModel.m in Sources */,
 				0055784020E2378E003B8DB6 /* ChatView.m in Sources */,
 				003EDBC620C551AF00CFCFE9 /* STRuntimeUtil.m in Sources */,
 				001965F020DCF6BF00776E46 /* MainCell.m in Sources */,
 				003EDBBA20C551AF00CFCFE9 /* BaseViewController.m in Sources */,
 				001965F920DCF91D00776E46 /* STExtendedLabel.m in Sources */,
 				003EDBEC20C551AF00CFCFE9 /* TouchScrollView.m in Sources */,
+				CFF73B0C20E8CC5400091033 /* MineViewCell.m in Sources */,
 				003EDBC420C551AF00CFCFE9 /* STNetUtil.m in Sources */,
 				003EDB3320C5361700CFCFE9 /* main.m in Sources */,
+				CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */,
 				003EDBE420C551AF00CFCFE9 /* STEdgeLabel.m in Sources */,
 				CF8C5F7C20DEAB5E001348A2 /* DetailViewModel.m in Sources */,
 				003EDBC920C551AF00CFCFE9 /* STAlertUtil.m in Sources */,
+				CFF73B1B20E8D4A400091033 /* DisclaimerPage.m in Sources */,
 				001965EC20DCEE4100776E46 /* MainModel.m in Sources */,
 				0038F18720CE295C00094EB9 /* MainPage.m in Sources */,
 				003EDBE520C551AF00CFCFE9 /* STLayerView.m in Sources */,
@@ -908,9 +1006,12 @@
 				003EDBCD20C551AF00CFCFE9 /* NSString+Extension.m in Sources */,
 				CF8C5F7420DEA9A5001348A2 /* DetailPage.m in Sources */,
 				0038F1AA20CE29AC00094EB9 /* MainViewModel.m in Sources */,
+				CFF73B1820E8D48B00091033 /* AgreementPage.m in Sources */,
 				003EDBDC20C551AF00CFCFE9 /* CircularProgressView.m in Sources */,
 				003EDBE720C551AF00CFCFE9 /* STRefreshTableView.m in Sources */,
 				001965FA20DCF91D00776E46 /* STToastUtil.m in Sources */,
+				CFF73B1520E8D46900091033 /* AboutPage.m in Sources */,
+				CFF73B1F20E8D72C00091033 /* AdMobManager.m in Sources */,
 				003EDBCC20C551AF00CFCFE9 /* STPUtil.m in Sources */,
 				003EDBBE20C551AF00CFCFE9 /* STObserver.m in Sources */,
 				003EDBCF20C551AF00CFCFE9 /* UILabel+ContentSize.m in Sources */,
@@ -918,12 +1019,15 @@
 				003EDBD020C551AF00CFCFE9 /* UILabel+Init.m in Sources */,
 				003EDBC720C551AF00CFCFE9 /* STSoundUtil.m in Sources */,
 				003EDBC020C551AF00CFCFE9 /* STDataBaseUtil.m in Sources */,
+				CF8C5FAC20E8B17A001348A2 /* MineView.m in Sources */,
 				003EDBCE20C551AF00CFCFE9 /* UIButton+Init.m in Sources */,
 				003EDBCB20C551AF00CFCFE9 /* STColorUtil.m in Sources */,
 				003EDBD320C551AF00CFCFE9 /* UIView+Frame.m in Sources */,
 				0038F19620CE298600094EB9 /* RespondModel.m in Sources */,
 				003EDBC520C551AF00CFCFE9 /* STUpdateUtil.m in Sources */,
+				CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */,
 				003EDBE620C551AF00CFCFE9 /* STNavigationView.m in Sources */,
+				CF8C5FA420E8B076001348A2 /* MinePage.m in Sources */,
 				CF8C5F7F20DEAED8001348A2 /* DetailModel.m in Sources */,
 				003EDBC820C551AF00CFCFE9 /* STTimeUtil.m in Sources */,
 				003EDBEA20C551AF00CFCFE9 /* STSwitchView.m in Sources */,
@@ -1061,6 +1165,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = live/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1094,6 +1202,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PREFIX_HEADER = live/macro/STPrefixHeader.pch;
 				INFOPLIST_FILE = "$(SRCROOT)/live/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

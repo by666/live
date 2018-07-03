@@ -7,6 +7,7 @@
 //
 
 #import "BaseViewController.h"
+#import "AdMobManager.h"
 
 @interface BaseViewController ()<STNavigationViewDelegate,GADBannerViewDelegate>
 
@@ -21,14 +22,12 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self hideNavigationBar:YES];
-    
 }
 
 
 -(void)hideNavigationBar : (Boolean) hidden{
     self.navigationController.navigationBarHidden = hidden;
 }
-
 
 
 -(void)setStatuBarBackgroud : (UIColor *)color{
@@ -74,6 +73,13 @@
     [self.view addSubview:_navigationView];
 }
 
+-(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightImage:(UIImage *)rightImage block:(void (^)(void))click{
+    _onRightBtnClick = click;
+    _navigationView = [[STNavigationView alloc]initWithRightImage:title needBack:needback rightImage:rightImage];
+    _navigationView.delegate = self;
+    [self.view addSubview:_navigationView];
+}
+
 -(void)OnBackBtnClicked{
     [self backLastPage];
 }
@@ -90,10 +96,10 @@
 -(void)createBanner
 {
     GADRequest *request = [GADRequest request];
-    request.testDevices = [NSArray arrayWithObjects:@"450d43d2349f56a320138b0518b12c2195da2791", nil];
+//    request.testDevices = [NSArray arrayWithObjects:@"d1c9f8a00e166de5ed8af3510f69a6f1",@"68e48a1d27f25fe1e97fca434c75e5c6", nil];
     
     _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
-    _bannerView.adUnitID = @"ca-app-pub-3441529924836552/8889032633";
+    _bannerView.adUnitID = AD_BANNER;
     _bannerView.rootViewController = (id)self;
     _bannerView.backgroundColor = c03;
     _bannerView.delegate = (id<GADBannerViewDelegate>)self;
@@ -142,5 +148,7 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
         [_bannerView removeFromSuperview];
     }
 }
+
+
 
 @end

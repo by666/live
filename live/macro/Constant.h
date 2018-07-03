@@ -32,6 +32,12 @@
 #define MSG_DETAIL_GIFT @"礼物"
 
 
+#define MSG_MINE_TITLE @"我的"
+#define MSG_ABOUT_TITLE @"关于"
+#define MSG_AGEENMENT_TITLE @"用户协议"
+#define MSG_DISCLAIMER_TITLE @"免责声明"
+
+
 
 
 

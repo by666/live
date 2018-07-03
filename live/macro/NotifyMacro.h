@@ -12,7 +12,7 @@
 
 
 
-
+#define Notify_Reward @"reward"
 
 
 #pragma mark 定义UserDefaults相关

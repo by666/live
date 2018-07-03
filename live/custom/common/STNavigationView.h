@@ -25,6 +25,9 @@
 
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr rightColor:(UIColor *)rightColor;
 
+-(instancetype)initWithRightImage:(NSString *)title needBack:(Boolean)needBack rightImage:(UIImage *)image;
+
 -(void)setTitle:(NSString *)title;
+
 
 @end

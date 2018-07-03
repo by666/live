@@ -21,10 +21,13 @@
 
 @property(strong, nonatomic)DetailViewModel *mViewModel;
 @property(atomic, retain) id<IJKMediaPlayback> player;
+@property(strong, nonatomic)UIButton *expandBtn;
 
 @end
 
-@implementation DetailView
+@implementation DetailView{
+    Boolean isFullScreen;
+}
 
 -(instancetype)initWithViewModel:(DetailViewModel *)viewModel{
     if(self == [super init]){
@@ -83,6 +86,7 @@
     
     [_scrollView addSubview:_chatView];
     [_scrollView addSubview:_giftView];
+    
 }
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
@@ -111,7 +115,41 @@
     if(_mViewModel){
         [_mViewModel showNavigationBar];
     }
+    
+    
+    _expandBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - STWidth(40), VideoHeight - STHeight(40), STWidth(30), STWidth(30))];
+    [_expandBtn setImage:[UIImage imageNamed:@"ic_expand"] forState:UIControlStateNormal];
+    [_expandBtn addTarget:self action:@selector(showFullScreen) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_expandBtn];
+    
+//    WS(weakSelf)
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        [weakSelf showFullScreen];
+//    });
 
+}
+
+
+-(void)showFullScreen{
+    WS(weakSelf)
+    if(isFullScreen){
+        [UIView animateWithDuration:0.3f animations:^{
+            weakSelf.player.view.transform = CGAffineTransformMakeRotation(0);
+            weakSelf.player.view.frame = CGRectMake(0, 0, ScreenWidth, VideoHeight);
+            weakSelf.expandBtn.frame = CGRectMake(ScreenWidth - STWidth(40), VideoHeight - STHeight(40), STWidth(30), STWidth(30));
+        }];
+    }else{
+        [UIView animateWithDuration:0.3f animations:^{
+            weakSelf.player.view.transform = CGAffineTransformMakeRotation(M_PI_2);
+            weakSelf.player.view.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+            [STLog print:[NSString stringWithFormat:@"%.f",ScreenWidth]];
+            [STLog print:[NSString stringWithFormat:@"%.f",ScreenHeight]];
+
+            weakSelf.expandBtn.frame = CGRectMake(STWidth(40), ScreenHeight - STHeight(40), STWidth(30), STWidth(30));
+        }];
+    }
+    isFullScreen = ! isFullScreen;
+ 
 }
 
 

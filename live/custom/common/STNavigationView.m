@@ -13,6 +13,7 @@
 
 @property(strong,nonatomic)UILabel *titleLabel;
 @property(strong,nonatomic)UIButton *backBtn;
+@property(strong,nonatomic)UIButton *rightBtn;
 
 @end
 
@@ -21,6 +22,7 @@
     Boolean mNeedBack;
     NSString *mRightStr;
     UIColor *mRightColor;
+    UIImage *mRightImage;
 
 }
 
@@ -49,6 +51,16 @@
         mNeedBack = needBack;
         mRightStr = rightStr;
         mRightColor = rightColor;
+        [self initView];
+    }
+    return self;
+}
+
+-(instancetype)initWithRightImage:(NSString *)title needBack:(Boolean)needBack rightImage:(UIImage *)image{
+    if(self == [super init]){
+        mTitle = title;
+        mNeedBack = needBack;
+        mRightImage = image;
         [self initView];
     }
     return self;
@@ -84,13 +96,21 @@
             mRightColor = c01;
         }
 
-        UIButton *button = [[UIButton alloc]initWithFont:STFont(14) text:mRightStr textColor:mRightColor backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
-        button.frame = CGRectMake(ScreenWidth - button.titleLabel.contentSize.width - STWidth(20) , 0, button.titleLabel.contentSize.width + STWidth(20), NavigationBarHeight);
-        button.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [button addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:button];
+        _rightBtn = [[UIButton alloc]initWithFont:STFont(14) text:mRightStr textColor:mRightColor backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
+        _rightBtn.frame = CGRectMake(ScreenWidth - _rightBtn.titleLabel.contentSize.width - STWidth(20) , 0, _rightBtn.titleLabel.contentSize.width + STWidth(20), NavigationBarHeight);
+        _rightBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
+        [_rightBtn addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_rightBtn];
         
       
+    }
+    
+    if(mRightImage != nil){
+        _rightBtn = [[UIButton alloc]initWithFrame:CGRectMake(ScreenWidth - NavigationBarHeight - STWidth(10) , 0, NavigationBarHeight, NavigationBarHeight)];
+        [_rightBtn setImage:mRightImage forState:UIControlStateNormal];
+        _rightBtn.userInteractionEnabled = YES;
+        [_rightBtn addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:_rightBtn];
     }
 
    
@@ -112,5 +132,6 @@
         [_delegate onRightBtnClicked];
     }
 }
+
 
 @end

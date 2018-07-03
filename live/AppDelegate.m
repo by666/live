@@ -17,6 +17,7 @@
 #import "UMessage.h"
 #import "UMMobClick/MobClick.h"
 #import "DetailPage.h"
+#import "AdMobManager.h"
 
 @interface AppDelegate ()
 
@@ -34,7 +35,7 @@
     [[STObserverManager sharedSTObserverManager]setup];
     [self initNet];
     [self initUmeng];
-    [self initAdmob];
+    [[AdMobManager sharedAdMobManager] initAdMob];
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
 //                [self showUpdateAlert:url version:version];
     }];
@@ -60,12 +61,7 @@
     [MobClick startWithConfigure:UMConfigInstance];
 }
 
--(void)initAdmob{
-    [GADMobileAds configureWithApplicationID:ADMOB_APPID];
-    
-    GADRequest *request = [GADRequest request];
-    request.testDevices = @[ @"a046e84d7e0211e877a2eb9fbb805669dddd972a"];
-}
+
 
 #pragma mark 系统自带回调
 - (void)applicationWillResignActive:(UIApplication *)application {

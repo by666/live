@@ -11,6 +11,5 @@ pod 'FMDB', '~> 2.6'
 pod 'MJRefresh'
 pod 'Masonry'
 pod 'UMengAnalytics'
-pod 'Google-Mobile-Ads-SDK'
 
 end

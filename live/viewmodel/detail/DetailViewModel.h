@@ -14,6 +14,7 @@
 
 -(void)onUserOffline;
 -(void)onShowNavigationBar;
+
 @end
 
 @interface DetailViewModel : NSObject
