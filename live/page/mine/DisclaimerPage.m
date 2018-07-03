@@ -33,7 +33,10 @@
 }
 
 -(void)initView{
-    
+    UILabel *contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:MSG_DISCLAIMER_CONTENT textAlignment:NSTextAlignmentLeft textColor:cblack backgroundColor:nil multiLine:YES];
+    CGSize contentSize = [MSG_DISCLAIMER_CONTENT sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(16)]];
+    contentLabel.frame = CGRectMake(STWidth(15), StatuBarHeight + NavigationBarHeight + STHeight(30),ScreenWidth - STWidth(30), contentSize.height);
+    [self.view addSubview:contentLabel];
 }
 
 @end

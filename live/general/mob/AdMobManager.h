@@ -18,6 +18,9 @@ SINGLETON_DECLARATION(AdMobManager)
 //初始化admob
 -(void)initAdMob;
 
+//添加banner广告
+-(void)addBannerAd:(UIViewController *)controller;
+
 //加载奖励广告
 -(void)loadRewardAd;
 

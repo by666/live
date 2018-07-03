@@ -32,7 +32,5 @@
 
 -(void)showSTNavigationBar:(NSString *)title needback:(Boolean)needback rightImage:(UIImage *)rightImage block:(void (^)(void))click;
 
--(void)initAdmob;
--(void)removeAd;
 
 @end

@@ -34,5 +34,21 @@
 
 -(void)initView{
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"agreement" ofType:@"txt"];
+    NSString *content = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+    
+    CGSize contentSize = [content sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(16)]];
+
+  
+    UIScrollView *scrollView = [[UIScrollView alloc]init];
+    scrollView.showsVerticalScrollIndicator = NO;
+    scrollView.showsHorizontalScrollIndicator = NO;
+    scrollView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
+    scrollView.contentSize = CGSizeMake(ScreenWidth, contentSize.height);
+    [self.view addSubview:scrollView];
+    
+    UILabel *contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:content textAlignment:NSTextAlignmentLeft textColor:cblack backgroundColor:nil multiLine:YES];
+    contentLabel.frame = CGRectMake(STWidth(15),  0,ScreenWidth - STWidth(30), contentSize.height);
+    [scrollView addSubview:contentLabel];
 }
 @end

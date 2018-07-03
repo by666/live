@@ -11,6 +11,7 @@
 #import "STToastUtil.h"
 #import "DetailPage.h"
 #import "MinePage.h"
+#import "AdMobManager.h"
 @interface MainPage ()<MainViewDelegate>
 
 @property(strong, nonatomic)MainView *mainView;
@@ -23,11 +24,12 @@
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
     [self initView];
-    [self initAdmob];
     WS(weakSelf)
     [self showSTNavigationBar:MSG_MAIN_TITLE needback:NO rightImage:[UIImage imageNamed:@"ic_mine"] block:^{
         [MinePage show:weakSelf];
     }];
+    
+    [[AdMobManager sharedAdMobManager] addBannerAd:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated{ 

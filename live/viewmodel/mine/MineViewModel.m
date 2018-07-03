@@ -8,7 +8,6 @@
 
 #import "MineViewModel.h"
 #import "TitleContentModel.h"
-#import "AdMobManager.h"
 
 @interface MineViewModel()
 

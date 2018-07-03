@@ -94,6 +94,7 @@
 		CFF73B1B20E8D4A400091033 /* DisclaimerPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1A20E8D4A400091033 /* DisclaimerPage.m */; };
 		CFF73B1F20E8D72C00091033 /* AdMobManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1E20E8D72C00091033 /* AdMobManager.m */; };
 		CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B2120E8D97400091033 /* AdMobModel.m */; };
+		CFF73B2620EBEAA300091033 /* agreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFF73B2520EBEAA200091033 /* agreement.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,6 +292,7 @@
 		CFF73B1E20E8D72C00091033 /* AdMobManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobManager.m; sourceTree = "<group>"; };
 		CFF73B2020E8D97400091033 /* AdMobModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AdMobModel.h; sourceTree = "<group>"; };
 		CFF73B2120E8D97400091033 /* AdMobModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AdMobModel.m; sourceTree = "<group>"; };
+		CFF73B2520EBEAA200091033 /* agreement.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = agreement.txt; sourceTree = "<group>"; };
 		F215627FF075B719AEDD0E1D /* Pods-live.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live.release.xcconfig"; path = "Pods/Target Support Files/Pods-live/Pods-live.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -416,6 +418,7 @@
 				003EDB2720C5360E00CFCFE9 /* ViewController.m */,
 				003EDB2C20C5361700CFCFE9 /* Assets.xcassets */,
 				003EDB3120C5361700CFCFE9 /* Info.plist */,
+				CFF73B2520EBEAA200091033 /* agreement.txt */,
 				003EDB3220C5361700CFCFE9 /* main.m */,
 				CF43E41420CDA3230069AAFA /* Launch Screen.storyboard */,
 			);
@@ -907,6 +910,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF73B2620EBEAA300091033 /* agreement.txt in Resources */,
 				CF43E41520CDA3230069AAFA /* Launch Screen.storyboard in Resources */,
 				003EDB2D20C5361700CFCFE9 /* Assets.xcassets in Resources */,
 			);
