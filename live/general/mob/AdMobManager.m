@@ -85,12 +85,12 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 -(void)loadRewardAd{
     [[GADRewardBasedVideoAd sharedInstance] loadRequest:[GADRequest request]
                                            withAdUnitID:AD_REWORD];
-    WS(weakSelf)
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        if(IS_NS_COLLECTION_EMPTY(weakSelf.datas)){
-            [weakSelf loadRewardAd];
-        }
-    });
+//    WS(weakSelf)
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        if(IS_NS_COLLECTION_EMPTY(weakSelf.datas)){
+//            [weakSelf loadRewardAd];
+//        }
+//    });
 }
 
 -(void)showRewardAd:(UIViewController *)controller{

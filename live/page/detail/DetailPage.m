@@ -9,6 +9,7 @@
 #import "DetailPage.h"
 #import "DetailView.h"
 #import "STToastUtil.h"
+#import "AdMobManager.h"
 @interface DetailPage ()<DetailViewDelegate>
 
 @property(strong, nonatomic)MainModel *mMainModel;
@@ -28,6 +29,7 @@
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
     [self initView];
+    [[AdMobManager sharedAdMobManager] loadRewardAd];
 }
 
 
