@@ -1,5 +1,5 @@
 //
-//  ChatView.h
+//  DetailContentView.h
 //  live
 //
 //  Created by 黄成实 on 2018/6/26.
@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "DetailViewModel.h"
 
-@interface ChatView : UIView
+@interface DetailContentView : UIView
 
 -(instancetype)initWithViewModel:(DetailViewModel *)viewModel;
 

@@ -10,4 +10,13 @@
 
 @implementation ChatModel
 
++(ChatModel *)buildModel:(long)uid name:(NSString *)name content:(NSString *)content identify:(ChatIdentify)identify{
+    ChatModel *model = [[ChatModel alloc]init];
+    model.uid = uid;
+    model.name = name;
+    model.content = content;
+    model.identify = identify;
+    return model;
+}
+
 @end

@@ -8,8 +8,9 @@
 
 #import "DetailViewModel.h"
 #import "STNetUtil.h"
-
+#import "ChatModel.h"
 @interface DetailViewModel()
+
 
 @property(strong, nonatomic)MainModel *mMainModel;
 
@@ -21,8 +22,15 @@
         _mMainModel = mainModel;
         _detailModel = [[DetailModel alloc]init];
         _chatDatas = [[NSMutableArray alloc]init];
+        [self buildChatDatas];
     }
     return self;
+}
+
+
+-(void)buildChatDatas{
+    ChatModel *chatModel = [ChatModel buildModel:1L name:MSG_CHAT_SYSTEM content:MSG_CHAT_SYSTEM_MSG identify:CI_System];
+    [_chatDatas addObject:chatModel];
 }
 
 -(void)requestData{

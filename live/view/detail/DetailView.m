@@ -8,16 +8,12 @@
 
 #import "DetailView.h"
 #import <IJKMediaFramework/IJKMediaFramework.h>
-#import "STTabBarView.h"
-#import "ChatView.h"
-#import "GiftView.h"
+#import "DetailContentView.h"
 
 @interface DetailView()<UIScrollViewDelegate>
 
-@property(strong, nonatomic)STTabBarView *tabBarView;
 @property(strong, nonatomic)UIScrollView *scrollView;
-@property(strong, nonatomic)ChatView *chatView;
-@property(strong, nonatomic)GiftView *giftView;
+@property(strong, nonatomic)DetailContentView *detailContentView;
 
 @property(strong, nonatomic)DetailViewModel *mViewModel;
 @property(atomic, retain) id<IJKMediaPlayback> player;
@@ -47,52 +43,15 @@
     waitLabel.frame = CGRectMake(0, 0, ScreenWidth, VideoHeight);
     [self addSubview:waitLabel];
     
-    NSArray *titles = @[MSG_DETAIL_CHAT,MSG_DETAIL_GIFT];
-    _tabBarView = [[STTabBarView alloc]initWithTitles:titles];
-    [_tabBarView setData:c12 SelectColor:c19 Font:[UIFont systemFontOfSize:STFont(16)]];
-    [_tabBarView setLineHeight:1];
-    [self addSubview:_tabBarView];
     
-    WS(weakSelf)
-    [_tabBarView getViewIndex:^(NSString *title, NSInteger index) {
-        [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.scrollView.contentOffset = CGPointMake(index * ScreenWidth, 0);
-        }];
-    }];
-    
-    [_tabBarView setIndexBlock:^(NSString *title, NSInteger index) {
-        [UIView animateWithDuration:0.3 animations:^{
-            weakSelf.scrollView.contentOffset = CGPointMake(index * ScreenWidth, 0);
-        }];
-    }];
-    
-    [_tabBarView setViewIndex:0];
-    
-    CGFloat scrollHeight = ScreenHeight - STHeight(44) - VideoHeight;
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, VideoHeight + STHeight(44) , ScreenWidth, scrollHeight)];
-    _scrollView.delegate = self;
-    _scrollView.pagingEnabled = YES;
-    _scrollView.bounces = NO;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.showsVerticalScrollIndicator = NO;
-    _scrollView.contentSize = CGSizeMake([titles count]*ScreenWidth, 0);
-    [self addSubview:_scrollView];
-    
-    _chatView = [[ChatView alloc]initWithViewModel:_mViewModel];
-    _chatView.frame = CGRectMake(0, 0, ScreenWidth, scrollHeight);
-    
-    _giftView = [[GiftView alloc]initWithViewModel:_mViewModel];
-    _giftView.frame = CGRectMake(ScreenWidth,0, ScreenWidth, scrollHeight);
-    
-    [_scrollView addSubview:_chatView];
-    [_scrollView addSubview:_giftView];
+    _detailContentView = [[DetailContentView alloc]initWithViewModel:_mViewModel];
+    _detailContentView.frame = CGRectMake(0, VideoHeight, ScreenWidth, ScreenHeight - VideoHeight);
+    _detailContentView.backgroundColor = c01;
+    [self addSubview:_detailContentView];
+
     
 }
 
-- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView{
-    NSInteger index = scrollView.contentOffset.x / ScreenWidth;
-    [_tabBarView setViewIndex:index];
-}
 
 
 -(void)updateView{
@@ -122,10 +81,6 @@
     [_expandBtn addTarget:self action:@selector(showFullScreen) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:_expandBtn];
     
-//    WS(weakSelf)
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        [weakSelf showFullScreen];
-//    });
 
 }
 

@@ -30,6 +30,10 @@
 
 #define MSG_DETAIL_CHAT @"聊天"
 #define MSG_DETAIL_GIFT @"礼物"
+#define MSG_DETAIL_REPORT @"举报"
+
+#define MSG_CHAT_SYSTEM @"系统消息"
+#define MSG_CHAT_SYSTEM_MSG @"禁止封面和直播内容包含政治、低俗、暴露、辱骂他人、宗教、集会等等。让我们一起打造一个健康的直播环境！"
 
 
 #define MSG_MINE_TITLE @"我的"
