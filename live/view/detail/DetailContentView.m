@@ -8,6 +8,7 @@
 
 #import "DetailContentView.h"
 #import "ChatViewCell.h"
+#import "GiftView.h"
 
 @interface DetailContentView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -32,13 +33,12 @@
     
     CGFloat tableHeight =  ScreenHeight - VideoHeight - STHeight(44);
     
-    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, tableHeight )];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, tableHeight)];
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.backgroundColor = cwhite;
     [_tableView useDefaultProperty];
     [self addSubview:_tableView];
-
 
     _bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, tableHeight, ScreenWidth, STHeight(44))];
     _bottomView.backgroundColor = c18;
@@ -108,7 +108,9 @@
 }
 
 -(void)onClickGiftBtn{
-    
+    if(_mViewModel){
+        [_mViewModel hideGiftView:NO];
+    }
 }
 
 -(void)onClickReportBtn{

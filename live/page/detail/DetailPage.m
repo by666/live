@@ -11,10 +11,12 @@
 #import "STToastUtil.h"
 #import "AdMobManager.h"
 #import "STNetUtil.h"
+#import "GiftView.h"
 @interface DetailPage ()<DetailViewDelegate>
 
 @property(strong, nonatomic)MainModel *mMainModel;
 @property(strong, nonatomic)DetailView *detailView;
+@property(strong, nonatomic)GiftView *giftView;
 
 @end
 
@@ -51,8 +53,9 @@
     _detailView.backgroundColor = cwhite;
     [self.view addSubview:_detailView];
     
+    _giftView = [[GiftView alloc]initWithDatas:viewModel.giftDatas];
+    [self.view addSubview:_giftView];
 
-    
 }
 
 -(void)onRequestBegin{
@@ -109,4 +112,10 @@
     }];
 }
 
+
+-(void)onHideGiftView:(Boolean)hidden{
+    if(_giftView){
+        [_giftView hideGiftView:hidden];
+    }
+}
 @end

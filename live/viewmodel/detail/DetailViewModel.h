@@ -15,6 +15,7 @@
 -(void)onUserOffline;
 -(void)onShowNavigationBar;
 -(void)onReportResult;
+-(void)onHideGiftView:(Boolean)hidden;
 
 @end
 
@@ -22,14 +23,19 @@
 
 @property(weak, nonatomic)id<DetailViewDelegate> delegate;
 @property(strong, nonatomic)DetailModel *detailModel;
-
 @property(strong, nonatomic)NSMutableArray *chatDatas;
+@property(strong, nonatomic)NSMutableArray *giftDatas;
 
 -(instancetype)initWithMainModel:(MainModel *)mainModel;
+//请求数据
 -(void)requestData;
+//主播离线
 -(void)useroffline;
+//显示导航栏
 -(void)showNavigationBar;
-
 //举报
 -(void)report;
+//显示/隐藏giftView
+-(void)hideGiftView:(Boolean)hidden;
+
 @end
