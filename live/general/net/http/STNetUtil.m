@@ -13,6 +13,7 @@
 //#import "AccountManager.h"
 #import "STConvertUtil.h"
 #import "STObserverManager.h"
+#import "STUserDefaults.h"
 @implementation STNetUtil
 
 
@@ -208,18 +209,28 @@
 
 
 
++(Boolean)getNetStatu{
+    int netStatu = [[ STUserDefaults getKeyValue:UD_NET_STATU] intValue];
+    return (netStatu == 1) ? YES : NO;
+}
+
+
 #pragma mark 监听网络状态
 +(void)startListenNetWork{
     AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
     [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
         if (status == AFNetworkReachabilityStatusUnknown) {
             NSLog(@"当前网络：未知网络");
+            [STUserDefaults saveKeyValue:UD_NET_STATU value:@(0)];
         } else if (status == AFNetworkReachabilityStatusNotReachable) {
             NSLog(@"当前网络：没有网络");
+            [STUserDefaults saveKeyValue:UD_NET_STATU value:@(0)];
         } else if (status == AFNetworkReachabilityStatusReachableViaWWAN) {
             NSLog(@"当前网络：手机流量");
+            [STUserDefaults saveKeyValue:UD_NET_STATU value:@(1)];
         } else if (status == AFNetworkReachabilityStatusReachableViaWiFi) {
             NSLog(@"当前网络：WiFi");
+            [STUserDefaults saveKeyValue:UD_NET_STATU value:@(1)];
         }
     }];
     [manager startMonitoring];

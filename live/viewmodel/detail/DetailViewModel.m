@@ -29,8 +29,11 @@
 
 
 -(void)buildChatDatas{
-    ChatModel *chatModel = [ChatModel buildModel:1L name:MSG_CHAT_SYSTEM content:MSG_CHAT_SYSTEM_MSG identify:CI_System];
-    [_chatDatas addObject:chatModel];
+    [_chatDatas addObject:[ChatModel buildModel:1L name:MSG_CHAT_SYSTEM content:MSG_CHAT_SYSTEM_MSG identify:CI_System]];
+    [_chatDatas addObject:[ChatModel buildModel:2L name:@"邻家小哥哥" content:@"666" identify:CI_User]];
+    [_chatDatas addObject:[ChatModel buildModel:3L name:@"by" content:@"送出一个飞吻 x 1" identify:CI_Mine]];
+    [_chatDatas addObject:[ChatModel buildModel:4L name:@"夜太美" content:@"主播唱的好听" identify:CI_User]];
+
 }
 
 -(void)requestData{
@@ -66,4 +69,10 @@
     }
 }
 
+
+-(void)report{
+    if(_delegate){
+        [_delegate onReportResult];
+    }
+}
 @end

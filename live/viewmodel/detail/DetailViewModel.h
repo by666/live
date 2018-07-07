@@ -14,6 +14,7 @@
 
 -(void)onUserOffline;
 -(void)onShowNavigationBar;
+-(void)onReportResult;
 
 @end
 
@@ -29,4 +30,6 @@
 -(void)useroffline;
 -(void)showNavigationBar;
 
+//举报
+-(void)report;
 @end

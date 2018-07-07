@@ -17,3 +17,4 @@
 
 #pragma mark 定义UserDefaults相关
 
+#define UD_NET_STATU @"net_statu"

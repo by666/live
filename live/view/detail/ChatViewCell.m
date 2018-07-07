@@ -10,7 +10,6 @@
 
 @interface ChatViewCell()
 
-@property(copy, nonatomic)UILabel *nameLabel;
 @property(copy, nonatomic)UILabel *contentLabel;
 
 @end
@@ -28,18 +27,24 @@
 
 -(void)initView{
     
-    _nameLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:cblack backgroundColor:nil multiLine:NO];
-    [self.contentView addSubview:_nameLabel];
-    
-    _contentLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:cblack backgroundColor:nil multiLine:NO];
+    _contentLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:cblack backgroundColor:nil multiLine:YES];
     [self.contentView addSubview:_contentLabel];
 }
 
 
 -(void)updateView:(ChatModel *)chatModel{
     if(chatModel.identify == CI_System){
-        _nameLabel.textColor = c0
+        _contentLabel.textColor = c33;
+    }else if(chatModel.identify == CI_Mine){
+        _contentLabel.textColor = c18;
+    }else{
+        _contentLabel.textColor = cblack;
     }
+    NSString *contentStr = [NSString stringWithFormat:@"%@：%@",chatModel.name,chatModel.content];
+    CGSize contentSize = [contentStr sizeWithMaxWidth:ScreenWidth - STWidth(20) font:[UIFont systemFontOfSize:STFont(14)]];
+    _contentLabel.frame = CGRectMake(STWidth(10), STHeight(5), ScreenWidth -  STWidth(20), contentSize.height);
+    _contentLabel.text = contentStr;
+    
 }
 
 

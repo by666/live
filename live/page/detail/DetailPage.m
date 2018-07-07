@@ -10,6 +10,7 @@
 #import "DetailView.h"
 #import "STToastUtil.h"
 #import "AdMobManager.h"
+#import "STNetUtil.h"
 @interface DetailPage ()<DetailViewDelegate>
 
 @property(strong, nonatomic)MainModel *mMainModel;
@@ -84,7 +85,7 @@
 
 -(void)onUserOffline{
     WS(weakSelf)
-    [STAlertUtil showAlertController:@"提醒" content:@"主播已下播，看看其他主播吧！" controller:self confirm:^{
+    [STAlertUtil showAlertController:MSG_PROMPT content:MSG_LIVE_FAIL controller:self confirm:^{
         [weakSelf backLastPage];
     }];
 }
@@ -93,5 +94,19 @@
     [self showSTNavigationBar:_mMainModel.nick needback:YES backgroudColor:[UIColor clearColor]];
 }
 
+-(void)onReportResult{
+    if(![STNetUtil getNetStatu]){
+        [STToastUtil showFailureAlertSheet:MSG_NET_ERROR];
+        return;
+    }
+    WS(weakSelf)
+    [STAlertUtil showAlertController:MSG_REPORT_TITLE content:MSG_REPORT_CONTENT controller:self confirm:^{
+        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [STToastUtil showSuccessTips:MSG_REPORT_SUCCESS];
+            [MBProgressHUD hideHUDForView:weakSelf.view animated:YES];
+        });
+    }];
+}
 
 @end

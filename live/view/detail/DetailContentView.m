@@ -35,7 +35,7 @@
     _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, tableHeight )];
     _tableView.delegate = self;
     _tableView.dataSource = self;
-    _tableView.backgroundColor = c01;
+    _tableView.backgroundColor = cwhite;
     [_tableView useDefaultProperty];
     [self addSubview:_tableView];
 
@@ -83,8 +83,8 @@
     if(!IS_NS_COLLECTION_EMPTY(_mViewModel.chatDatas)){
         ChatModel *chatModel = [_mViewModel.chatDatas objectAtIndex:indexPath.row];
         NSString *content = [NSString stringWithFormat:@"%@：%@",chatModel.name,chatModel.content];
-        CGSize cellSize = [content sizeWithMaxWidth:(ScreenWidth - STWidth(30)) font:[UIFont systemFontOfSize:STFont(14)]];
-        return cellSize.height;
+        CGSize cellSize = [content sizeWithMaxWidth:(ScreenWidth - STWidth(20)) font:[UIFont systemFontOfSize:STFont(14)]];
+        return cellSize.height + STHeight(5);
     }
     return STHeight(30);
 }
@@ -94,6 +94,7 @@
     if(!cell){
         cell = [[ChatViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[ChatViewCell identify]];
     }
+    [cell setBackgroundColor:cclear];
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     if(!IS_NS_COLLECTION_EMPTY(_mViewModel.chatDatas)){
         [cell updateView:[_mViewModel.chatDatas objectAtIndex:indexPath.row]];
@@ -111,7 +112,9 @@
 }
 
 -(void)onClickReportBtn{
-    
+    if(_mViewModel){
+        [_mViewModel report];
+    }
 }
 
 
