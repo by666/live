@@ -109,10 +109,7 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 
 }
 
-- (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
-    NSLog(@"获取广告成功（激励广告）");
-    [_datas addObject:rewardBasedVideoAd];
-}
+
 
 - (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
     NSLog(@"打开广告（激励广告）");
@@ -140,6 +137,16 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 
 - (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
     didFailToLoadWithError:(NSError *)error {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self loadRewardAd];
+    });
     NSLog(@"获取激励广告失败");
+}
+
+- (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
+    NSLog(@"获取广告成功（激励广告）");
+    [_datas addObject:rewardBasedVideoAd];
+    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_ADMOB msg:nil];
+
 }
 @end

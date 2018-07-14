@@ -35,11 +35,13 @@
     [self showSTNavigationBar:MSG_MINE_TITLE needback:YES];
     [self initView];
     [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_Reward delegate:self];
+
 }
 
 
 -(void)dealloc{
     [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_Reward];
+
 }
 
 

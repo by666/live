@@ -35,8 +35,9 @@
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
     [self initView];
-    [[AdMobManager sharedAdMobManager] loadRewardAd];
+
 }
+
 
 
 -(void)viewWillAppear:(BOOL)animated{

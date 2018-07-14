@@ -7,8 +7,10 @@
 //
 
 #import "BaseViewController.h"
+#import "STObserverManager.h"
+#import "AdMobManager.h"
 
-@interface BaseViewController ()<STNavigationViewDelegate>
+@interface BaseViewController ()<STNavigationViewDelegate,STObserverProtocol>
 
 @property(copy,nonatomic)void(^onRightBtnClick)(void);
 
@@ -20,6 +22,14 @@
 -(void)viewDidLoad{
     [super viewDidLoad];
     [self hideNavigationBar:YES];
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    [[STObserverManager sharedSTObserverManager]registerSTObsever:Notify_ADMOB delegate:self];
+}
+
+-(void)viewWillDisappear:(BOOL)animated{
+    [[STObserverManager sharedSTObserverManager]removeSTObsever:Notify_ADMOB];
 }
 
 
@@ -86,6 +96,12 @@
     _onRightBtnClick();
 }
 
+-(void)onReciveResult:(NSString *)key msg:(id)msg{
+    WS(weakSelf)
+    [STAlertUtil showAlertController:@"恭喜您！" content:@"观看完整广告可免费获取B币，给喜欢的主播免费刷礼物吧！" controller:self confirm:^{
+        [[AdMobManager sharedAdMobManager] showRewardAd:weakSelf];
+    }];
+}
 
 
 @end

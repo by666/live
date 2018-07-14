@@ -13,6 +13,7 @@
 
 
 #define Notify_Reward @"reward"
+#define Notify_ADMOB @"has_ad"
 
 
 #pragma mark 定义UserDefaults相关
