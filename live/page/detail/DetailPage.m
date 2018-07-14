@@ -13,6 +13,7 @@
 #import "STNetUtil.h"
 #import "GiftView.h"
 #import "STUserDefaults.h"
+#import "MinePage.h"
 @interface DetailPage ()<DetailViewDelegate,GiftViewDelegate>
 
 @property(strong, nonatomic)MainModel *mMainModel;
@@ -126,8 +127,9 @@
     [self onHideGiftView:YES];
     int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
     if(bb < giftModel.giftPrice){
-        [STAlertUtil showAlertController:@"哎呀~" content:@"您的B币余额不足，是否去免费赚取B币？" controller:self confirm:^{
-            
+        WS(weakSelf)
+        [STAlertUtil showAlertController:@"哎呀~" content:@"您的B币余额不足，是否现在就去观看广告免费赚取B币？" controller:self confirm:^{
+            [MinePage show:weakSelf];
         }];
     }else{
         bb = bb - giftModel.giftPrice;
@@ -147,8 +149,9 @@
 -(void)onOpenChat{
     int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
     if(bb < 500){
-        [STAlertUtil showAlertController:@"哎呀~" content:@"永久开通聊天功能，需要花费500B币，是否现在就去赚取B币?" controller:self confirm:^{
-            
+        WS(weakSelf)
+        [STAlertUtil showAlertController:@"哎呀~" content:@"永久开通聊天功能，需要花费500B币，是否现在就去观看广告免费赚取B币?" controller:self confirm:^{
+            [MinePage show:weakSelf];
         }];
     }
 }

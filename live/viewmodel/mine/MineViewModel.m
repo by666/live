@@ -25,7 +25,7 @@
 }
 
 -(void)buildDatas{
-    NSArray *titleArray = @[@"免费获得C币",@"用户协议",@"免责声明",@"关于"];
+    NSArray *titleArray = @[@"免费获得B币",@"用户协议",@"免责声明",@"关于"];
     int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
     NSArray *contentArray = @[[NSString stringWithFormat:@"B币：%d",bb],@"",@"",@"v1.0"];
     for(int i= 0 ; i < titleArray.count ; i ++ ){

@@ -8,6 +8,7 @@
 
 #import "AdMobManager.h"
 #import "STObserverManager.h"
+#import "STUserDefaults.h"
 
 @interface AdMobManager()<GADRewardBasedVideoAdDelegate,GADBannerViewDelegate>
 
@@ -85,25 +86,24 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 -(void)loadRewardAd{
     [[GADRewardBasedVideoAd sharedInstance] loadRequest:[GADRequest request]
                                            withAdUnitID:AD_REWORD];
-//    WS(weakSelf)
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        if(IS_NS_COLLECTION_EMPTY(weakSelf.datas)){
-//            [weakSelf loadRewardAd];
-//        }
-//    });
 }
 
--(void)showRewardAd:(UIViewController *)controller{
+-(Boolean)showRewardAd:(UIViewController *)controller{
     if ([[GADRewardBasedVideoAd sharedInstance] isReady]) {
         [[GADRewardBasedVideoAd sharedInstance] presentFromRootViewController:controller];
+        return YES;
     }
+    return NO;
 }
 
 - (void)rewardBasedVideoAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd
    didRewardUserWithReward:(GADAdReward *)reward {
     AdMobModel *model = [[AdMobModel alloc]init];
-    model.count = [reward.amount doubleValue];
+    model.count = [[reward.type substringWithRange: NSMakeRange(0, reward.type.length - 2)] intValue];
     model.type = reward.type;
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
+    bb +=model.count;
+    [STUserDefaults saveKeyValue:UD_BB value:[NSString stringWithFormat:@"%d",bb]];
     [[STObserverManager sharedSTObserverManager]sendMessage:Notify_Reward msg:model];
     NSLog(@"接收奖励成功（激励广告）");
 

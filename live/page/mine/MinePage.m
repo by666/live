@@ -13,6 +13,7 @@
 #import "DisclaimerPage.h"
 #import "AdMobManager.h"
 #import "STObserverManager.h"
+#import "STToastUtil.h"
 
 @interface MinePage ()<MineViewDelegate,STObserverProtocol>
 
@@ -72,7 +73,10 @@
 }
 
 -(void)onOpenRewardAd{
-    [[AdMobManager sharedAdMobManager] showRewardAd:self];
+    Boolean success = [[AdMobManager sharedAdMobManager] showRewardAd:self];
+    if(!success){
+        [STToastUtil showFailureAlertSheet:@"很抱歉，广告未加载完毕，请过一会再来赚取B币"];
+    }
 }
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{

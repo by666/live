@@ -10,6 +10,6 @@
 
 @interface AdMobModel : NSObject
 
-@property(assign, nonatomic)double count;
+@property(assign, nonatomic)int count;
 @property(copy, nonatomic)NSString *type;
 @end

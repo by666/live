@@ -25,6 +25,6 @@ SINGLETON_DECLARATION(AdMobManager)
 -(void)loadRewardAd;
 
 //展示奖励广告
--(void)showRewardAd:(UIViewController *)controller;
+-(Boolean)showRewardAd:(UIViewController *)controller;
 
 @end
