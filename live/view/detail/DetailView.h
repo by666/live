@@ -13,5 +13,6 @@
 -(instancetype)initWithViewModel:(DetailViewModel *)viewModel;
 -(void)updateView;
 -(void)removeView;
+-(void)updateChatView;
 
 @end

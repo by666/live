@@ -8,6 +8,7 @@
 
 #import "MineView.h"
 #import "MineViewCell.h"
+#import "STUserDefaults.h"
 
 @interface MineView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -50,7 +51,9 @@
     lineView.backgroundColor = cline;
     [self addSubview:lineView];
     
-    UILabel *accountLabel = [[UILabel alloc]initWithFont:STFont(16) text:@"237283478" textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:NO];
+    NSString *uid = [STUserDefaults getKeyValue:UD_ID];
+
+    UILabel *accountLabel = [[UILabel alloc]initWithFont:STFont(16) text:uid textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:NO];
     accountLabel.frame = CGRectMake(0, STHeight(120), ScreenWidth, STHeight(16));
     [self addSubview:accountLabel];
 }

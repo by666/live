@@ -9,6 +9,7 @@
 #import "DetailContentView.h"
 #import "ChatViewCell.h"
 #import "GiftView.h"
+#import "STUserDefaults.h"
 
 @interface DetailContentView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -104,7 +105,9 @@
 
 
 -(void)onClickChatBtn{
-    
+    if(_mViewModel){
+        [_mViewModel openChat];
+    }
 }
 
 -(void)onClickGiftBtn{
@@ -119,5 +122,9 @@
     }
 }
 
+
+-(void)updateView{
+    [_tableView reloadData];
+}
 
 @end

@@ -12,11 +12,13 @@
 #import "AdMobManager.h"
 #import "STNetUtil.h"
 #import "GiftView.h"
-@interface DetailPage ()<DetailViewDelegate>
+#import "STUserDefaults.h"
+@interface DetailPage ()<DetailViewDelegate,GiftViewDelegate>
 
 @property(strong, nonatomic)MainModel *mMainModel;
 @property(strong, nonatomic)DetailView *detailView;
 @property(strong, nonatomic)GiftView *giftView;
+@property(strong, nonatomic)DetailViewModel *viewModel;
 
 @end
 
@@ -45,15 +47,16 @@
 
 
 -(void)initView{
-    DetailViewModel *viewModel = [[DetailViewModel alloc]initWithMainModel:_mMainModel];
-    viewModel.delegate = self;
+    _viewModel = [[DetailViewModel alloc]initWithMainModel:_mMainModel];
+    _viewModel.delegate = self;
     
-    _detailView = [[DetailView alloc]initWithViewModel:viewModel];
+    _detailView = [[DetailView alloc]initWithViewModel:_viewModel];
     _detailView.frame = CGRectMake(0,0, ScreenWidth, ScreenHeight);
     _detailView.backgroundColor = cwhite;
     [self.view addSubview:_detailView];
     
-    _giftView = [[GiftView alloc]initWithDatas:viewModel.giftDatas];
+    _giftView = [[GiftView alloc]initWithDatas:_viewModel.giftDatas];
+    _giftView.delegate = self;
     [self.view addSubview:_giftView];
 
 }
@@ -118,4 +121,36 @@
         [_giftView hideGiftView:hidden];
     }
 }
+
+-(void)onSelectItem:(GiftModel *)giftModel{
+    [self onHideGiftView:YES];
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
+    if(bb < giftModel.giftPrice){
+        [STAlertUtil showAlertController:@"哎呀~" content:@"您的B币余额不足，是否去免费赚取B币？" controller:self confirm:^{
+            
+        }];
+    }else{
+        bb = bb - giftModel.giftPrice;
+        [STUserDefaults saveKeyValue:UD_BB value:[NSString stringWithFormat:@"%d",bb]];
+        if(_viewModel){
+            [_viewModel sendGift:giftModel];
+        }
+    }
+}
+
+-(void)onUpdateChatView{
+    if(_detailView){
+        [_detailView updateChatView];
+    }
+}
+
+-(void)onOpenChat{
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
+    if(bb < 500){
+        [STAlertUtil showAlertController:@"哎呀~" content:@"永久开通聊天功能，需要花费500B币，是否现在就去赚取B币?" controller:self confirm:^{
+            
+        }];
+    }
+}
+
 @end

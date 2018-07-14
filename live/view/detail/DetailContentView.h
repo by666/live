@@ -12,5 +12,6 @@
 @interface DetailContentView : UIView
 
 -(instancetype)initWithViewModel:(DetailViewModel *)viewModel;
+-(void)updateView;
 
 @end

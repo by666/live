@@ -8,19 +8,18 @@
 
 #import "GiftView.h"
 #import "GiftViewCell.h"
+#import "STUserDefaults.h"
 #define GiftHeight (STWidth(255) + STHeight(44))
 
-@interface GiftView()<UIScrollViewDelegate,UICollectionViewDataSource,UICollectionViewDelegate>
+@interface GiftView()<UICollectionViewDataSource,UICollectionViewDelegate>
 
 @property(strong, nonatomic)NSMutableArray *datas;
 @property(strong ,nonatomic)UIView *contentView;
-@property(strong, nonatomic)UIScrollView *scrollView;
+@property(strong, nonatomic)UILabel *totalLabel;
 
 @end
 
-@implementation GiftView{
-    NSInteger count;
-}
+@implementation GiftView
 
 -(instancetype)initWithDatas:(NSMutableArray *)datas{
     if(self == [super init]){
@@ -36,47 +35,31 @@
     self.backgroundColor = [cblack colorWithAlphaComponent:0.65f];
     self.hidden =YES;
     
-    if(!IS_NS_COLLECTION_EMPTY(_datas)){
-        NSInteger tempcount = [_datas count];
-        if(tempcount % 6 == 0){
-            count = tempcount / 6;
-        }else{
-            count = tempcount / 6 + 1;
-        }
-    }
     _contentView = [[UIView alloc]init];
     _contentView.frame = CGRectMake(0, ScreenHeight, ScreenWidth, GiftHeight);
-    _contentView.backgroundColor = [c18 colorWithAlphaComponent:0.8f];
     _contentView.userInteractionEnabled = YES;
+    _contentView.backgroundColor = cblack;
     [self addSubview:_contentView];
     
-    _scrollView = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, GiftHeight - STHeight(44))];
-    _scrollView.backgroundColor = cwhite;
-    _scrollView.pagingEnabled = YES;
-    _scrollView.showsVerticalScrollIndicator = YES;
-    _scrollView.showsHorizontalScrollIndicator = NO;
-    _scrollView.delegate = self;
-    _scrollView.contentSize = CGSizeMake(ScreenWidth * count, GiftHeight - STHeight(44));
-    [_contentView addSubview:_scrollView];
-
 
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
-    if(count > 0){
-        for(int i = 0 ; i < count ; i ++){
-            
-            UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(ScreenWidth * i, 0, ScreenWidth, GiftHeight - STHeight(44)) collectionViewLayout:layout];
-            collectionView.delegate = self;
-            collectionView.dataSource = self;
-            collectionView.backgroundColor = c15;
-            collectionView.scrollEnabled = NO;
-            collectionView.tag = i;
-            [_scrollView addSubview:collectionView];
-            
-            [collectionView registerClass:[GiftViewCell class] forCellWithReuseIdentifier:[GiftViewCell identify]];
-            
-        }
-    }
+
+    UICollectionView *collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, GiftHeight - STHeight(44)) collectionViewLayout:layout];
+    collectionView.delegate = self;
+    collectionView.dataSource = self;
+    collectionView.scrollEnabled = NO;
+    [_contentView addSubview:collectionView];
+    
+    [collectionView registerClass:[GiftViewCell class] forCellWithReuseIdentifier:[GiftViewCell identify]];
+    
+    
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
+    NSString *totalStr = [NSString stringWithFormat:@"B币：%d",bb];
+    _totalLabel = [[UILabel alloc]initWithFont:STFont(14) text:totalStr textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _totalLabel.userInteractionEnabled = YES;
+    _totalLabel.frame = CGRectMake(0, GiftHeight - STHeight(44), ScreenWidth, STHeight(44));
+    [_contentView addSubview:_totalLabel];
 }
 
 
@@ -99,22 +82,16 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    if(collectionView.tag == count - 1){
-        return [_datas count] % 6;
-    }
-    return 6;
+    return [_datas count];
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger tag = collectionView.tag;
     GiftViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[GiftViewCell identify] forIndexPath:indexPath];
+    [cell.contentView setBackgroundColor:[cblack colorWithAlphaComponent:0.65]];
     if(_datas && !IS_NS_COLLECTION_EMPTY(_datas)){
-        
-        GiftModel *model = [_datas objectAtIndex:0];
+        GiftModel *model = [_datas objectAtIndex:indexPath.row];
         [cell setData:model];
     }
-    [STLog print:@"collection" content:[NSString stringWithFormat:@"%ld",tag]];
-    [STLog print:@"index" content:[NSString stringWithFormat:@"%ld",indexPath.row + 6 * tag]];
     return cell;
 }
 
@@ -124,34 +101,30 @@
 
 
 - (CGSize)collectionView:(UICollectionView *)collectionView  layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    CGFloat width = (ScreenWidth - STWidth(60))/3;
+    CGFloat width = (ScreenWidth - STWidth(40))/3;
     return CGSizeMake(width, width);
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
 {
-    return STWidth(15);
+    return 0;
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
 {
-    return STWidth(15);
+    return 0;
 }
 
 
 -(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(0, 0, 0, 0);
+    return UIEdgeInsetsMake(STWidth(10), STWidth(10), STWidth(10), STWidth(10));
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-
-    
-}
-
-
-
--(void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
+    NSInteger position = indexPath.row;
+    if(_delegate){
+        [_delegate onSelectItem:[_datas objectAtIndex:position]];
+    }
 }
 
 
@@ -159,5 +132,8 @@
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
     [self hideGiftView:YES];
 }
+
+
+
 
 @end

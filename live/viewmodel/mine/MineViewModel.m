@@ -8,7 +8,7 @@
 
 #import "MineViewModel.h"
 #import "TitleContentModel.h"
-
+#import "STUserDefaults.h"
 @interface MineViewModel()
 
 @property(assign, nonatomic)int coins;
@@ -26,7 +26,8 @@
 
 -(void)buildDatas{
     NSArray *titleArray = @[@"免费获得C币",@"用户协议",@"免责声明",@"关于"];
-    NSArray *contentArray = @[@"C币：0",@"",@"",@"v1.0"];
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
+    NSArray *contentArray = @[[NSString stringWithFormat:@"B币：%d",bb],@"",@"",@"v1.0"];
     for(int i= 0 ; i < titleArray.count ; i ++ ){
         [_datas addObject:[TitleContentModel buildModel:[titleArray objectAtIndex:i] content:[contentArray objectAtIndex:i]]];
     }
@@ -61,7 +62,7 @@
     _coins += count;
     if(_delegate){
         TitleContentModel *model = [_datas objectAtIndex:0];
-        model.content = [NSString stringWithFormat:@"C币：%d",_coins];
+        model.content = [NSString stringWithFormat:@"B币：%d",_coins];
         [_delegate onAddCoin];
     }
 }

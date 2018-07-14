@@ -18,3 +18,5 @@
 #pragma mark 定义UserDefaults相关
 
 #define UD_NET_STATU @"net_statu"
+#define UD_BB @"live_bb"
+#define UD_ID @"live_id"

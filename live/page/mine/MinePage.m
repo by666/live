@@ -77,7 +77,7 @@
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     AdMobModel *model = msg;
-    if(_viewModel){
+    if(_viewModel && [key isEqualToString:Notify_Reward]){
         [_viewModel addCoin:model.count];
     }
 }

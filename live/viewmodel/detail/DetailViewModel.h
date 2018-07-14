@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MainModel.h"
 #import "DetailModel.h"
+#import "GiftModel.h"
 
 @protocol DetailViewDelegate<BaseRequestDelegate>
 
@@ -16,6 +17,8 @@
 -(void)onShowNavigationBar;
 -(void)onReportResult;
 -(void)onHideGiftView:(Boolean)hidden;
+-(void)onUpdateChatView;
+-(void)onOpenChat;
 
 @end
 
@@ -37,5 +40,9 @@
 -(void)report;
 //显示/隐藏giftView
 -(void)hideGiftView:(Boolean)hidden;
+//送出礼物
+-(void)sendGift:(GiftModel *)giftModel;
+//打开聊天
+-(void)openChat;
 
 @end

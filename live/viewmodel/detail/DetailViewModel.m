@@ -41,34 +41,18 @@
 }
 
 -(void)buildGiftDatas{
-    [_giftDatas addObject:[GiftModel buildModel:@"1" url:@"www" price:10]];
-    [_giftDatas addObject:[GiftModel buildModel:@"2" url:@"www" price:20]];
-    [_giftDatas addObject:[GiftModel buildModel:@"3" url:@"www" price:30]];
-    [_giftDatas addObject:[GiftModel buildModel:@"4" url:@"www" price:40]];
-    [_giftDatas addObject:[GiftModel buildModel:@"5" url:@"www" price:50]];
-    [_giftDatas addObject:[GiftModel buildModel:@"6" url:@"www" price:60]];
-    
-    [_giftDatas addObject:[GiftModel buildModel:@"1" url:@"www" price:10]];
-    [_giftDatas addObject:[GiftModel buildModel:@"2" url:@"www" price:20]];
-    [_giftDatas addObject:[GiftModel buildModel:@"3" url:@"www" price:30]];
-    [_giftDatas addObject:[GiftModel buildModel:@"4" url:@"www" price:40]];
-    [_giftDatas addObject:[GiftModel buildModel:@"5" url:@"www" price:50]];
-    [_giftDatas addObject:[GiftModel buildModel:@"6" url:@"www" price:60]];
-    
-    [_giftDatas addObject:[GiftModel buildModel:@"1" url:@"www" price:10]];
-    [_giftDatas addObject:[GiftModel buildModel:@"2" url:@"www" price:20]];
-    [_giftDatas addObject:[GiftModel buildModel:@"3" url:@"www" price:30]];
-    [_giftDatas addObject:[GiftModel buildModel:@"4" url:@"www" price:40]];
-    [_giftDatas addObject:[GiftModel buildModel:@"5" url:@"www" price:50]];
+
+    [_giftDatas addObject:[GiftModel buildModel:@"丘比特" url:@"http://xkaoss.huyanzu.com/public/attachment/201805/26/07/5b08a17b901ba.png?x-oss-process=image/resize,m_mfit,h_260,w_260/resize,m_mfit,h_260,w_260" price:10]];
+    [_giftDatas addObject:[GiftModel buildModel:@"法拉利" url:@"http://xkaoss.huyanzu.com/public/attachment/201805/26/05/5b0883cdd9644.png?x-oss-process=image/resize,m_mfit,h_260,w_260/resize,m_mfit,h_260,w_260" price:50]];
+    [_giftDatas addObject:[GiftModel buildModel:@"轰炸机" url:@"http://xkaoss.huyanzu.com/public/attachment/201805/26/05/5b08844162f34.png?x-oss-process=image/resize,m_mfit,h_260,w_260/resize,m_mfit,h_260,w_260" price:100]];
+    [_giftDatas addObject:[GiftModel buildModel:@"客机" url:@"http://xkaoss.huyanzu.com/public/attachment/201805/26/05/5b088415ea55d.png?x-oss-process=image/resize,m_mfit,h_260,w_260/resize,m_mfit,h_260,w_260" price:100]];
+    [_giftDatas addObject:[GiftModel buildModel:@"火箭" url:@"http://xkaoss.huyanzu.com/public/attachment/201805/26/05/5b08842a87c51.png?x-oss-process=image/resize,m_mfit,h_260,w_260/resize,m_mfit,h_260,w_260" price:1000]];
 
 }
 
 -(void)requestData{
     if(_delegate){
         [_delegate onRequestBegin];
-//        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-//        dic[@"room_id"] = [NSString stringWithFormat:@"%ld",_mMainModel.room_id];
-//        dic[@"origin"] = _mMainModel.origin;
         NSString *url = [NSString stringWithFormat:@"%@?room_id=%ld&origin=%@",URL_LIVE_DETAIL,_mMainModel.room_id,_mMainModel.origin];
         WS(weakSelf)
         [STNetUtil get:url parameters:nil success:^(RespondModel *respondModel) {
@@ -108,6 +92,19 @@
     if(_delegate){
         _giftHidden = hidden;
         [_delegate onHideGiftView:hidden];
+    }
+}
+
+-(void)sendGift:(GiftModel *)giftModel{
+    [_chatDatas addObject:[ChatModel buildModel:3L name:@"by" content:[NSString stringWithFormat:@"送出一个%@ x 1",giftModel.giftName] identify:CI_Mine]];
+    if(_delegate){
+        [_delegate onUpdateChatView];
+    }
+}
+
+-(void)openChat{
+    if(_delegate){
+        [_delegate onOpenChat];
     }
 }
 @end

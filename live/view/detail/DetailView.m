@@ -133,10 +133,6 @@
 
 - (void)loadStateDidChange:(NSNotification*)notification
 {
-    //    MPMovieLoadStateUnknown        = 0,
-    //    MPMovieLoadStatePlayable       = 1 << 0,
-    //    MPMovieLoadStatePlaythroughOK  = 1 << 1, // Playback will be automatically started in this state when shouldAutoplay is YES
-    
     IJKMPMovieLoadState loadState = _player.loadState;
     
     if ((loadState & IJKMPMovieLoadStatePlaythroughOK) != 0) {
@@ -150,9 +146,6 @@
 
 - (void)moviePlayBackDidFinish:(NSNotification*)notification
 {
-    //    MPMovieFinishReasonPlaybackEnded,
-    //    MPMovieFinishReasonPlaybackError,
-    //    MPMovieFinishReasonUserExited
     int reason = [[[notification userInfo] valueForKey:IJKMPMoviePlayerPlaybackDidFinishReasonUserInfoKey] intValue];
     
     switch (reason)
@@ -182,13 +175,6 @@
 
 - (void)moviePlayBackStateDidChange:(NSNotification*)notification
 {
-    //    MPMoviePlaybackStateStopped,
-    //    MPMoviePlaybackStatePlaying,
-    //    MPMoviePlaybackStatePaused,
-    //    MPMoviePlaybackStateInterrupted,
-    //    MPMoviePlaybackStateSeekingForward,
-    //    MPMoviePlaybackStateSeekingBackward
-    
     switch (_player.playbackState)
     {
         case IJKMPMoviePlaybackStateStopped: {
@@ -221,19 +207,23 @@
         }
     }
 }
-//    MPMovieLoadStateStalled        = 1 << 2, // Playback will be automatically paused in this state, if started
 
 -(void)removeView{
     [self.player shutdown];
     [self removeMovieNotificationObservers];
 }
 
-/* Remove the movie notification observers from the movie object. */
 -(void)removeMovieNotificationObservers
 {
     [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerLoadStateDidChangeNotification object:_player];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerPlaybackDidFinishNotification object:_player];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMediaPlaybackIsPreparedToPlayDidChangeNotification object:_player];
     [[NSNotificationCenter defaultCenter]removeObserver:self name:IJKMPMoviePlayerPlaybackStateDidChangeNotification object:_player];
+}
+
+-(void)updateChatView{
+    if(_detailContentView){
+        [_detailContentView updateView];
+    }
 }
 @end

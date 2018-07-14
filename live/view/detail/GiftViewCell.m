@@ -11,9 +11,8 @@
 @interface GiftViewCell()
 
 @property (strong, nonatomic) UIImageView *showImg;
-@property (strong, nonatomic) UILabel *titleLabel;
-@property (strong, nonatomic) UILabel *userCountLabel;
-@property (strong, nonatomic) UILabel *cityLabel;
+@property (strong, nonatomic) UILabel *priceLabel;
+
 
 @end
 
@@ -24,7 +23,7 @@
 
 -(instancetype)initWithFrame:(CGRect)frame{
     if(self == [super initWithFrame:frame]){
-        width = (ScreenWidth - STWidth(60))/3;
+        width = (ScreenWidth - STWidth(40))/3;
         height = width;
         [self initView];
         
@@ -34,27 +33,29 @@
 
 
 -(void)initView{
-
-    self.backgroundColor = c01;
-//    _showImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, width, height)];
-//    _showImg.layer.masksToBounds = YES;
-//    _showImg.backgroundColor = cwhite;
-//    CAShapeLayer *topLayer = [[CAShapeLayer alloc] init];
-//    topLayer.frame = _showImg.bounds;
-//    topLayer.path =  [UIBezierPath bezierPathWithRoundedRect:_showImg.bounds byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(STHeight(6), STHeight(6))].CGPath;
-//    _showImg.layer.mask = topLayer;
-//    _showImg.contentMode = UIViewContentModeScaleAspectFill;
-//    [self.contentView addSubview:_showImg];
-//
- 
     
+    self.contentView.backgroundColor = cclear;
+    
+    _showImg = [[UIImageView alloc]initWithFrame:CGRectMake(STWidth(10), 0, width-STWidth(20), height-STHeight(20))];
+    _showImg.layer.masksToBounds = YES;
+    _showImg.layer.cornerRadius = STHeight(4);
+    _showImg.backgroundColor = [cblack colorWithAlphaComponent:0.65f];
+    _showImg.contentMode = UIViewContentModeScaleAspectFit;
+    [self.contentView addSubview:_showImg];
+
+ 
+    _priceLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _priceLabel.frame = CGRectMake(0, height-STHeight(20) , width, STHeight(14));
+    [self.contentView addSubview:_priceLabel];
+
     
     
 }
 
 -(void)setData:(GiftModel *)model{
-    
+    [_showImg sd_setImageWithURL:[NSURL URLWithString:model.giftImageUrl]];
  
+    _priceLabel.text = [NSString stringWithFormat:@"%d B币 x1",model.giftPrice];
 }
 
 +(NSString *)identify{

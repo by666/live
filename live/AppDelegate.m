@@ -28,7 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    DetailPage *controller = [[DetailPage alloc]init];
+    MainPage *controller = [[MainPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -40,14 +40,20 @@
     [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
 //                [self showUpdateAlert:url version:version];
     }];
-    
-
-
-    
+    [self initAccount];
     
     return YES;
 }
 
+-(void)initAccount{
+    NSString *uid = [STUserDefaults getKeyValue:UD_ID];
+    if(IS_NS_STRING_EMPTY(uid)){
+        NSTimeInterval random=[NSDate timeIntervalSinceReferenceDate];
+        NSString *randomString = [NSString stringWithFormat:@"%.8f",random];
+        NSString *randompassword = [[randomString componentsSeparatedByString:@"."]objectAtIndex:1];
+        [STUserDefaults saveKeyValue:UD_ID value:randompassword];
+    }
+}
 
 -(void)initNet{
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
