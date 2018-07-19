@@ -27,4 +27,10 @@ SINGLETON_DECLARATION(AdMobManager)
 //展示奖励广告
 -(Boolean)showRewardAd:(UIViewController *)controller;
 
+//添加插屏广告
+-(void)loadFullScreenAd;
+
+//展示插屏广告
+-(Boolean)showFullScreenAd:(UIViewController *)controller;
+
 @end

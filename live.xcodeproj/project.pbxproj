@@ -85,7 +85,6 @@
 		CF8C5F7820DEAB37001348A2 /* DetailView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5F7720DEAB37001348A2 /* DetailView.m */; };
 		CF8C5F7C20DEAB5E001348A2 /* DetailViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5F7B20DEAB5E001348A2 /* DetailViewModel.m */; };
 		CF8C5F7F20DEAED8001348A2 /* DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5F7E20DEAED8001348A2 /* DetailModel.m */; };
-		CF8C5F9820E29F60001348A2 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F9120E29F58001348A2 /* IJKMediaFramework.framework */; };
 		CF8C5F9D20E7EC72001348A2 /* GoogleMobileAds.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F9A20E7EC71001348A2 /* GoogleMobileAds.framework */; };
 		CF8C5FA420E8B076001348A2 /* MinePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA320E8B076001348A2 /* MinePage.m */; };
 		CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */; };
@@ -99,37 +98,6 @@
 		CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B2120E8D97400091033 /* AdMobModel.m */; };
 		CFF73B2620EBEAA300091033 /* agreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFF73B2520EBEAA200091033 /* agreement.txt */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CF8C5F9020E29F58001348A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E654EA8A1B6B27E600B0F2D0;
-			remoteInfo = IJKMediaFramework;
-		};
-		CF8C5F9220E29F58001348A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5450B0431E63EA4300568494;
-			remoteInfo = IJKMediaFrameworkWithSSL;
-		};
-		CF8C5F9420E29F58001348A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E654EA941B6B27E600B0F2D0;
-			remoteInfo = IJKMediaFrameworkTests;
-		};
-		CF8C5F9620E29F5B001348A2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = E654EA891B6B27E600B0F2D0;
-			remoteInfo = IJKMediaFramework;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		001965EA20DCEE4100776E46 /* MainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
@@ -259,6 +227,7 @@
 		00AD859E20F090C8001D272C /* GiftModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiftModel.m; sourceTree = "<group>"; };
 		00AD85A020F0A466001D272C /* GiftViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GiftViewCell.h; sourceTree = "<group>"; };
 		00AD85A120F0A466001D272C /* GiftViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GiftViewCell.m; sourceTree = "<group>"; };
+		00ADA11421006200002005E4 /* live.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = live.entitlements; sourceTree = "<group>"; };
 		0BE5F5B46D5EA21EF0AD8E05 /* Pods_live.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_live.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B663E8DAD9BB96CBB69816 /* Pods-live.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live.debug.xcconfig"; path = "Pods/Target Support Files/Pods-live/Pods-live.debug.xcconfig"; sourceTree = "<group>"; };
 		CF43E41420CDA3230069AAFA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -279,7 +248,6 @@
 		CF8C5F7B20DEAB5E001348A2 /* DetailViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewModel.m; sourceTree = "<group>"; };
 		CF8C5F7D20DEAED8001348A2 /* DetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailModel.h; sourceTree = "<group>"; };
 		CF8C5F7E20DEAED8001348A2 /* DetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailModel.m; sourceTree = "<group>"; };
-		CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
 		CF8C5F9A20E7EC71001348A2 /* GoogleMobileAds.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMobileAds.framework; sourceTree = "<group>"; };
 		CF8C5FA220E8B076001348A2 /* MinePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MinePage.h; sourceTree = "<group>"; };
 		CF8C5FA320E8B076001348A2 /* MinePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MinePage.m; sourceTree = "<group>"; };
@@ -310,7 +278,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8C5F9820E29F60001348A2 /* IJKMediaFramework.framework in Frameworks */,
 				CF8C5F6F20DEA905001348A2 /* VideoToolbox.framework in Frameworks */,
 				003EDC0420C5536600CFCFE9 /* QuartzCore.framework in Frameworks */,
 				CF8C5F6D20DEA8FA001348A2 /* OpenGLES.framework in Frameworks */,
@@ -393,7 +360,6 @@
 		003EDB1720C5360E00CFCFE9 = {
 			isa = PBXGroup;
 			children = (
-				CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */,
 				003EDB2220C5360E00CFCFE9 /* live */,
 				003EDB2120C5360E00CFCFE9 /* Products */,
 				52501F195B1D0B07030819A2 /* Pods */,
@@ -412,6 +378,7 @@
 		003EDB2220C5360E00CFCFE9 /* live */ = {
 			isa = PBXGroup;
 			children = (
+				00ADA11421006200002005E4 /* live.entitlements */,
 				003EDC3B20C78C1C00CFCFE9 /* UMessage_Sdk_1.5.0a */,
 				003EDBEF20C5524500CFCFE9 /* page */,
 				003EDBED20C5523E00CFCFE9 /* view */,
@@ -461,7 +428,7 @@
 		003EDB4620C551AF00CFCFE9 /* general */ = {
 			isa = PBXGroup;
 			children = (
-				CFF73B1C20E8D71A00091033 /* mob */,
+				CFF73B1C20E8D71A00091033 /* admob */,
 				003EDB4920C551AF00CFCFE9 /* data */,
 				003EDB5020C551AF00CFCFE9 /* db */,
 				003EDB5920C551AF00CFCFE9 /* log */,
@@ -765,16 +732,6 @@
 			path = detail;
 			sourceTree = "<group>";
 		};
-		CF8C5F8B20E29F58001348A2 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				CF8C5F9120E29F58001348A2 /* IJKMediaFramework.framework */,
-				CF8C5F9320E29F58001348A2 /* IJKMediaFrameworkWithSSL.framework */,
-				CF8C5F9520E29F58001348A2 /* IJKMediaFrameworkTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CF8C5F9F20E8B06A001348A2 /* mine */ = {
 			isa = PBXGroup;
 			children = (
@@ -819,7 +776,7 @@
 			path = extra;
 			sourceTree = "<group>";
 		};
-		CFF73B1C20E8D71A00091033 /* mob */ = {
+		CFF73B1C20E8D71A00091033 /* admob */ = {
 			isa = PBXGroup;
 			children = (
 				CFF73B1D20E8D72C00091033 /* AdMobManager.h */,
@@ -827,7 +784,7 @@
 				CFF73B2020E8D97400091033 /* AdMobModel.h */,
 				CFF73B2120E8D97400091033 /* AdMobModel.m */,
 			);
-			path = mob;
+			path = admob;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -846,7 +803,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				CF8C5F9720E29F5B001348A2 /* PBXTargetDependency */,
 			);
 			name = live;
 			productName = live;
@@ -883,42 +839,12 @@
 			mainGroup = 003EDB1720C5360E00CFCFE9;
 			productRefGroup = 003EDB2120C5360E00CFCFE9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CF8C5F8B20E29F58001348A2 /* Products */;
-					ProjectRef = CF8C5F8A20E29F58001348A2 /* IJKMediaPlayer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				003EDB1F20C5360E00CFCFE9 /* live */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CF8C5F9120E29F58001348A2 /* IJKMediaFramework.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = IJKMediaFramework.framework;
-			remoteRef = CF8C5F9020E29F58001348A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CF8C5F9320E29F58001348A2 /* IJKMediaFrameworkWithSSL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = IJKMediaFrameworkWithSSL.framework;
-			remoteRef = CF8C5F9220E29F58001348A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CF8C5F9520E29F58001348A2 /* IJKMediaFrameworkTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = IJKMediaFrameworkTests.xctest;
-			remoteRef = CF8C5F9420E29F58001348A2 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		003EDB1E20C5360E00CFCFE9 /* Resources */ = {
@@ -1059,14 +985,6 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		CF8C5F9720E29F5B001348A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = IJKMediaFramework;
-			targetProxy = CF8C5F9620E29F5B001348A2 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
 		003EDB3420C5361700CFCFE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1183,7 +1101,7 @@
 			baseConfigurationReference = 80B663E8DAD9BB96CBB69816 /* Pods-live.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = live/live.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
@@ -1200,18 +1118,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/live/UMessage_Sdk_1.5.0a",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavcodec",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavfilter",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavformat",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavutil",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libswresample",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libswscale",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrat.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Debug;
 		};
@@ -1220,7 +1133,7 @@
 			baseConfigurationReference = F215627FF075B719AEDD0E1D /* Pods-live.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "";
+				CODE_SIGN_ENTITLEMENTS = live/live.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AB86U4DT8H;
@@ -1237,18 +1150,13 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/live/UMessage_Sdk_1.5.0a",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavcodec",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavfilter",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavformat",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libavutil",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libswresample",
-					"$(PROJECT_DIR)/ffmpeg-arm64/libswscale",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.scrat.live;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Release;
 		};
