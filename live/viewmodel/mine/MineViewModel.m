@@ -58,12 +58,12 @@
 }
 
 
--(void)addCoin:(double)count{
-    _coins += count;
+-(void)updateCoins{
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
     if(_delegate){
         TitleContentModel *model = [_datas objectAtIndex:0];
-        model.content = [NSString stringWithFormat:@"B币：%d",_coins];
-        [_delegate onAddCoin];
+        model.content = [NSString stringWithFormat:@"B币：%d",bb];
+        [_delegate onUpdateCoins];
     }
 }
 

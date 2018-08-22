@@ -20,6 +20,7 @@
 @property(strong, nonatomic)MineView *mineView;
 @property(strong, nonatomic)MineViewModel *viewModel;
 
+
 @end
 
 @implementation MinePage
@@ -75,20 +76,19 @@
 }
 
 -(void)onOpenRewardAd{
-    Boolean success = [[AdMobManager sharedAdMobManager] showRewardAd:self];
+    Boolean success = [[AdMobManager sharedAdMobManager] showAd:self];
     if(!success){
         [STToastUtil showFailureAlertSheet:@"很抱歉，广告未加载完毕，请过一会再来赚取B币"];
     }
 }
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
-    AdMobModel *model = msg;
     if(_viewModel && [key isEqualToString:Notify_Reward]){
-        [_viewModel addCoin:model.count];
+        [_viewModel updateCoins];
     }
 }
 
--(void)onAddCoin{
+-(void)onUpdateCoins{
     if(_mineView){
         [_mineView updateView];
     }

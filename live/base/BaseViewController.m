@@ -99,7 +99,7 @@
 -(void)onReciveResult:(NSString *)key msg:(id)msg{
     WS(weakSelf)
     [STAlertUtil showAlertController:@"恭喜您！" content:@"观看完整广告可免费获取B币，给喜欢的主播免费刷礼物吧！" controller:self confirm:^{
-        [[AdMobManager sharedAdMobManager] showRewardAd:weakSelf];
+        [[AdMobManager sharedAdMobManager] showAd:weakSelf];
     }];
 }
 

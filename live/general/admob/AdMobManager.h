@@ -13,7 +13,8 @@
 @interface AdMobManager : NSObject
 SINGLETON_DECLARATION(AdMobManager)
 
-@property(strong, nonatomic)NSMutableArray *datas;
+@property(strong, nonatomic)NSMutableArray *rewardsDatas;
+@property(strong, nonatomic)NSMutableArray *fullScreenDatas;
 
 //初始化admob
 -(void)initAdMob;
@@ -32,5 +33,9 @@ SINGLETON_DECLARATION(AdMobManager)
 
 //展示插屏广告
 -(Boolean)showFullScreenAd:(UIViewController *)controller;
+
+
+//插屏和激励广告谁获取到展示谁
+-(Boolean)showAd:(UIViewController *)controller;
 
 @end

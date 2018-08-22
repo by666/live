@@ -11,7 +11,7 @@
 @protocol MineViewDelegate
 
 -(void)onOpenRewardAd;
--(void)onAddCoin;
+-(void)onUpdateCoins;
 -(void)onGoAgreementPage;
 -(void)onGoAboutPage;
 -(void)onGoDisclaimerPage;
@@ -28,6 +28,6 @@
 -(void)goAgreementPage;
 -(void)goAboutPage;
 -(void)goDisclaimerPage;
--(void)addCoin:(double)count;
+-(void)updateCoins;
 
 @end

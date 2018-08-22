@@ -21,7 +21,8 @@ SINGLETON_IMPLEMENTION(AdMobManager)
 
 -(void)initAdMob{
     [GADMobileAds configureWithApplicationID:ADMOB_APPID];
-    _datas =[[NSMutableArray alloc]init];
+    _rewardsDatas =[[NSMutableArray alloc]init];
+    _fullScreenDatas = [[NSMutableArray alloc]init];
     [GADRewardBasedVideoAd sharedInstance].delegate = self;
     [self loadRewardAd];
     [self loadFullScreenAd];
@@ -105,6 +106,7 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 
 - (void)interstitialDidReceiveAd:(GADInterstitial *)ad {
     NSLog(@"获取广告成功（插屏广告）");
+    [_fullScreenDatas addObject:ad];
 }
 
 - (void)interstitial:(GADInterstitial *)ad
@@ -114,10 +116,17 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 
 - (void)interstitialWillPresentScreen:(GADInterstitial *)ad {
     NSLog(@"即将展示广告（插屏广告）");
+    if(!IS_NS_COLLECTION_EMPTY(_fullScreenDatas)){
+        [_fullScreenDatas removeObject:ad];
+    }
 }
 
 - (void)interstitialWillDismissScreen:(GADInterstitial *)ad {
     NSLog(@"即将离开广告页（插屏广告）");
+    AdMobModel *model = [[AdMobModel alloc]init];
+    model.count = 10;
+    model.type = @"B币";
+    [self addRewards:model];
 }
 
 - (void)interstitialDidDismissScreen:(GADInterstitial *)ad {
@@ -150,10 +159,7 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
     AdMobModel *model = [[AdMobModel alloc]init];
     model.count = [reward.amount intValue];
     model.type = reward.type;
-    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
-    bb +=model.count;
-    [STUserDefaults saveKeyValue:UD_BB value:[NSString stringWithFormat:@"%d",bb]];
-    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_Reward msg:model];
+    [self addRewards:model];
     NSLog(@"接收奖励成功（激励广告）");
 }
 
@@ -161,8 +167,8 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
 
 - (void)rewardBasedVideoAdDidOpen:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
     NSLog(@"打开广告（激励广告）");
-    if(!IS_NS_COLLECTION_EMPTY(_datas)){
-        [_datas removeObject:rewardBasedVideoAd];
+    if(!IS_NS_COLLECTION_EMPTY(_rewardsDatas)){
+        [_rewardsDatas removeObject:rewardBasedVideoAd];
         [self loadRewardAd];
     }
 }
@@ -187,14 +193,32 @@ didFailToReceiveAdWithError:(GADRequestError *)error {
     didFailToLoadWithError:(NSError *)error {
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(60 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self loadRewardAd];
+        [self loadFullScreenAd];
     });
     NSLog(@"获取广告失败（激励广告）");
 }
 
 - (void)rewardBasedVideoAdDidReceiveAd:(GADRewardBasedVideoAd *)rewardBasedVideoAd {
     NSLog(@"获取广告成功（激励广告）");
-    [_datas addObject:rewardBasedVideoAd];
+    [_rewardsDatas addObject:rewardBasedVideoAd];
     [[STObserverManager sharedSTObserverManager]sendMessage:Notify_ADMOB msg:nil];
-
 }
+
+-(void)addRewards:(AdMobModel *)model{
+    int bb = [[STUserDefaults getKeyValue:UD_BB] intValue];
+    bb +=model.count;
+    [STUserDefaults saveKeyValue:UD_BB value:[NSString stringWithFormat:@"%d",bb]];
+    [[STObserverManager sharedSTObserverManager]sendMessage:Notify_Reward msg:model];
+}
+
+-(Boolean)showAd:(UIViewController *)controller{
+    if(!IS_NS_COLLECTION_EMPTY(_rewardsDatas)){
+        return [self showRewardAd:controller];
+    }
+    if(!IS_NS_COLLECTION_EMPTY(_fullScreenDatas)){
+        return [self showFullScreenAd:controller];
+    }
+    return NO;
+}
+
 @end
