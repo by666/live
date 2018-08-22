@@ -34,4 +34,14 @@
 //计算字符串宽度
 +(CGSize)textSize:(NSString *)text maxWidth:(CGFloat)maxWidth font:(CGFloat)font;
 
+//通过身份证号获取生日
++(NSString *)getBirthdayFromIdNum:(NSString *)idNum;
+
+//通过身份证号获取性别
++(NSString *)getGenderfromIdNum:(NSString *)numberStr;
+
+//11位电话号码隐藏
++(NSString *)getSecretPhoneNum:(NSString *)phoneNum;
+
+
 @end

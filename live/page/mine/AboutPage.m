@@ -48,7 +48,7 @@
     logoLabel.frame = CGRectMake(0, STHeight(90) + barHeight + width, ScreenWidth, STHeight(22));
     [self.view addSubview:logoLabel];
     
-    UILabel *copyRightLabel = [[UILabel alloc] initWithFont:STFont(12) text:@"Copyright © 2018年 by.huang. All rights reserved." textAlignment:NSTextAlignmentCenter textColor:c15 backgroundColor:nil multiLine:NO];
+    UILabel *copyRightLabel = [[UILabel alloc] initWithFont:STFont(12) text:@"Copyright © 2018年 by.huang. All rights reserved." textAlignment:NSTextAlignmentCenter textColor:c01 backgroundColor:nil multiLine:NO];
     copyRightLabel.frame = CGRectMake(0, ScreenHeight -  STHeight(30), ScreenWidth, STHeight(12));
     [self.view addSubview:copyRightLabel];
 }

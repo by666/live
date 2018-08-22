@@ -52,7 +52,7 @@
         NSString *url = [NSString stringWithFormat:@"%@?room_id=%ld&origin=%@",URL_LIVE_DETAIL,_mMainModel.room_id,_mMainModel.origin];
         WS(weakSelf)
         [STNetUtil get:url parameters:nil success:^(RespondModel *respondModel) {
-            if(respondModel.code == 200){
+            if(respondModel.code == CODE_SUCCESS){
                 weakSelf.detailModel = [DetailModel mj_objectWithKeyValues:respondModel.data];
                 [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.detailModel];
             }else{

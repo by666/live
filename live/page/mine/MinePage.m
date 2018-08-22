@@ -58,7 +58,7 @@
     
     _mineView = [[MineView alloc]initWithViewModel:_viewModel];
     _mineView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
-    _mineView.backgroundColor = c15;
+    _mineView.backgroundColor = c01;
     [self.view addSubview:_mineView];
 }
 

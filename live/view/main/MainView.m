@@ -35,7 +35,7 @@
     _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) collectionViewLayout:layout];
     _collectionView.delegate = self;
     _collectionView.dataSource = self;
-    _collectionView.backgroundColor = c15;
+    _collectionView.backgroundColor = c01;
     [self addSubview:_collectionView];
     
     [_collectionView registerClass:[MainCell class] forCellWithReuseIdentifier:[MainCell identify]];

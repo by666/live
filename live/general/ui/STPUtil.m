@@ -16,6 +16,11 @@
 }
 
 +(CGFloat)getActualHeight : (CGFloat)height{
+    if(IS_IPHONE_X){
+        
+        return height * 1.1;
+        
+    }
     return (ScreenHeight * height) / 676;
 }
 
@@ -57,7 +62,7 @@
     NSInteger idCardMod=idCardWiSum % 11;
     NSString *idCardLast= [idNum substringWithRange:NSMakeRange(17, 1)];
     if(idCardMod==2) {
-        if(![idCardLast isEqualToString:@"X"]|| ![idCardLast isEqualToString:@"x"]) {
+        if(![idCardLast isEqualToString:@"X"] && ![idCardLast isEqualToString:@"x"]) {
             return NO;
         }
     }
@@ -82,9 +87,52 @@
 
 
 +(CGSize)textSize:(NSString *)text maxWidth:(CGFloat)maxWidth font:(CGFloat)font{
-   return [text boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
+    return [text boundingRectWithSize:CGSizeMake(maxWidth, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:font]} context:nil].size;
 }
 
 
 
++(NSString *)getBirthdayFromIdNum:(NSString *)idNum{
+    if(!IS_NS_STRING_EMPTY(idNum) && (idNum.length == 15 || idNum.length == 18)){
+        NSString *month = [idNum substringWithRange:NSMakeRange(10, 2)];
+        NSString *day = [idNum substringWithRange:NSMakeRange(12,2)];
+        return [NSString stringWithFormat:@"%@.%@",month,day];
+    }
+    return @"";
+}
+
+
++(NSString *)getGenderfromIdNum:(NSString *)numberStr{
+    if(IS_NS_STRING_EMPTY(numberStr)){
+        return @"";
+    }
+    NSString *sex = @"";
+    if (numberStr.length==18){
+        int sexInt=[[numberStr substringWithRange:NSMakeRange(16,1)] intValue];
+        if(sexInt%2!=0){
+            sex = @"男";
+        }else{
+            sex = @"女";
+        }
+    }
+    if (numberStr.length==15){
+        int sexInt=[[numberStr substringWithRange:NSMakeRange(14,1)] intValue];
+        if(sexInt%2!=0){
+            sex = @"男";
+        }else{
+            sex = @"女";
+        }
+    }
+    return sex;
+}
+
+
++(NSString *)getSecretPhoneNum:(NSString *)phoneNum{
+    if(IS_NS_STRING_EMPTY(phoneNum) || phoneNum.length != 11){
+        return @"";
+    }
+    NSString *start = [phoneNum substringWithRange:NSMakeRange(0, 3)];
+    NSString *end = [phoneNum substringWithRange:NSMakeRange(7, 4)];
+    return [NSString stringWithFormat:@"%@****%@",start,end];
+}
 @end

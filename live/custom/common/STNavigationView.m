@@ -87,7 +87,7 @@
     
     UIView *lineView = [[UIView alloc]init];
     lineView.frame = CGRectMake(0, NavigationBarHeight - LineHeight, ScreenWidth, LineHeight);
-    lineView.backgroundColor = c01;
+    lineView.backgroundColor = cline;
     lineView.hidden = YES;
     [self addSubview:lineView];
     

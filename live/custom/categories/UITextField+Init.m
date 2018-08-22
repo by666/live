@@ -10,6 +10,7 @@
 #import <objc/runtime.h>
 
 static char *hasValueChar = "hasValue";
+static char *maxLengthValue = "maxLength";
 
 @implementation UITextField(Init)
 
@@ -33,9 +34,22 @@ static char *hasValueChar = "hasValue";
         leftView.backgroundColor = backgroundColor;
         self.leftView = leftView;
         self.leftViewMode = UITextFieldViewModeAlways;
+        
     }
     return self;
 }
+
+
+
+-(void)setMaxLength:(NSString *)maxLength{
+    objc_setAssociatedObject(self, &maxLengthValue, maxLength, OBJC_ASSOCIATION_COPY_NONATOMIC);
+    [self addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
+}
+
+-(NSString *)maxLength{
+    return objc_getAssociatedObject(self, &maxLengthValue);
+}
+
 
 
 -(void)setHasValue:(NSString *)hasValue{
@@ -54,6 +68,18 @@ static char *hasValueChar = "hasValue";
                                            NSFontAttributeName:[UIFont systemFontOfSize:fontSize]
                                            }];
     self.attributedPlaceholder = placeholderStr;
+}
+
+
+- (void)textFieldDidChange:(UITextField *)textField{
+    UITextRange * selectedRange = textField.markedTextRange;
+    if(selectedRange == nil || selectedRange.empty){
+        NSInteger maxLength = [[self maxLength] intValue];
+        NSString *text = textField.text;
+        if(text.length >= maxLength){
+            textField.text = [text substringWithRange: NSMakeRange(0, maxLength)];
+        }
+    }
 }
 
 

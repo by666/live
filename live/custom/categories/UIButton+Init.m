@@ -61,6 +61,4 @@ static char *tag2Value = "tag2Value";
     return image;
 }
 
-
-
 @end

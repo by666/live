@@ -46,7 +46,7 @@
     
     _detailContentView = [[DetailContentView alloc]initWithViewModel:_mViewModel];
     _detailContentView.frame = CGRectMake(0, VideoHeight, ScreenWidth, ScreenHeight - VideoHeight);
-    _detailContentView.backgroundColor = c01;
+    _detailContentView.backgroundColor = cwhite;
     [self addSubview:_detailContentView];
 
     

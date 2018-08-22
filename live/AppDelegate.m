@@ -19,6 +19,7 @@
 #import "DetailPage.h"
 #import "AdMobManager.h"
 #import "STNetUtil.h"
+#import "LoginPage.h"
 
 @interface AppDelegate ()
 
@@ -28,7 +29,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    MainPage *controller = [[MainPage alloc]init];
+    LoginPage *controller = [[LoginPage alloc]init];
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -41,7 +42,7 @@
 //                [self showUpdateAlert:url version:version];
     }];
     [self initAccount];
-    
+    [self initShotScreen];
     return YES;
 }
 
@@ -68,6 +69,13 @@
     UMConfigInstance.appKey = UMENG_APPKEY;
     UMConfigInstance.channelId = CHANNELCODE;
     [MobClick startWithConfigure:UMConfigInstance];
+}
+
+-(void)initShotScreen{
+    NSOperationQueue *mainQueue = [NSOperationQueue mainQueue];
+    [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationUserDidTakeScreenshotNotification object:nil queue:mainQueue usingBlock:^(NSNotification *note) {
+        [STLog print:@"用户截屏"];
+    }];
 }
 
 

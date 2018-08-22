@@ -21,3 +21,5 @@
 #define UD_NET_STATU @"net_statu"
 #define UD_BB @"live_bb"
 #define UD_ID @"live_id"
+
+#define UD_USERMODEL @"ud_usermodel"

@@ -56,4 +56,21 @@
 
 
 
+#define MSG_LOGINVIEW_TITLE @"登录"
+#define MSG_PHONENUM_ERROR @"手机号码错误"
+#define MSG_VERIFYCODE_ERROR @"验证码错误"
+#define MSG_NOT_INSTALL_WECHAT @"请先安装微信客户端"
+#define MSG_VERIFYCODE_SUCCESS @"验证码短信已发送"
+#define MSG_LOGIN_SUCCESS @"登录成功"
+#define MSG_GET_VERIFYCODE @"发送验证码"
+#define MSG_VERIFYCODE_RESEND @"重发验证码"
+#define MSG_VERIFYCODE_OUROFTIME @"验证码超时，请点击重发验证码"
+#define MSG_VERIFYCODE_MUTIPLE @"验证码发送次数过多，请过一会再试"
+#define MSG_LOGIN_PHONENUM_HINT @"请输入手机号"
+#define MSG_LOGIN_VERIFYCODE_HINT @"验证码"
+#define MSG_LOGIN_BTN_LOGIN @"登录"
+#define MSG_LOGIN_THIRD_LOGIN @"第三方登录"
+#define MSG_OTHER_LOGIN @"其他登录方式"
+#define MSG_WECHAT_LOGIN @"微信登录"
+#define MSG_PHONE_LOGIN @"手机验证登录"
 
