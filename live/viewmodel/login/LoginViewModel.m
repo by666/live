@@ -32,7 +32,7 @@
     if(_delegate){
         if(![STPUtil isPhoneNumValid:phoneNum]){
             _loginModel.msgStr = MSG_PHONENUM_ERROR;
-            _loginModel.msgColor = c07;
+            _loginModel.msgColor = c01;
             [_delegate onRequestFail:MSG_PHONENUM_ERROR];
             return;
         }
@@ -43,18 +43,18 @@
         [STNetUtil get:URL_GETVERIFYCODE parameters:dic success:^(RespondModel *respondModel) {
             if(respondModel.code == CODE_SUCCESS){
                 weakSelf.loginModel.msgStr = MSG_VERIFYCODE_SUCCESS;
-                weakSelf.loginModel.msgColor = c06;
+                weakSelf.loginModel.msgColor = c01;
                 [weakSelf.delegate onRequestSuccess:respondModel data:phoneNum];
                 [self startCountTime];
             }else{
                 weakSelf.loginModel.msgStr = respondModel.msg;
-                weakSelf.loginModel.msgColor = c07;
+                weakSelf.loginModel.msgColor = c01;
                 [weakSelf.delegate onRequestFail:respondModel.msg];
             }
             
         } failure:^(int errorCode) {
             weakSelf.loginModel.msgStr = [NSString stringWithFormat:MSG_ERROR,errorCode];
-            weakSelf.loginModel.msgColor = c07;
+            weakSelf.loginModel.msgColor = c01;
             [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
         }];
     }
@@ -72,13 +72,13 @@
         [_delegate onRequestBegin];
         if(![STPUtil isPhoneNumValid:phoneNum]){
             _loginModel.msgStr = MSG_PHONENUM_ERROR;
-            _loginModel.msgColor = c07;
+            _loginModel.msgColor = c01;
             [_delegate onRequestFail:MSG_PHONENUM_ERROR];
             return;
         }
         if(![STPUtil isVerifyCodeValid:verifyCode]){
             _loginModel.msgStr = MSG_VERIFYCODE_ERROR;
-            _loginModel.msgColor = c07;
+            _loginModel.msgColor = c01;
             [_delegate onRequestFail:MSG_VERIFYCODE_ERROR];
             return;
         }

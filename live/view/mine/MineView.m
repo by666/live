@@ -53,7 +53,7 @@
     
     NSString *uid = [STUserDefaults getKeyValue:UD_ID];
 
-    UILabel *accountLabel = [[UILabel alloc]initWithFont:STFont(16) text:uid textAlignment:NSTextAlignmentCenter textColor:c16 backgroundColor:nil multiLine:NO];
+    UILabel *accountLabel = [[UILabel alloc]initWithFont:STFont(16) text:uid textAlignment:NSTextAlignmentCenter textColor:c01 backgroundColor:nil multiLine:NO];
     accountLabel.frame = CGRectMake(0, STHeight(120), ScreenWidth, STHeight(16));
     [self addSubview:accountLabel];
 }

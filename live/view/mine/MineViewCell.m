@@ -31,7 +31,7 @@
     _titleLabel = [[UILabel alloc]initWithFont:STFont(16) text:nil textAlignment:NSTextAlignmentCenter textColor:cblack backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_titleLabel];
     
-    _contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:nil textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    _contentLabel = [[UILabel alloc]initWithFont:STFont(16) text:nil textAlignment:NSTextAlignmentCenter textColor:c01 backgroundColor:nil multiLine:NO];
     [self.contentView addSubview:_contentLabel];
     
     _lineView = [[UIView alloc]init];

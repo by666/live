@@ -49,7 +49,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c18];
+    [self setStatuBarBackgroud:c01];
 }
 
 -(void)initView{

@@ -34,9 +34,9 @@
 
 -(void)updateView:(ChatModel *)chatModel{
     if(chatModel.identify == CI_System){
-        _contentLabel.textColor = c33;
+        _contentLabel.textColor = c01;
     }else if(chatModel.identify == CI_Mine){
-        _contentLabel.textColor = c18;
+        _contentLabel.textColor = c01;
     }else{
         _contentLabel.textColor = cblack;
     }

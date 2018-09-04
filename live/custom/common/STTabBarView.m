@@ -45,7 +45,7 @@
             self.selectedBtn = item;
             self.lineView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 3, width, 3)];
             self.lineView.layer.cornerRadius = 3.0;
-            self.lineView.backgroundColor = c19;
+            self.lineView.backgroundColor = cline;
             self.lineView.layer.masksToBounds = YES;
             [self addSubview:self.lineView];
         }

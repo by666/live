@@ -39,7 +39,7 @@ SINGLETON_IMPLEMENTION(AdMobManager)
     _bannerView = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
     _bannerView.adUnitID = AD_BANNER;
     _bannerView.rootViewController = (id)controller;
-    _bannerView.backgroundColor = c03;
+    _bannerView.backgroundColor = c01;
     _bannerView.delegate = (id<GADBannerViewDelegate>)self;
     _bannerView.frame = CGRectMake(0, ScreenHeight - STHeight(48), ScreenWidth , STHeight(48));
     [_bannerView loadRequest:request];

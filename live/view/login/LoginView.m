@@ -79,39 +79,18 @@
     verifyLine.frame = CGRectMake(STWidth(47), STHeight(317), STWidth(280), 0.5f);
     [self addSubview:verifyLine];
     
-    _tipLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c06 backgroundColor:nil multiLine:NO];
+    _tipLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentLeft textColor:c01 backgroundColor:nil multiLine:NO];
     _tipLabel.frame = CGRectMake(STWidth(47), STHeight(331), STWidth(280), STHeight(20));
     [self addSubview:_tipLabel];
     
     
-    _loginBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_LOGIN_BTN_LOGIN textColor:[cwhite colorWithAlphaComponent:0.5f] backgroundColor:[c02a colorWithAlphaComponent:0.5f] corner:STHeight(25) borderWidth:0 borderColor:nil];
+    _loginBtn = [[UIButton alloc]initWithFont:STFont(16) text:MSG_LOGIN_BTN_LOGIN textColor:[cwhite colorWithAlphaComponent:0.5f] backgroundColor:[c01 colorWithAlphaComponent:0.5f] corner:STHeight(25) borderWidth:0 borderColor:nil];
     _loginBtn.frame = CGRectMake(STWidth(27), STHeight(374), STWidth(320), STWidth(50));
-    [_loginBtn setBackgroundColor:c08a forState:UIControlStateHighlighted];
+    [_loginBtn setBackgroundColor:c01 forState:UIControlStateHighlighted];
     [self addSubview:_loginBtn];
     _loginBtn.enabled = NO;
     [_loginBtn addTarget:self action:@selector(doLogin) forControlEvents:UIControlEventTouchUpInside];
     
-    
-    UIView *leftView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(114), STHeight(583), STWidth(26), 0.5f)];
-    leftView.backgroundColor = c05;
-    [self addSubview:leftView];
-    
-    
-    UIView *rightView = [[UIView alloc]initWithFrame:CGRectMake(STWidth(236), STHeight(583), STWidth(26), 0.5f)];
-    rightView.backgroundColor = c05;
-    [self addSubview:rightView];
-    
-    UILabel *thirdLabel = [[UILabel alloc]initWithFont:STFont(15) text:MSG_LOGIN_THIRD_LOGIN textAlignment:NSTextAlignmentCenter textColor:c05 backgroundColor:nil multiLine:NO];
-    thirdLabel.frame = CGRectMake(0, STHeight(577), ScreenWidth, STHeight(15));
-    [self addSubview:thirdLabel];
-    
-    
-    _wechatLoginBtn =  [[UIButton alloc]init];
-    [_wechatLoginBtn setImage:[UIImage imageNamed:@"登录_icon_微信"] forState:UIControlStateNormal];
-    _wechatLoginBtn.imageView.contentMode = UIViewContentModeScaleAspectFill;
-    _wechatLoginBtn.frame = CGRectMake(STWidth(172), STHeight(617), STWidth(31), STWidth(31));
-    [self addSubview:_wechatLoginBtn];
-    [_wechatLoginBtn addTarget:self action:@selector(doWechatLogin) forControlEvents:UIControlEventTouchUpInside];
     
     
     _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.loginModel.verifyStr textColor:cwhite backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
@@ -157,7 +136,7 @@
         [_sendVerifyCodeBtn setTitleColor:cwhite forState:UIControlStateNormal];
     }else{
         [_sendVerifyCodeBtn setEnabled:NO];
-        [_sendVerifyCodeBtn setTitleColor:c06 forState:UIControlStateNormal];
+        [_sendVerifyCodeBtn setTitleColor:c01 forState:UIControlStateNormal];
     }
 }
 
@@ -184,7 +163,7 @@
         _loginBtn.enabled = YES;
         [_loginBtn setTitleColor:c02 forState:UIControlStateNormal];
     }else{
-        [_loginBtn setBackgroundColor:c02a forState:UIControlStateNormal];
+        [_loginBtn setBackgroundColor:c01 forState:UIControlStateNormal];
         _loginBtn.enabled = NO;
         [_loginBtn setTitleColor:[cwhite colorWithAlphaComponent:0.5f] forState:UIControlStateNormal];
     }

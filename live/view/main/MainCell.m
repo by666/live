@@ -59,10 +59,10 @@
     cityImageView.image = [UIImage imageNamed:@"ic_position"];
     [txtView addSubview:cityImageView];
     
-    _cityLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    _cityLabel = [[UILabel alloc]initWithFont:STFont(14) text:@"" textAlignment:NSTextAlignmentCenter textColor:c01 backgroundColor:nil multiLine:NO];
     [txtView addSubview:_cityLabel];
     
-    _userCountLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentCenter textColor:c12 backgroundColor:nil multiLine:NO];
+    _userCountLabel = [[UILabel alloc]initWithFont:STFont(12) text:@"" textAlignment:NSTextAlignmentCenter textColor:c01 backgroundColor:nil multiLine:NO];
     [txtView addSubview:_userCountLabel];
     
     

@@ -26,6 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [STColorUtil setGradientColor:self.view startColor:c01 endColor:c02 director:Top];
+    
     [self initView];
 }
 
@@ -44,7 +45,7 @@
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c18];
+    [self setStatuBarBackgroud:c01];
 }
 
 

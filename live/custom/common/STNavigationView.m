@@ -68,7 +68,7 @@
 
 
 -(void)initView{
-    self.backgroundColor = c18;
+    self.backgroundColor = c01;
     self.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, NavigationBarHeight);
     
     _titleLabel = [[UILabel alloc]initWithFont:STFont(17) text:mTitle textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];

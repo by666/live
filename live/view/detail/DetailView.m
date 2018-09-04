@@ -39,7 +39,7 @@
 
 -(void)initView{
     
-    UILabel *waitLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"主播正在快马加鞭赶来..." textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c16 multiLine:NO];
+    UILabel *waitLabel = [[UILabel alloc]initWithFont:STFont(18) text:@"主播正在快马加鞭赶来..." textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:c01 multiLine:NO];
     waitLabel.frame = CGRectMake(0, 0, ScreenWidth, VideoHeight);
     [self addSubview:waitLabel];
     
