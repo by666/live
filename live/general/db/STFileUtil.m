@@ -23,4 +23,11 @@
     return nil;
 }
 
+
++(NSString *)getJsonStr:(NSString *)filename{
+    NSString *path = [[NSBundle mainBundle] pathForResource:filename ofType:@"json"];
+    NSData *data = [[NSData alloc] initWithContentsOfFile:path];
+    NSString *jsonStr  =[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    return jsonStr;
+}
 @end

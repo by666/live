@@ -98,6 +98,8 @@
 		CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */; };
 		CF8C5FAC20E8B17A001348A2 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FAB20E8B17A001348A2 /* MineView.m */; };
 		CF8E686A213D94ED00C2D214 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8E6863213D94DC00C2D214 /* IJKMediaFramework.framework */; };
+		CFEA38C5216B06F300FAE786 /* AppInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEA38C4216B06F300FAE786 /* AppInfoModel.m */; };
+		CFEA38CA216B2B1800FAE786 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = CFEA38C9216B2B1800FAE786 /* login.json */; };
 		CFF73B0C20E8CC5400091033 /* MineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B0B20E8CC5400091033 /* MineViewCell.m */; };
 		CFF73B1220E8CCB600091033 /* TitleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1020E8CCB600091033 /* TitleContentModel.m */; };
 		CFF73B1520E8D46900091033 /* AboutPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1420E8D46900091033 /* AboutPage.m */; };
@@ -305,6 +307,9 @@
 		CF8C5FAA20E8B17A001348A2 /* MineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
 		CF8C5FAB20E8B17A001348A2 /* MineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
 		CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		CFEA38C3216B06F300FAE786 /* AppInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfoModel.h; sourceTree = "<group>"; };
+		CFEA38C4216B06F300FAE786 /* AppInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInfoModel.m; sourceTree = "<group>"; };
+		CFEA38C9216B2B1800FAE786 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
 		CFF73B0A20E8CC5400091033 /* MineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewCell.h; sourceTree = "<group>"; };
 		CFF73B0B20E8CC5400091033 /* MineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewCell.m; sourceTree = "<group>"; };
 		CFF73B1020E8CCB600091033 /* TitleContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleContentModel.m; sourceTree = "<group>"; };
@@ -457,6 +462,7 @@
 		003EDB2220C5360E00CFCFE9 /* live */ = {
 			isa = PBXGroup;
 			children = (
+				CFEA38CB216B2B4D00FAE786 /* json */,
 				00ADA11421006200002005E4 /* live.entitlements */,
 				003EDC3B20C78C1C00CFCFE9 /* UMessage_Sdk_1.5.0a */,
 				003EDBEF20C5524500CFCFE9 /* page */,
@@ -717,6 +723,8 @@
 				00AD859E20F090C8001D272C /* GiftModel.m */,
 				002E238D212D420C00E8B93D /* LoginModel.h */,
 				002E238E212D420C00E8B93D /* LoginModel.m */,
+				CFEA38C3216B06F300FAE786 /* AppInfoModel.h */,
+				CFEA38C4216B06F300FAE786 /* AppInfoModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -869,6 +877,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		CFEA38CB216B2B4D00FAE786 /* json */ = {
+			isa = PBXGroup;
+			children = (
+				CFEA38C9216B2B1800FAE786 /* login.json */,
+			);
+			path = json;
+			sourceTree = "<group>";
+		};
 		CFF73B0F20E8CC9900091033 /* extra */ = {
 			isa = PBXGroup;
 			children = (
@@ -986,6 +1002,7 @@
 				CFF73B2620EBEAA300091033 /* agreement.txt in Resources */,
 				CF43E41520CDA3230069AAFA /* Launch Screen.storyboard in Resources */,
 				003EDB2D20C5361700CFCFE9 /* Assets.xcassets in Resources */,
+				CFEA38CA216B2B1800FAE786 /* login.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,6 +1097,7 @@
 				003EDBC220C551AF00CFCFE9 /* STUserDefaults.m in Sources */,
 				002E23A4212D45BA00E8B93D /* UITextView+Placeholder.m in Sources */,
 				002E2388212D40D400E8B93D /* LoginPage.m in Sources */,
+				CFEA38C5216B06F300FAE786 /* AppInfoModel.m in Sources */,
 				CF8C5F7820DEAB37001348A2 /* DetailView.m in Sources */,
 				002E23A9212D45BA00E8B93D /* UILabel+StringFrame.m in Sources */,
 				003EDBC320C551AF00CFCFE9 /* STLog.m in Sources */,

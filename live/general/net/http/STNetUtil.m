@@ -14,11 +14,13 @@
 #import "STConvertUtil.h"
 #import "STObserverManager.h"
 #import "STUserDefaults.h"
+
+#define APPID @"42172331"
 @implementation STNetUtil
 
 
 #pragma mark get传参
-+(void)get:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
++(void) get:(NSString *)url parameters:(NSDictionary *)parameters success:(void (^)(RespondModel *))success failure:(void (^)(int))failure{
     
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:YES];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
@@ -29,12 +31,8 @@
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     //header
-//    UserModel *model =[[AccountManager sharedAccountManager]getUserModel];
-//    if(!IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.userUid)){
-//        [manager.requestSerializer setValue:model.token forHTTPHeaderField:@"token"];
-//        [manager.requestSerializer setValue:model.userUid forHTTPHeaderField:@"uid"];
-//    }
-//
+    [manager.requestSerializer setValue:APPID forHTTPHeaderField:@"appid"];
+
     //content-type
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/xml",@"text/html", nil ];
     
@@ -59,11 +57,8 @@
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     //header
-//    UserModel *model =[[AccountManager sharedAccountManager]getUserModel];
-//    if(!IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.userUid)){
-//        [manager.requestSerializer setValue:model.token forHTTPHeaderField:@"token"];
-//        [manager.requestSerializer setValue:model.userUid forHTTPHeaderField:@"uid"];
-//    }
+    [manager.requestSerializer setValue:APPID forHTTPHeaderField:@"appid"];
+
     
     //content-type
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/xml",@"text/html", nil ];
@@ -91,11 +86,8 @@
     
     //header
     NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:nil];
-//    UserModel *model =[[AccountManager sharedAccountManager]getUserModel];
-//    if(!IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.userUid)){
-//        [request addValue:model.token forHTTPHeaderField:@"token"];
-//        [request addValue:model.userUid forHTTPHeaderField:@"uid"];
-//    }
+    [manager.requestSerializer setValue:APPID forHTTPHeaderField:@"appid"];
+
     
     //content-type
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];

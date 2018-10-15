@@ -10,6 +10,7 @@
 #import "STObserverManager.h"
 #import "STNetUtil.h"
 #import "STUserDefaults.h"
+#import "AccountManager.h"
 
 #define TIMECOUNT 60
 
@@ -40,7 +41,9 @@
         WS(weakSelf)
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
         dic[@"mobile"] = phoneNum;
-        [STNetUtil get:URL_GETVERIFYCODE parameters:dic success:^(RespondModel *respondModel) {
+        
+        NSString *requestUrl = [NSString stringWithFormat:@"%@/%@",URL_GETVERIFYCODE,phoneNum];
+        [STNetUtil post:requestUrl parameters:dic success:^(RespondModel *respondModel) {
             if(respondModel.code == CODE_SUCCESS){
                 weakSelf.loginModel.msgStr = MSG_VERIFYCODE_SUCCESS;
                 weakSelf.loginModel.msgColor = c01;
@@ -84,29 +87,23 @@
         }
         //todo:网络请求
         NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-        dic[@"mobile"] = phoneNum;
-        dic[@"validateCode"] = verifyCode;
-        if(!IS_NS_STRING_EMPTY(wxToken)){
-            dic[@"wxToken"] = wxToken;
-        }
+        dic[@"phone"] = phoneNum;
+        dic[@"sms_code"] = verifyCode;
         NSString *jsonStr = [dic mj_JSONString];
         WS(weakSelf)
         [STNetUtil post:URL_LOGIN content:jsonStr success:^(RespondModel *repondModel) {
-//            if([repondModel.status isEqualToString:STATU_SUCCESS]){
-//                UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
-//                model.phoneNum = phoneNum;
-//                model.token = [repondModel.data objectForKey:@"token"];
-//                model.userUid = [repondModel.data objectForKey:@"userUid"];
-//                [[AccountManager sharedAccountManager]saveUserModel:model];
-//                weakSelf.loginModel.msgStr = MSG_LOGIN_SUCCESS;
-//                weakSelf.loginModel.msgColor = c06;
-//                [weakSelf.delegate onRequestSuccess:repondModel data:model];
-//            }else{
-//                weakSelf.loginModel.msgStr = repondModel.msg;
-//                weakSelf.loginModel.msgColor = c07;
-//                [weakSelf.delegate onRequestFail:repondModel.msg];
-//
-//            }
+            if(repondModel.code == CODE_SUCCESS){
+                UserModel *model = [UserModel mj_objectWithKeyValues:repondModel.data];
+                [[AccountManager sharedAccountManager]saveUserModel:model];
+                weakSelf.loginModel.msgStr = MSG_LOGIN_SUCCESS;
+                weakSelf.loginModel.msgColor = c03;
+                [weakSelf.delegate onRequestSuccess:repondModel data:model];
+            }else{
+                weakSelf.loginModel.msgStr = repondModel.msg;
+                weakSelf.loginModel.msgColor = c04;
+                [weakSelf.delegate onRequestFail:repondModel.msg];
+
+            }
         } failure:^(int errorCode) {
             [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
         }];
@@ -133,12 +130,12 @@
 
 #pragma mark 微信登录票据换token
 -(void)requestWechatLogin:(NSString *)code{
-    if(_delegate){
-        [_delegate onRequestBegin];
-        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
-        dic[@"code"] = code;
-        WS(weakSelf)
-        [STNetUtil post:URL_WX_LOGIN content:dic.mj_JSONString success:^(RespondModel *respondModel) {
+//    if(_delegate){
+//        [_delegate onRequestBegin];
+//        NSMutableDictionary *dic = [[NSMutableDictionary alloc]init];
+//        dic[@"code"] = code;
+//        WS(weakSelf)
+//        [STNetUtil post:URL_WX_LOGIN content:dic.mj_JSONString success:^(RespondModel *respondModel) {
 //            if([respondModel.status isEqualToString:STATU_SUCCESS]){
 //                UserModel *model = [[AccountManager sharedAccountManager]getUserModel];
 //                model.token = [respondModel.data objectForKey:@"token"];
@@ -154,11 +151,11 @@
 //            }else{
 //                [weakSelf.delegate onRequestFail:respondModel.msg];
 //            }
-        } failure:^(int errorCode) {
-            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
-            
-        }];
-    }
+//        } failure:^(int errorCode) {
+//            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
+//
+//        }];
+//    }
 }
 
 

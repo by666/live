@@ -99,7 +99,7 @@
 }
 
 -(void)onShowNavigationBar{
-    [self showSTNavigationBar:_mMainModel.nick needback:YES backgroudColor:[UIColor clearColor]];
+    [self showSTNavigationBar:_mMainModel.presenter_name needback:YES backgroudColor:[UIColor clearColor]];
 }
 
 -(void)onReportResult{

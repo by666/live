@@ -19,4 +19,13 @@
 @property(copy, nonatomic)NSString *avatar;
 @property(copy, nonatomic)NSString *live_url;
 
+
+//主播id    aid
+//主播昵称    name
+//主播预览图    url
+//观众数    audience
+//主播定位    city
+//距离    distance
+//主播标签(1v1,1v多,可约,视频)    label
+
 @end

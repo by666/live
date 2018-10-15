@@ -43,5 +43,7 @@
 //11位电话号码隐藏
 +(NSString *)getSecretPhoneNum:(NSString *)phoneNum;
 
+//打开网页
++(void)openUrl:(NSString *)urlStr;
 
 @end

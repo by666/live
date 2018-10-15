@@ -20,7 +20,8 @@
 #import "AdMobManager.h"
 #import "STNetUtil.h"
 #import "LoginPage.h"
-
+#import "AppInfoModel.h"
+#import "AccountManager.h"
 @interface AppDelegate ()
 
 @end
@@ -29,7 +30,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
-    MainPage *controller = [[MainPage alloc]init];
+    id controller;
+    if([[AccountManager sharedAccountManager] isLogin]){
+        controller = [[MainPage alloc]init];
+    }else{
+        controller = [[LoginPage alloc]init];
+    }
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -37,15 +43,36 @@
     [[STObserverManager sharedSTObserverManager]setup];
     [self initNet];
     [self initUmeng];
-    [[AdMobManager sharedAdMobManager] initAdMob];
-    [STUpdateUtil checkUpdate:^(NSString *appname, NSString *url, double version) {
-//                [self showUpdateAlert:url version:version];
-    }];
+//    [[AdMobManager sharedAdMobManager] initAdMob];
+    [self initAppInfo];
     [self initAccount];
     [self initShotScreen];
     return YES;
 }
 
+
+//获取版本信息
+-(void)initAppInfo{
+    [STNetUtil get:URL_APPINFO parameters:nil success:^(RespondModel *respondModel) {
+        if(respondModel.code == CODE_SUCCESS){
+            AppInfoModel *model = [AppInfoModel mj_objectWithKeyValues:respondModel.data];
+            //不允许进入，强制退出
+            if(![model.state isEqualToString:@"online"]){
+                exit(0);
+                return;
+            }
+            //有版本更新t，跳转到网页
+            double currentVersion =  [STPUtil getAppVersion];
+            if(model.vc > currentVersion){
+                [STPUtil openUrl:model.ios_app_url];
+            }
+        }
+    } failure:^(int errorCode) {
+        
+    }];
+}
+
+//
 -(void)initAccount{
     NSString *uid = [STUserDefaults getKeyValue:UD_ID];
     if(IS_NS_STRING_EMPTY(uid)){

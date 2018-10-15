@@ -135,4 +135,24 @@
     NSString *end = [phoneNum substringWithRange:NSMakeRange(7, 4)];
     return [NSString stringWithFormat:@"%@****%@",start,end];
 }
+
++(void)openUrl:(NSString *)urlStr{
+    NSURL *url = [NSURL URLWithString:urlStr];
+    if([[UIDevice currentDevice].systemVersion floatValue] >= 10.0){
+        if ([[UIApplication sharedApplication] respondsToSelector:@selector(openURL:options:completionHandler:)]) {
+            [[UIApplication sharedApplication] openURL:url options:@{}
+                                     completionHandler:^(BOOL success) {
+                                         NSLog(@"Open %d",success);
+                                     }];
+        } else {
+            [[UIApplication sharedApplication] openURL:url];
+        }
+        
+    } else{
+        if([[UIApplication sharedApplication] canOpenURL:url]){
+            [[UIApplication sharedApplication] openURL:url];
+        }
+    }
+
+}
 @end

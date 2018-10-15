@@ -10,11 +10,16 @@
 
 @interface MainModel : NSObject
 
-@property(strong, nonatomic)NSString *origin;
-@property(strong, nonatomic)NSString *nick;
 @property(strong, nonatomic)NSString *avatar;
-@property(strong, nonatomic)NSString *city;
-@property(assign, nonatomic)long room_id;
+@property(strong, nonatomic)NSString *live_url;
+@property(strong, nonatomic)NSString *presenter_city;
+@property(strong, nonatomic)NSString *presenter_name;
+@property(assign, nonatomic)long live_id;
+@property(strong, nonatomic)NSString *cover_url;
+@property(strong, nonatomic)NSString *tags;
+@property(assign, nonatomic)long total_view;
+@property(assign, nonatomic)long presenter_distance;
+
 
 
 @end

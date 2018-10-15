@@ -8,6 +8,7 @@
 
 #import "LoginPage.h"
 #import "LoginView.h"
+#import "MainPage.h"
 
 @interface LoginPage ()<LoginDelegate>
 
@@ -59,22 +60,17 @@
 -(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [_mLoginView onLoginCallback];
-    if([respondModel.requestUrl isEqualToString:URL_GETVERIFYCODE]){
+    if([respondModel.requestUrl containsString:URL_GETVERIFYCODE]){
         NSString *phoneNum = data;
     }else if([respondModel.requestUrl isEqualToString:URL_LOGIN]){
-//        [MainPage show:self];
-    }else if([respondModel.requestUrl isEqualToString:URL_WX_LOGIN]){
-//        if([data isEqualToString:MSG_SUCCESS]){
-//            [MainPage show:self];
-//        }else{
-//            [BindPhonePage show:self wxToken:data];
-//        }
+        [MainPage show:self];
     }
 }
 
 -(void)onRequestFail:(NSString *)msg{
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [_mLoginView onLoginCallback];
+
 }
 
 

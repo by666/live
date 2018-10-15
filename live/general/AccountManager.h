@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "UserModel.h"
+
 @interface AccountManager : NSObject
 SINGLETON_DECLARATION(AccountManager)
 

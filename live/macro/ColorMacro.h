@@ -11,6 +11,13 @@
 
 #define c01 [STColorUtil colorWithHexString:@"#9632BE"]
 #define c02 [STColorUtil colorWithHexString:@"#DB3CAD"]
+//绿色（成功）
+#define c03 [STColorUtil colorWithHexString:@"#32CD32"]
+//红色（失败或者警告）
+#define c04 [STColorUtil colorWithHexString:@"#FF4040"]
+//灰色
+#define c05 [STColorUtil colorWithHexString:@"#EDEDED"]
+
 
 #define cwhite [STColorUtil colorWithHexString:@"#ffffff"]
 #define cblack [STColorUtil colorWithHexString:@"#000000"]

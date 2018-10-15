@@ -10,10 +10,10 @@
 #import "STTabBarView.h"
 #import "MainCell.h"
 
-@interface MainView()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface MainView()<UITableViewDelegate,UITableViewDataSource>
 
 @property(strong, nonatomic)MainViewModel *mViewModel;
-@property(strong, nonatomic)UICollectionView *collectionView;
+@property(strong, nonatomic)UITableView *tableView;
 
 
 @end
@@ -29,16 +29,15 @@
 }
 
 -(void)initView{
-    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-    [layout setScrollDirection:UICollectionViewScrollDirectionVertical];
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight)];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.showsHorizontalScrollIndicator = NO;
+    _tableView.showsVerticalScrollIndicator = NO;
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self addSubview:_tableView];
     
-    _collectionView = [[UICollectionView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ContentHeight) collectionViewLayout:layout];
-    _collectionView.delegate = self;
-    _collectionView.dataSource = self;
-    _collectionView.backgroundColor = c01;
-    [self addSubview:_collectionView];
-    
-    [_collectionView registerClass:[MainCell class] forCellWithReuseIdentifier:[MainCell identify]];
+   
     
     if(_mViewModel){
         [_mViewModel requestData];
@@ -47,48 +46,48 @@
 }
 
 
-- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return [_mViewModel.datas count];
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    MainCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:[MainCell identify] forIndexPath:indexPath];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 1;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return STHeight(4);
+}
+
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView *sectionView = [[UIView alloc]init];
+    sectionView.backgroundColor = c05;
+    return sectionView;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return STHeight(100) + ScreenWidth * 3 /4;
+}
+
+
+
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    MainCell *cell = [tableView dequeueReusableCellWithIdentifier:[MainCell identify]];
+    if(!cell){
+        cell = [[MainCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:[MainCell identify]];
+    }
     if(_mViewModel && !IS_NS_COLLECTION_EMPTY(_mViewModel.datas)){
-        MainModel *model = [_mViewModel.datas objectAtIndex:indexPath.row];
+        MainModel *model = [_mViewModel.datas objectAtIndex:indexPath.section];
         [cell setData:model];
     }
     return cell;
 }
 
-- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-    return 1;
-}
 
 
-- (CGSize)collectionView:(UICollectionView *)collectionView  layout:(nonnull UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(nonnull NSIndexPath *)indexPath{
-    CGFloat width = (ScreenWidth - STWidth(30))/2;
-    CGFloat height = width * 4 / 3;
-    return CGSizeMake(width, height  + STHeight(60));
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
-}
-
-- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section
-{
-    return 0;
-}
-
-
--(UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section{
-    return UIEdgeInsetsMake(STHeight(10) , STWidth(10), 0, STWidth(10));
-}
-
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(_mViewModel){
-        [_mViewModel goDetailPage: [_mViewModel.datas objectAtIndex:indexPath.row]];
+        [_mViewModel goDetailPage: [_mViewModel.datas objectAtIndex:indexPath.section]];
     }
     
 }
@@ -96,7 +95,7 @@
 
 
 -(void)updateView{
-    [_collectionView reloadData];
+    [_tableView reloadData];
 }
 
 

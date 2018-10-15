@@ -32,7 +32,7 @@ SINGLETON_IMPLEMENTION(AccountManager)
 
 -(Boolean)isLogin{
     UserModel *model = [self getUserModel];
-    if(model && !IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.userUid)){
+    if(model && !IS_NS_STRING_EMPTY(model.token) && !IS_NS_STRING_EMPTY(model.uid)){
         return YES;
     }
     return NO;

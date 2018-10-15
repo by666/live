@@ -10,8 +10,6 @@
 
 @interface MainPage : BaseViewController
 
-
-
-
++(void)show:(BaseViewController *)controller;
 
 @end

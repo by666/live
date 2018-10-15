@@ -11,6 +11,6 @@
 @interface STFileUtil : NSObject
 
 +(NSString *)saveImageFile:(NSString *)filePath image:(UIImage *)image;
-
++(NSString *)getJsonStr:(NSString *)filename;
 
 @end

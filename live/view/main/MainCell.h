@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "MainModel.h"
-@interface MainCell : UICollectionViewCell
+@interface MainCell : UITableViewCell
 
 -(void)setData:(MainModel *)model;
 +(NSString *)identify;

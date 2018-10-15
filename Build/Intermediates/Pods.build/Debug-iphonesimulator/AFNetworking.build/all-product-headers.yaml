@@ -1,0 +1,652 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "AFAutoPurgingImageCache.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/AFAutoPurgingImageCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFHTTPSessionManager.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFImageDownloader.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/AFImageDownloader.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworkActivityIndicatorManager.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/AFNetworkActivityIndicatorManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworkReachabilityManager.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworking-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework/Headers/AFNetworking-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworking-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/AFNetworking/AFNetworking-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFSecurityPolicy.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFURLRequestSerialization.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFURLResponseSerialization.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h"
+        },
+        {
+          'type': 'file',
+          'name': "AFURLSessionManager.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/AFNetworking/AFURLSessionManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIActivityIndicatorView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIButton+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIImage+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIImageView+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIKit+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIKit+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIProgressView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIProgressView+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIRefreshControl+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIWebView+AFNetworking.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/AFNetworking/UIKit+AFNetworking/UIWebView+AFNetworking.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/AFNetworking/AFNetworking.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/AFNetworking.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/FMDB/FMDB.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "FMDB-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/FMDB/FMDB.framework/Headers/FMDB-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDB-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/FMDB/FMDB-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDB.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/FMDB/src/fmdb/FMDB.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabase.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/FMDB/src/fmdb/FMDatabase.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabaseAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/FMDB/src/fmdb/FMDatabaseAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabasePool.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/FMDB/src/fmdb/FMDatabasePool.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMDatabaseQueue.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/FMDB/src/fmdb/FMDatabaseQueue.h"
+        },
+        {
+          'type': 'file',
+          'name': "FMResultSet.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/FMDB/src/fmdb/FMResultSet.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/FMDB/FMDB.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/FMDB.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MBProgressHUD-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Headers/MBProgressHUD-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBProgressHUD-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/MBProgressHUD/MBProgressHUD-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "MBProgressHUD.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MBProgressHUD/MBProgressHUD.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MBProgressHUD/MBProgressHUD.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/MBProgressHUD.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MJExtension/MJExtension.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MJExtension-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MJExtension/MJExtension.framework/Headers/MJExtension-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJExtension-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/MJExtension/MJExtension-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/MJExtension.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJExtensionConst.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/MJExtensionConst.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJFoundation.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/MJFoundation.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJProperty.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/MJProperty.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJPropertyKey.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/MJPropertyKey.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJPropertyType.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/MJPropertyType.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJClass.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/NSObject+MJClass.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJCoding.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/NSObject+MJCoding.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJKeyValue.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/NSObject+MJKeyValue.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSObject+MJProperty.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/NSObject+MJProperty.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSString+MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJExtension/MJExtension/NSString+MJExtension.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MJExtension/MJExtension.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/MJExtension.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MJRefresh-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework/Headers/MJRefresh-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefresh-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/MJRefresh/MJRefresh-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefresh.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/MJRefresh.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Base/MJRefreshAutoFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoGifFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoGifFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoNormalFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoNormalFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshAutoStateFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Footer/Auto/MJRefreshAutoStateFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Base/MJRefreshBackFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackGifFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackGifFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackNormalFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackNormalFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshBackStateFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Footer/Back/MJRefreshBackStateFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshComponent.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Base/MJRefreshComponent.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshConst.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/MJRefreshConst.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshFooter.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Base/MJRefreshFooter.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshGifHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshGifHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Base/MJRefreshHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshNormalHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshNormalHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "MJRefreshStateHeader.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/Custom/Header/MJRefreshStateHeader.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSBundle+MJRefresh.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/NSBundle+MJRefresh.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIScrollView+MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/UIScrollView+MJExtension.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIScrollView+MJRefresh.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/UIScrollView+MJRefresh.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+MJExtension.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/MJRefresh/MJRefresh/UIView+MJExtension.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/MJRefresh/MJRefresh.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/MJRefresh.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "MASCompositeConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASCompositeConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASConstraint+Private.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASConstraint+Private.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASConstraintMaker.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASConstraintMaker.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASLayoutConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASLayoutConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASUtilities.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASUtilities.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASViewAttribute.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASViewAttribute.h"
+        },
+        {
+          'type': 'file',
+          'name': "MASViewConstraint.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/MASViewConstraint.h"
+        },
+        {
+          'type': 'file',
+          'name': "Masonry-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework/Headers/Masonry-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "Masonry-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/Masonry/Masonry-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Masonry.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/Masonry.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+MASAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/NSArray+MASAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSArray+MASShorthandAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/NSArray+MASShorthandAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "NSLayoutConstraint+MASDebugAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/NSLayoutConstraint+MASDebugAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "View+MASAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/View+MASAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "View+MASShorthandAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/View+MASShorthandAdditions.h"
+        },
+        {
+          'type': 'file',
+          'name': "ViewController+MASAdditions.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Masonry/Masonry/ViewController+MASAdditions.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/Masonry/Masonry.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/Masonry.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/Pods_live.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "Pods-live-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/Pods-live/Pods-live-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "Pods_live-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/Pods_live.framework/Headers/Pods_live-Swift.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/Pods_live.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/Pods-live.build/module.modulemap"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "NSData+ImageContentType.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/NSData+ImageContentType.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDImageCache.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDImageCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImage-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework/Headers/SDWebImage-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImage-umbrella.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/Target Support Files/SDWebImage/SDWebImage-umbrella.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageCompat.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImageCompat.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDecoder.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImageDecoder.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloader.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImageDownloader.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageDownloaderOperation.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImageDownloaderOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageManager.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImageManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImageOperation.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImageOperation.h"
+        },
+        {
+          'type': 'file',
+          'name': "SDWebImagePrefetcher.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/SDWebImagePrefetcher.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIButton+WebCache.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/UIButton+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+GIF.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/UIImage+GIF.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImage+MultiFormat.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/UIImage+MultiFormat.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+HighlightedWebCache.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/UIImageView+HighlightedWebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIImageView+WebCache.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/UIImageView+WebCache.h"
+        },
+        {
+          'type': 'file',
+          'name': "UIView+WebCacheOperation.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Pods/SDWebImage/SDWebImage/UIView+WebCacheOperation.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphonesimulator/SDWebImage/SDWebImage.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/Pods.build/Debug-iphonesimulator/SDWebImage.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}

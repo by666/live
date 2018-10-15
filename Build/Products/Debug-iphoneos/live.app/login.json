@@ -1,0 +1,18 @@
+{
+    "code": 200,
+    "msg": "ok",
+    "data": {
+        "uid": "10000",
+        "token": "123123",
+        "phoneNum": "18680686420",
+        "money": 1000,
+        "free_count": 5,
+        "vipDays": 0,
+        "imageUrl": "http://s.e.baidu.com/sites/default/files/banner/homeBanner-qixi.jpg",
+        "downUrl": "http://www.baidu.com",
+        "activity_title": "限时优惠倒计时1天",
+        "activity_content": "充值99元额外赠送888钻石",
+        "activity_origin_price": 199,
+        "activity_price": 99
+    }
+}

@@ -49,7 +49,7 @@
 -(void)requestData{
     if(_delegate){
         [_delegate onRequestBegin];
-        NSString *url = [NSString stringWithFormat:@"%@?room_id=%ld&origin=%@",URL_LIVE_DETAIL,_mMainModel.room_id,_mMainModel.origin];
+        NSString *url = @"";
         WS(weakSelf)
         [STNetUtil get:url parameters:nil success:^(RespondModel *respondModel) {
             if(respondModel.code == CODE_SUCCESS){

@@ -11,7 +11,7 @@
 
 #pragma mark 定义三方库appid,appkey....
 
-#define UMENG_APPKEY @"5b1753a3b27b0a6bd40000af"
+#define UMENG_APPKEY @"5b9a297ff43e4859ba00001c"
 #define CHANNELCODE  @"00001"
 
 //test

@@ -20,6 +20,11 @@
 
 @implementation MainPage
 
++(void)show:(BaseViewController *)controller{
+    MainPage *page = [[MainPage alloc]init];
+    [controller pushPage:page];
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
@@ -29,7 +34,7 @@
         [MinePage show:weakSelf];
     }];
     
-    [[AdMobManager sharedAdMobManager] addBannerAd:self];
+//    [[AdMobManager sharedAdMobManager] addBannerAd:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated{ 
@@ -47,6 +52,7 @@
     viewModel.delegate = self;
 
     _mainView = [[MainView alloc]initWithViewModel:viewModel];
+    _mainView.backgroundColor = c05;
     _mainView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
     [self.view addSubview:_mainView];
 }
