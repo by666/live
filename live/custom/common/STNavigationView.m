@@ -9,13 +9,13 @@
 #import "STNavigationView.h"
 
 @interface STNavigationView()
-
-
-@property(strong,nonatomic)UILabel *titleLabel;
-@property(strong,nonatomic)UIButton *backBtn;
-@property(strong,nonatomic)UIButton *rightBtn;
-
-@end
+    
+    
+    @property(strong,nonatomic)UILabel *titleLabel;
+    @property(strong,nonatomic)UIButton *backBtn;
+    @property(strong,nonatomic)UIButton *rightBtn;
+    
+    @end
 
 @implementation STNavigationView{
     NSString *mTitle;
@@ -23,9 +23,10 @@
     NSString *mRightStr;
     UIColor *mRightColor;
     UIImage *mRightImage;
-
+    UIImage *mLeftImage;
+    
 }
-
+    
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack{
     if(self == [super init]){
         mTitle = title;
@@ -34,7 +35,7 @@
     }
     return self;
 }
-
+    
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr{
     if(self == [super init]){
         mTitle = title;
@@ -44,7 +45,7 @@
     }
     return self;
 }
-
+    
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr rightColor:(UIColor *)rightColor{
     if(self == [super init]){
         mTitle = title;
@@ -55,7 +56,7 @@
     }
     return self;
 }
-
+    
 -(instancetype)initWithRightImage:(NSString *)title needBack:(Boolean)needBack rightImage:(UIImage *)image{
     if(self == [super init]){
         mTitle = title;
@@ -65,20 +66,33 @@
     }
     return self;
 }
-
-
+    
+-(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack leftimage:(UIImage *)leftImage{
+    if(self == [super init]){
+        mTitle = title;
+        mNeedBack = needBack;
+        mLeftImage = leftImage;
+        [self initView];
+    }
+    return self;
+}
+    
 -(void)initView{
-    self.backgroundColor = c01;
+    self.backgroundColor = cwhite;
     self.frame = CGRectMake(0, StatuBarHeight, ScreenWidth, NavigationBarHeight);
     
-    _titleLabel = [[UILabel alloc]initWithFont:STFont(17) text:mTitle textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    _titleLabel = [[UILabel alloc]initWithFont:STFont(17) text:mTitle textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
+    [_titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:STFont(17)]];
     _titleLabel.frame = CGRectMake(0, 0, ScreenWidth, NavigationBarHeight);
     [self addSubview:_titleLabel];
     
-
+    
     if(mNeedBack){
         _backBtn = [[UIButton alloc]init];
-        UIImage *image = [UIImage imageNamed:@"ic_back"];
+        UIImage *image = [UIImage imageNamed:@"icon_fanhui"];
+        if(mLeftImage != nil){
+            image = mLeftImage;
+        }
         [_backBtn setImage:image forState:UIControlStateNormal];
         _backBtn.frame = CGRectMake(0, 0, STWidth(30) + image.size.width,NavigationBarHeight);
         [_backBtn addTarget:self action:@selector(OnBackBtnClick) forControlEvents:UIControlEventTouchUpInside];
@@ -95,14 +109,14 @@
         if(mRightColor == nil){
             mRightColor = c01;
         }
-
+        
         _rightBtn = [[UIButton alloc]initWithFont:STFont(14) text:mRightStr textColor:mRightColor backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
         _rightBtn.frame = CGRectMake(ScreenWidth - _rightBtn.titleLabel.contentSize.width - STWidth(20) , 0, _rightBtn.titleLabel.contentSize.width + STWidth(20), NavigationBarHeight);
         _rightBtn.titleLabel.textAlignment = NSTextAlignmentCenter;
         [_rightBtn addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_rightBtn];
         
-      
+        
     }
     
     if(mRightImage != nil){
@@ -112,26 +126,26 @@
         [_rightBtn addTarget:self action:@selector(onClickRightBtn) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:_rightBtn];
     }
-
-   
+    
+    
 }
-
-
+    
+    
 -(void)setTitle:(NSString *)title{
     _titleLabel.text = title;
 }
-
+    
 -(void)OnBackBtnClick{
     if(_delegate && [_delegate respondsToSelector:@selector(OnBackBtnClicked)]){
         [_delegate OnBackBtnClicked];
     }
 }
-
+    
 -(void)onClickRightBtn{
     if(_delegate && [_delegate respondsToSelector:@selector(onRightBtnClicked)]){
         [_delegate onRightBtnClicked];
     }
 }
-
-
-@end
+    
+    
+    @end

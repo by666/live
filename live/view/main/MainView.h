@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "MainViewModel.h"
+#import "HomeViewModel.h"
 
 @interface MainView : UIView
 
--(instancetype)initWithViewModel:(MainViewModel *)viewModel;
+-(instancetype)initWithViewModel:(HomeViewModel *)viewModel;
 -(void)updateView;
 
 @end

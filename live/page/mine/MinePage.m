@@ -14,6 +14,7 @@
 #import "AdMobManager.h"
 #import "STObserverManager.h"
 #import "STToastUtil.h"
+#import "WechatPayPage.h"
 
 @interface MinePage ()<MineViewDelegate,STObserverProtocol>
 
@@ -48,8 +49,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c01];
 }
 
 -(void)initView{
@@ -76,10 +75,11 @@
 }
 
 -(void)onOpenRewardAd{
-    Boolean success = [[AdMobManager sharedAdMobManager] showAd:self];
-    if(!success){
-        [STToastUtil showFailureAlertSheet:@"很抱歉，广告未加载完毕，请过一会再来赚取B币"];
-    }
+    [WechatPayPage show:self];
+//    Boolean success = [[AdMobManager sharedAdMobManager] showAd:self];
+//    if(!success){
+//        [STToastUtil showFailureAlertSheet:@"很抱歉，广告未加载完毕，请过一会再来赚取B币"];
+//    }
 }
 
 -(void)onReciveResult:(NSString *)key msg:(id)msg{

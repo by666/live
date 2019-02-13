@@ -9,25 +9,25 @@
 #import <UIKit/UIKit.h>
 
 @protocol STNavigationViewDelegate
-
+    
 -(void)OnBackBtnClicked;
 -(void)onRightBtnClicked;
-
-@end
+    
+    @end
 
 @interface STNavigationView : UIView
-
-@property(weak, nonatomic)id delegate;
-
+    
+    @property(weak, nonatomic)id delegate;
+    
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack;
-
+    
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr;
-
+    
 -(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack rightBtn:(NSString *)rightStr rightColor:(UIColor *)rightColor;
-
--(instancetype)initWithRightImage:(NSString *)title needBack:(Boolean)needBack rightImage:(UIImage *)image;
-
+    
+-(instancetype)initWithTitle:(NSString *)title needBack:(Boolean)needBack leftimage:(UIImage *)leftImage;
+    
 -(void)setTitle:(NSString *)title;
-
-
-@end
+    
+    
+    @end

@@ -7,21 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "MainModel.h"
 
 @protocol MainViewDelegate<BaseRequestDelegate>
 
--(void)onGoDetailPage:(MainModel *)mainModel;
 
 @end
 
 @interface MainViewModel : NSObject
 
 @property(weak, nonatomic)id<MainViewDelegate> delegate;
-@property(strong, nonatomic)NSMutableArray *datas;
-
--(instancetype)init;
--(void)requestData;
--(void)goDetailPage:(MainModel *)mainModel;
 
 @end

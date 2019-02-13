@@ -11,10 +11,9 @@
 #import "STToastUtil.h"
 #import "DetailPage.h"
 #import "MinePage.h"
+#import "STTabBarView.h"
 #import "AdMobManager.h"
-@interface MainPage ()<MainViewDelegate>
-
-@property(strong, nonatomic)MainView *mainView;
+@interface MainPage ()<STTabBarViewDelegate>
 
 @end
 
@@ -29,57 +28,26 @@
     [super viewDidLoad];
     self.view.backgroundColor = cwhite;
     [self initView];
-    WS(weakSelf)
-    [self showSTNavigationBar:MSG_MAIN_TITLE needback:NO rightImage:[UIImage imageNamed:@"ic_mine"] block:^{
-        [MinePage show:weakSelf];
-    }];
-    
-//    [[AdMobManager sharedAdMobManager] addBannerAd:self];
 }
 
 -(void)viewWillAppear:(BOOL)animated{ 
     [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c01];
 }
 
 
 
 
 -(void)initView{
+    NSArray *titles = @[MSG_HOME_TITLE,MSG_FOLLOW_TITLE,MSG_MSG_TITLE,MSG_MINE_TITLE];
+    STTabBarView *tabbarView = [[STTabBarView alloc]initWithTitles:titles centerBtn:YES];
+    tabbarView.delegate = self;
+    [self.view addSubview:tabbarView];
+}
+
+-(void)onTabBarSelected:(NSInteger)index{
     
-    MainViewModel *viewModel = [[MainViewModel alloc]init];
-    viewModel.delegate = self;
-
-    _mainView = [[MainView alloc]initWithViewModel:viewModel];
-    _mainView.backgroundColor = c05;
-    _mainView.frame = CGRectMake(0, StatuBarHeight + NavigationBarHeight, ScreenWidth, ContentHeight);
-    [self.view addSubview:_mainView];
 }
 
 
-
--(void)onRequestBegin{
-    WS(weakSelf)
-    dispatch_main_async_safe(^{
-        [MBProgressHUD showHUDAddedTo:weakSelf.view animated:YES];
-    })
-}
-
--(void)onRequestFail:(NSString *)msg{
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
-    [STToastUtil showFailureAlertSheet:msg];
-}
-
-
--(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
-    if(_mainView){
-        [_mainView updateView];
-    }
-}
-
--(void)onGoDetailPage:(MainModel *)mainModel{
-    [DetailPage show:mainModel controller:self];
-}
 
 @end

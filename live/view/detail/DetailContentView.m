@@ -42,7 +42,6 @@
     [self addSubview:_tableView];
 
     _bottomView = [[UIView alloc]initWithFrame:CGRectMake(0, tableHeight, ScreenWidth, STHeight(44))];
-    _bottomView.backgroundColor = c01;
     [self addSubview:_bottomView];
     
     [self buildBottomView];

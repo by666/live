@@ -27,7 +27,10 @@
 
 
 
-#define MSG_MAIN_TITLE @"小草Live"
+#define MSG_HOME_TITLE @"首页"
+#define MSG_FOLLOW_TITLE @"关注"
+#define MSG_MSG_TITLE @"消息"
+#define MSG_MINE_TITLE @"我的"
 
 #define MSG_DETAIL_CHAT @"聊天"
 #define MSG_DETAIL_GIFT @"礼物"
@@ -67,7 +70,7 @@
 #define MSG_VERIFYCODE_OUROFTIME @"验证码超时，请点击重发验证码"
 #define MSG_VERIFYCODE_MUTIPLE @"验证码发送次数过多，请过一会再试"
 #define MSG_LOGIN_PHONENUM_HINT @"请输入手机号"
-#define MSG_LOGIN_VERIFYCODE_HINT @"验证码"
+#define MSG_LOGIN_VERIFYCODE_HINT @"请输入验证码"
 #define MSG_LOGIN_BTN_LOGIN @"登录"
 #define MSG_LOGIN_THIRD_LOGIN @"第三方登录"
 #define MSG_OTHER_LOGIN @"其他登录方式"

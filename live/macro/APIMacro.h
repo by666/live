@@ -12,7 +12,7 @@
 
 #pragma mark 定义API相关
 
-#define RootUrl @"https://scrats.cn/live"
+#define RootUrl @"https://yuepaoapi.cn/live"
 
 
 

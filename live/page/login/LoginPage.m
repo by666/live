@@ -25,9 +25,7 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [STColorUtil setGradientColor:self.view startColor:c01 endColor:c02 director:Top];
-    
+    [super viewDidLoad];    
     [self initView];
 }
 
@@ -40,13 +38,12 @@
     
     _mLoginView = [[LoginView alloc]initWithViewModel:_mViewModel];
     _mLoginView.frame = CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+    _mLoginView.backgroundColor = cbg;
     [self.view addSubview:_mLoginView];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c01];
 }
 
 
@@ -61,7 +58,7 @@
     [MBProgressHUD hideHUDForView:self.view animated:YES];
     [_mLoginView onLoginCallback];
     if([respondModel.requestUrl containsString:URL_GETVERIFYCODE]){
-        NSString *phoneNum = data;
+        
     }else if([respondModel.requestUrl isEqualToString:URL_LOGIN]){
         [MainPage show:self];
     }

@@ -28,8 +28,6 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
-    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
-    [self setStatuBarBackgroud:c01];
 }
 
 -(void)initView{
@@ -38,5 +36,7 @@
     contentLabel.frame = CGRectMake(STWidth(15), StatuBarHeight + NavigationBarHeight + STHeight(30),ScreenWidth - STWidth(30), contentSize.height);
     [self.view addSubview:contentLabel];
 }
+
+
 
 @end

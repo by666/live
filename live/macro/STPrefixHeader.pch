@@ -41,7 +41,7 @@
 //比例宽高
 #define STWidth(width) ([STPUtil getActualWidth:width])
 #define STHeight(height) ([STPUtil getActualHeight:height])
-#define STFont(font) ([STPUtil getActualHeight:font])
+#define STFont(font) ([STPUtil getActualWidth:font])
 #define VideoHeight (ScreenWidth * 3 / 4)
 
 //获取当前屏幕的高度
@@ -69,6 +69,13 @@
 #define IS_IPHONE_678P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
 #define IS_IPHONE_X ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
 
+// 判断是否全面屏
+#define IS_FULL_SCREEN ((([[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0f) && ([[[[UIApplication sharedApplication] delegate] window] safeAreaInsets].bottom > 0.0))? YES : NO)
+
+// home指示器高度
+#define HomeIndicatorHeight (IS_FULL_SCREEN ? 34.f : 0.f)
+
+
 
 //重写NSLog,Debug模式下打印日志和当前行数
 #if DEBUG
@@ -80,7 +87,7 @@
 
 #define IS_NS_COLLECTION_EMPTY(collection) (collection == nil || [collection count] == 0)
 
-#define IS_NS_STRING_EMPTY(str) (str == nil || [str isEqualToString:@""])
+#define IS_NS_STRING_EMPTY(str) (((NSNull *)str == [NSNull null]) || str == nil || [str isEqualToString:@""] )
 
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self;
 
@@ -90,4 +97,3 @@
 
 
 #define TITLE_HEIGHT STHeight(30)
-#define CONTENT_HEIGHT STHeight(120)

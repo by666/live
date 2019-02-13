@@ -40,16 +40,16 @@
 
 -(void)initView{
     
-    UILabel *loginLabel = [[UILabel alloc]initWithFont:STFont(30) text:MSG_LOGINVIEW_TITLE textAlignment:NSTextAlignmentCenter textColor:cwhite backgroundColor:nil multiLine:NO];
+    UILabel *loginLabel = [[UILabel alloc]initWithFont:STFont(30) text:MSG_LOGINVIEW_TITLE textAlignment:NSTextAlignmentCenter textColor:c10 backgroundColor:nil multiLine:NO];
     loginLabel.frame = CGRectMake(0, STHeight(120), ScreenWidth, STHeight(30));
     [self addSubview:loginLabel];
     
-    _phoneNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cwhite backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
+    _phoneNumTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c10 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _phoneNumTF.frame =  CGRectMake(STWidth(47), STHeight(216), STWidth(280), STHeight(41));
     _phoneNumTF.keyboardType = UIKeyboardTypePhonePad;
     _phoneNumTF.text = [[AccountManager sharedAccountManager]getUserModel].phone;
     NSAttributedString *phoneNumStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_PHONENUM_HINT attributes:
-                                       @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
+                                       @{NSForegroundColorAttributeName:c11,
                                          NSFontAttributeName:_phoneNumTF.font
                                          }];
     [_phoneNumTF setMaxLength:@"11"];
@@ -58,24 +58,24 @@
     [self addSubview:_phoneNumTF];
     
     UIView *phoneLine = [[UIView alloc]init];
-    phoneLine.backgroundColor = cwhite;
+    phoneLine.backgroundColor = cline;
     phoneLine.frame = CGRectMake(STWidth(47), STHeight(257), STWidth(280), 0.5f);
     [self addSubview:phoneLine];
     
-    _verifyCodeTF = [[UITextField alloc]initWithFont:STFont(16) textColor:cwhite backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
+    _verifyCodeTF = [[UITextField alloc]initWithFont:STFont(16) textColor:c10 backgroundColor:nil corner:0 borderWidth:0 borderColor:nil padding:STWidth(2)];
     _verifyCodeTF.frame =  CGRectMake(STWidth(47), STHeight(273), STWidth(280), STHeight(41));
     _verifyCodeTF.keyboardType = UIKeyboardTypeNumberPad;
     NSAttributedString *verifyCodeStr = [[NSAttributedString alloc] initWithString:MSG_LOGIN_VERIFYCODE_HINT attributes:
-                                         @{NSForegroundColorAttributeName:[cwhite colorWithAlphaComponent:0.5f],
+                                         @{NSForegroundColorAttributeName:c11,
                                            NSFontAttributeName:_verifyCodeTF.font
                                            }];
-    [_verifyCodeTF setMaxLength:@"6"];
+    [_verifyCodeTF setMaxLength:@"8"];
     _verifyCodeTF.attributedPlaceholder = verifyCodeStr;
     [_verifyCodeTF addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
     [self addSubview:_verifyCodeTF];
     
     UIView *verifyLine = [[UIView alloc]init];
-    verifyLine.backgroundColor = cwhite;
+    verifyLine.backgroundColor = cline;
     verifyLine.frame = CGRectMake(STWidth(47), STHeight(317), STWidth(280), 0.5f);
     [self addSubview:verifyLine];
     
@@ -93,7 +93,7 @@
     
     
     
-    _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.loginModel.verifyStr textColor:cwhite backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
+    _sendVerifyCodeBtn =  [[UIButton alloc]initWithFont:STFont(14) text:_mViewModel.loginModel.verifyStr textColor:c10 backgroundColor:[UIColor clearColor] corner:0 borderWidth:0 borderColor:nil];
     if(IS_IPHONE_X){
         _sendVerifyCodeBtn.frame = CGRectMake(STWidth(232), STHeight(260), STWidth(100) , STHeight(56));
     }else{
@@ -133,7 +133,7 @@
     [self changeLoginBtnStatu];
     if(complete){
         [_sendVerifyCodeBtn setEnabled:YES];
-        [_sendVerifyCodeBtn setTitleColor:cwhite forState:UIControlStateNormal];
+        [_sendVerifyCodeBtn setTitleColor:c10 forState:UIControlStateNormal];
     }else{
         [_sendVerifyCodeBtn setEnabled:NO];
         [_sendVerifyCodeBtn setTitleColor:c01 forState:UIControlStateNormal];
@@ -159,11 +159,11 @@
 
 -(void)changeLoginBtnStatu{
     if(!IS_NS_STRING_EMPTY(_phoneNumTF.text) && !IS_NS_STRING_EMPTY(_verifyCodeTF.text)){
-        [_loginBtn setBackgroundColor:cwhite forState:UIControlStateNormal];
-        _loginBtn.enabled = YES;
-        [_loginBtn setTitleColor:c02 forState:UIControlStateNormal];
-    }else{
         [_loginBtn setBackgroundColor:c01 forState:UIControlStateNormal];
+        _loginBtn.enabled = YES;
+        [_loginBtn setTitleColor:cwhite forState:UIControlStateNormal];
+    }else{
+        [_loginBtn setBackgroundColor:c02 forState:UIControlStateNormal];
         _loginBtn.enabled = NO;
         [_loginBtn setTitleColor:[cwhite colorWithAlphaComponent:0.5f] forState:UIControlStateNormal];
     }

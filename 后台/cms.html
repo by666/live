@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小草小草小草，随波飘摇</title>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+</head>
+<body>
+
+<div id="app">
+
+    <el-button type="primary" @click="handleAdd()">添加直播</el-button>
+    <br><br>
+    <el-table
+            :data="lives"
+            stripe
+            style="width: 100%">
+        <el-table-column
+                prop="live_id"
+                label="ID">
+        </el-table-column>
+        <el-table-column
+                label="头像">
+            <template slot-scope="scope">
+                <img v-show="scope.row.avatar!=''" :src="scope.row.avatar" width="80" style="display: none"/>
+                <i v-show="scope.row.avatar==''" class="el-icon-loading" style="display: none"></i>
+            </template>
+        </el-table-column>
+        <el-table-column label="封面">
+            <template slot-scope="scope">
+                <img v-show="scope.row.cover_url!=''" :src="scope.row.cover_url" width="150" height="auto"
+                     style="display: none"/>
+            </template>
+        </el-table-column>
+        <el-table-column
+                prop="live_url"
+                label="直播地址">
+        </el-table-column>
+        <el-table-column
+                label="直播信息">
+            <template slot-scope="scope">
+                <p>{{scope.row.presenter_name}}</p>
+                <p>{{scope.row.presenter_city}}</p>
+                <p>{{scope.row.tags}}</p>
+            </template>
+        </el-table-column>
+        <el-table-column
+                label="操作">
+            <template slot-scope="scope">
+                <el-button
+                        size="mini"
+                        type="danger"
+                        @click="handleRemove(scope.row)">删除
+                </el-button>
+                <el-button
+                        size="mini"
+                        type="default"
+                        @click="handleUpdate(scope.row)">编辑
+                </el-button>
+            </template>
+        </el-table-column>
+    </el-table>
+
+    <el-dialog
+            :title="dialog.state=='update'?'更新直播信息':'添加直播'"
+            :visible.sync="dialog.visible"
+            width="80%">
+        <el-input v-show="dialog.state=='update'" v-model="dialog.data.live_id" :disabled="true" style="display: none">
+            <template slot="prepend">ID：</template>
+        </el-input>
+        <br><br>
+        <el-input v-model="dialog.data.presenter_name" placeholder="请输入昵称">
+            <template slot="prepend">昵称：</template>
+        </el-input>
+        <el-input v-model="dialog.data.presenter_city" placeholder="如：深圳">
+            <template slot="prepend">城市：</template>
+        </el-input>
+        <el-input v-model="dialog.data.tags" placeholder="请输入标签，多个标签，以英文逗号隔开 ,">
+            <template slot="prepend">标签：</template>
+        </el-input>
+        <br><br>
+        <el-input v-model="dialog.data.live_url" placeholder="https://xxx.com/live.m3u8">
+            <template slot="prepend">视频地址：</template>
+        </el-input>
+        <el-input v-model="dialog.data.avatar" placeholder="https://xxx.com/avatar.png">
+            <template slot="prepend">头像地址：</template>
+        </el-input>
+        <el-input v-model="dialog.data.cover_url" placeholder="https://xxx.com/avatar.png">
+            <template slot="prepend">封面地址：</template>
+        </el-input>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="dialog.visible = false">取 消</el-button>
+            <el-button type="primary" @click="handleExecute()">
+                <span v-show="dialog.state=='add'" style="display: none">添 加</span>
+                <span v-show="dialog.state=='update'" style="display: none">更 新</span>
+            </el-button>
+        </span>
+    </el-dialog>
+
+</div>
+
+<!-- import Vue before Element -->
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!-- import JavaScript -->
+<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<!--axios-->
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="application/javascript">
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                // host: 'http://localhost:8083',
+                host: 'https://scrats.cn/live',
+                lives: [],
+                dialog: {
+                    visible: false,
+                    state: 'add',
+                    data: {}
+                },
+            }
+        },
+        created: function () {
+            this.initData()
+        },
+        methods: {
+            // getUrlKey: function (name) {
+            //     return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.href) || [, ""])[1].replace(/\+/g, '%20')) || null;
+            // },
+            // tsToDateStr: function (ts, fmt) {
+            //     let date;
+            //     if (!ts) {
+            //         date = new Date()
+            //     } else {
+            //         if (ts <= 9999999999) {
+            //             ts *= 1000
+            //         }
+            //         date = new Date(ts)
+            //     }
+            //     if (!fmt) {
+            //         fmt = 'yyyy-MM-dd hh:mm:ss'
+            //     }
+            //     if (/(y+)/.test(fmt)) {
+            //         fmt = fmt.replace(RegExp.$1, (date.getFullYear() + '').substr(4 - RegExp.$1.length))
+            //     }
+            //     let o = {
+            //         'M+': date.getMonth() + 1,
+            //         'd+': date.getDate(),
+            //         'h+': date.getHours(),
+            //         'm+': date.getMinutes(),
+            //         's+': date.getSeconds()
+            //     };
+            //     for (let k in o) {
+            //         if (new RegExp(`(${k})`).test(fmt)) {
+            //             let str = o[k] + '';
+            //             fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? str : ('00' + str).substr(str.length))
+            //         }
+            //     }
+            //     return fmt
+            // },
+            initData: function () {
+                const that = this;
+                axios.get(`${this.host}/cors/lives`).then(res => {
+                    console.log(res);
+                    that.lives = res.data.data
+                })
+            },
+            handleAdd: function () {
+                this.dialog.state = 'add';
+                this.dialog.data = {};
+                this.dialog.visible = true;
+            },
+            handleUpdate: function (item) {
+                this.dialog.state = 'update';
+                this.dialog.data = item;
+                this.dialog.visible = true;
+            },
+            handleRemove: function (item) {
+                console.log(item);
+                if (!confirm(`兄弟，想清楚没？要删「${item.presenter_name}」吗？`)) {
+                    return;
+                }
+                const that = this;
+                axios.delete(`${this.host}/cors/live/${item.live_id}`).then(res => {
+                    console.log(res);
+                    if (res.data.code === 200) {
+                        that.initData();
+                    }
+                })
+            },
+            handleExecute: function () {
+                const that = this;
+                if (this.dialog.state === 'update') {
+                    axios.post(`${this.host}/cors/live/${this.dialog.data.live_id}`, this.dialog.data).then(res => {
+                        console.log(res);
+                        if (res.data.code === 200) {
+                            that.dialog.visible = false;
+                        } else {
+                            alert(res.data.msg);
+                        }
+                    });
+                    return;
+                }
+
+                if (this.dialog.state === 'add') {
+                    const {avatar, cover_url, live_url, presenter_name, presenter_city, tags} = this.dialog.data;
+                    if (!live_url || !presenter_name) {
+                        return alert('参数不正确');
+                    }
+                    axios.post(`${this.host}/cors/live`, this.dialog.data).then(res => {
+                        console.log(res);
+                        if (res.data.code === 200) {
+                            that.lives.unshift(res.data.data);
+                            that.dialog.visible = false;
+                        } else {
+                            alert(res.data.msg);
+                        }
+                    });
+                    return;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

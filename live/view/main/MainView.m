@@ -12,7 +12,7 @@
 
 @interface MainView()<UITableViewDelegate,UITableViewDataSource>
 
-@property(strong, nonatomic)MainViewModel *mViewModel;
+@property(strong, nonatomic)HomeViewModel *mViewModel;
 @property(strong, nonatomic)UITableView *tableView;
 
 
@@ -20,7 +20,7 @@
 
 @implementation MainView
 
--(instancetype)initWithViewModel:(MainViewModel *)viewModel {
+-(instancetype)initWithViewModel:(HomeViewModel *)viewModel {
     if(self == [super init]){
         _mViewModel = viewModel;
         [self initView];
@@ -39,9 +39,7 @@
     
    
     
-    if(_mViewModel){
-        [_mViewModel requestData];
-    }
+
     
 }
 
@@ -83,11 +81,10 @@
 }
 
 
-
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if(_mViewModel){
-        [_mViewModel goDetailPage: [_mViewModel.datas objectAtIndex:indexPath.section]];
+//        [_mViewModel goDetailPage: [_mViewModel.datas objectAtIndex:indexPath.section]];
     }
     
 }

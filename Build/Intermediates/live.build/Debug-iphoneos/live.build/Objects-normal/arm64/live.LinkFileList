@@ -1,11 +1,12 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STFileUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STObserverManager.o
-/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ViewController.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/HomeViewModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UserModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ChatModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STResultView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MainView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UILabel+Init.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/WechatPayPage.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STAlertSheet.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UIButton+Init.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/TitleContentModel.o
@@ -20,6 +21,7 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ChatViewCell.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/main.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UIImage+FixOrientation.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/HomePage.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MineViewModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STEdgeLabel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/DetailViewModel.o
@@ -70,5 +72,6 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/LoginView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MinePage.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/DetailModel.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/HomeView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STTimeUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STSwitchView.o

@@ -9,6 +9,7 @@
 #import "MineView.h"
 #import "MineViewCell.h"
 #import "STUserDefaults.h"
+#import "STNetUtil.h"
 
 @interface MineView()<UITableViewDelegate,UITableViewDataSource>
 
@@ -101,6 +102,7 @@
         NSInteger row = indexPath.row;
         switch (row) {
             case 0:
+//                [self doWechatPay];
                 [_mViewModel openRewardAd];
                 break;
             case 1:
@@ -122,4 +124,19 @@
     [_tableView reloadData];
 }
 
+
+-(void)doWechatPay{
+//    NSURL *url = [NSURL URLWithString:@"https://yinqiantong.com/experience/order/create?platform=h5&channel=wx"];
+//    NSURLRequest *request =[NSURLRequest requestWithURL:url];
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    NSURLSessionDataTask *sessionDataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        if(data){
+//            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:(NSJSONReadingMutableLeaves) error:nil];
+//            NSString *payUrl = [dict objectForKey:@"pay_body"];
+//            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:payUrl] options:@{} completionHandler:nil];
+//        }
+//    }];
+//    [sessionDataTask resume];
+
+}
 @end

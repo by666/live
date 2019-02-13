@@ -10,7 +10,7 @@
 #import <AFNetworking/AFNetworking.h>
 #import "RespondModel.h"
 #import <MJExtension/MJExtension.h>
-//#import "AccountManager.h"
+#import "AccountManager.h"
 #import "STConvertUtil.h"
 #import "STObserverManager.h"
 #import "STUserDefaults.h"
@@ -31,7 +31,13 @@
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     //header
+    UserModel *userModel =  [[AccountManager sharedAccountManager]getUserModel];
     [manager.requestSerializer setValue:APPID forHTTPHeaderField:@"appid"];
+    if(!IS_NS_STRING_EMPTY(userModel.uid) && !IS_NS_STRING_EMPTY(userModel.token)){
+        [manager.requestSerializer setValue:userModel.uid forHTTPHeaderField:@"uid"];
+        [manager.requestSerializer setValue:userModel.token forHTTPHeaderField:@"token"];
+    }
+
 
     //content-type
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json",@"text/json",@"text/xml",@"text/html", nil ];
@@ -57,7 +63,13 @@
     [manager.requestSerializer didChangeValueForKey:@"timeoutInterval"];
     
     //header
+    UserModel *userModel =  [[AccountManager sharedAccountManager]getUserModel];
     [manager.requestSerializer setValue:APPID forHTTPHeaderField:@"appid"];
+    if(!IS_NS_STRING_EMPTY(userModel.uid) && !IS_NS_STRING_EMPTY(userModel.token)){
+        [manager.requestSerializer setValue:userModel.uid forHTTPHeaderField:@"uid"];
+        [manager.requestSerializer setValue:userModel.token forHTTPHeaderField:@"token"];
+    }
+
 
     
     //content-type
@@ -86,7 +98,12 @@
     
     //header
     NSMutableURLRequest *request = [[AFJSONRequestSerializer serializer] requestWithMethod:@"POST" URLString:url parameters:nil error:nil];
+    UserModel *userModel =  [[AccountManager sharedAccountManager]getUserModel];
     [manager.requestSerializer setValue:APPID forHTTPHeaderField:@"appid"];
+    if(!IS_NS_STRING_EMPTY(userModel.uid) && !IS_NS_STRING_EMPTY(userModel.token)){
+        [manager.requestSerializer setValue:userModel.uid forHTTPHeaderField:@"uid"];
+        [manager.requestSerializer setValue:userModel.token forHTTPHeaderField:@"token"];
+    }
 
     
     //content-type

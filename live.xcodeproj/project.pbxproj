@@ -33,7 +33,6 @@
 		0038F19620CE298600094EB9 /* RespondModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F18B20CE298500094EB9 /* RespondModel.m */; };
 		0038F1AA20CE29AC00094EB9 /* MainViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0038F1A620CE29AC00094EB9 /* MainViewModel.m */; };
 		003EDB2520C5360E00CFCFE9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB2420C5360E00CFCFE9 /* AppDelegate.m */; };
-		003EDB2820C5360E00CFCFE9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB2720C5360E00CFCFE9 /* ViewController.m */; };
 		003EDB2D20C5361700CFCFE9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 003EDB2C20C5361700CFCFE9 /* Assets.xcassets */; };
 		003EDB3320C5361700CFCFE9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB3220C5361700CFCFE9 /* main.m */; };
 		003EDBBA20C551AF00CFCFE9 /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 003EDB3B20C551AF00CFCFE9 /* BaseViewController.m */; };
@@ -80,6 +79,7 @@
 		00AD85A220F0A466001D272C /* GiftViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 00AD85A120F0A466001D272C /* GiftViewCell.m */; };
 		83707B895F078A657C64F156 /* Pods_live.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE5F5B46D5EA21EF0AD8E05 /* Pods_live.framework */; };
 		CF43E41520CDA3230069AAFA /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF43E41420CDA3230069AAFA /* Launch Screen.storyboard */; };
+		CF4B4E802174E58800636310 /* WechatPayPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF4B4E7F2174E58800636310 /* WechatPayPage.m */; };
 		CF8C5F5F20DEA8D1001348A2 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F5E20DEA8D1001348A2 /* AudioToolbox.framework */; };
 		CF8C5F6120DEA8D5001348A2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F6020DEA8D5001348A2 /* AVFoundation.framework */; };
 		CF8C5F6320DEA8DA001348A2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8C5F6220DEA8DA001348A2 /* CoreGraphics.framework */; };
@@ -97,7 +97,9 @@
 		CF8C5FA420E8B076001348A2 /* MinePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA320E8B076001348A2 /* MinePage.m */; };
 		CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */; };
 		CF8C5FAC20E8B17A001348A2 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FAB20E8B17A001348A2 /* MineView.m */; };
-		CF8E686A213D94ED00C2D214 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF8E6863213D94DC00C2D214 /* IJKMediaFramework.framework */; };
+		CFB6E1622213E96E005BA40A /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6E1612213E96E005BA40A /* HomePage.m */; };
+		CFB6E1662213E9B8005BA40A /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6E1652213E9B8005BA40A /* HomeView.m */; };
+		CFB6E16A2213E9D9005BA40A /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6E1692213E9D9005BA40A /* HomeViewModel.m */; };
 		CFEA38C5216B06F300FAE786 /* AppInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEA38C4216B06F300FAE786 /* AppInfoModel.m */; };
 		CFEA38CA216B2B1800FAE786 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = CFEA38C9216B2B1800FAE786 /* login.json */; };
 		CFF73B0C20E8CC5400091033 /* MineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B0B20E8CC5400091033 /* MineViewCell.m */; };
@@ -109,30 +111,6 @@
 		CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B2120E8D97400091033 /* AdMobModel.m */; };
 		CFF73B2620EBEAA300091033 /* agreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFF73B2520EBEAA200091033 /* agreement.txt */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CF8E6862213D94DC00C2D214 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E654EA8A1B6B27E600B0F2D0;
-			remoteInfo = IJKMediaFramework;
-		};
-		CF8E6864213D94DC00C2D214 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 5450B0431E63EA4300568494;
-			remoteInfo = IJKMediaFrameworkWithSSL;
-		};
-		CF8E6866213D94DC00C2D214 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = E654EA941B6B27E600B0F2D0;
-			remoteInfo = IJKMediaFrameworkTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		001965EA20DCEE4100776E46 /* MainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
@@ -189,8 +167,6 @@
 		003EDB2020C5360E00CFCFE9 /* live.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = live.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		003EDB2320C5360E00CFCFE9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		003EDB2420C5360E00CFCFE9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		003EDB2620C5360E00CFCFE9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		003EDB2720C5360E00CFCFE9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		003EDB2C20C5361700CFCFE9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		003EDB3120C5361700CFCFE9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		003EDB3220C5361700CFCFE9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -282,6 +258,8 @@
 		0BE5F5B46D5EA21EF0AD8E05 /* Pods_live.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_live.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		80B663E8DAD9BB96CBB69816 /* Pods-live.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-live.debug.xcconfig"; path = "Pods/Target Support Files/Pods-live/Pods-live.debug.xcconfig"; sourceTree = "<group>"; };
 		CF43E41420CDA3230069AAFA /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		CF4B4E7E2174E58800636310 /* WechatPayPage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WechatPayPage.h; sourceTree = "<group>"; };
+		CF4B4E7F2174E58800636310 /* WechatPayPage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WechatPayPage.m; sourceTree = "<group>"; };
 		CF8C5F5E20DEA8D1001348A2 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		CF8C5F6020DEA8D5001348A2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		CF8C5F6220DEA8DA001348A2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -306,7 +284,12 @@
 		CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewModel.m; sourceTree = "<group>"; };
 		CF8C5FAA20E8B17A001348A2 /* MineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
 		CF8C5FAB20E8B17A001348A2 /* MineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
-		CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		CFB6E1602213E96E005BA40A /* HomePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
+		CFB6E1612213E96E005BA40A /* HomePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
+		CFB6E1642213E9B8005BA40A /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
+		CFB6E1652213E9B8005BA40A /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
+		CFB6E1682213E9D9005BA40A /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
+		CFB6E1692213E9D9005BA40A /* HomeViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewModel.m; sourceTree = "<group>"; };
 		CFEA38C3216B06F300FAE786 /* AppInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfoModel.h; sourceTree = "<group>"; };
 		CFEA38C4216B06F300FAE786 /* AppInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInfoModel.m; sourceTree = "<group>"; };
 		CFEA38C9216B2B1800FAE786 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
@@ -333,7 +316,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CF8E686A213D94ED00C2D214 /* IJKMediaFramework.framework in Frameworks */,
 				CF8C5F6F20DEA905001348A2 /* VideoToolbox.framework in Frameworks */,
 				003EDC0420C5536600CFCFE9 /* QuartzCore.framework in Frameworks */,
 				CF8C5F6D20DEA8FA001348A2 /* OpenGLES.framework in Frameworks */,
@@ -443,7 +425,6 @@
 		003EDB1720C5360E00CFCFE9 = {
 			isa = PBXGroup;
 			children = (
-				CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */,
 				003EDB2220C5360E00CFCFE9 /* live */,
 				003EDB2120C5360E00CFCFE9 /* Products */,
 				52501F195B1D0B07030819A2 /* Pods */,
@@ -475,8 +456,6 @@
 				003EDB3E20C551AF00CFCFE9 /* macro */,
 				003EDB2320C5360E00CFCFE9 /* AppDelegate.h */,
 				003EDB2420C5360E00CFCFE9 /* AppDelegate.m */,
-				003EDB2620C5360E00CFCFE9 /* ViewController.h */,
-				003EDB2720C5360E00CFCFE9 /* ViewController.m */,
 				003EDB2C20C5361700CFCFE9 /* Assets.xcassets */,
 				003EDB3120C5361700CFCFE9 /* Info.plist */,
 				CFF73B2520EBEAA200091033 /* agreement.txt */,
@@ -698,6 +677,7 @@
 		003EDBED20C5523E00CFCFE9 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				CFB6E1632213E9AC005BA40A /* home */,
 				002E2381212D40B100E8B93D /* login */,
 				CF8C5FA520E8B0BF001348A2 /* mine */,
 				CF8C5F7520DEAB2C001348A2 /* detail */,
@@ -732,10 +712,13 @@
 		003EDBEF20C5524500CFCFE9 /* page */ = {
 			isa = PBXGroup;
 			children = (
+				CFB6E15F2213E95F005BA40A /* home */,
 				002E2385212D40C900E8B93D /* login */,
 				CF8C5F9F20E8B06A001348A2 /* mine */,
 				CF8C5F7120DEA996001348A2 /* detail */,
 				0038F18020CE295C00094EB9 /* main */,
+				CF4B4E7E2174E58800636310 /* WechatPayPage.h */,
+				CF4B4E7F2174E58800636310 /* WechatPayPage.m */,
 			);
 			path = page;
 			sourceTree = "<group>";
@@ -743,6 +726,7 @@
 		003EDBF020C5524B00CFCFE9 /* viewmodel */ = {
 			isa = PBXGroup;
 			children = (
+				CFB6E1672213E9CE005BA40A /* home */,
 				002E2389212D40DB00E8B93D /* login */,
 				CF8C5FA620E8B0C4001348A2 /* mine */,
 				CF8C5F7920DEAB55001348A2 /* detail */,
@@ -867,14 +851,31 @@
 			path = mine;
 			sourceTree = "<group>";
 		};
-		CF8E685D213D94DC00C2D214 /* Products */ = {
+		CFB6E15F2213E95F005BA40A /* home */ = {
 			isa = PBXGroup;
 			children = (
-				CF8E6863213D94DC00C2D214 /* IJKMediaFramework.framework */,
-				CF8E6865213D94DC00C2D214 /* IJKMediaFrameworkWithSSL.framework */,
-				CF8E6867213D94DC00C2D214 /* IJKMediaFrameworkTests.xctest */,
+				CFB6E1602213E96E005BA40A /* HomePage.h */,
+				CFB6E1612213E96E005BA40A /* HomePage.m */,
 			);
-			name = Products;
+			path = home;
+			sourceTree = "<group>";
+		};
+		CFB6E1632213E9AC005BA40A /* home */ = {
+			isa = PBXGroup;
+			children = (
+				CFB6E1642213E9B8005BA40A /* HomeView.h */,
+				CFB6E1652213E9B8005BA40A /* HomeView.m */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		CFB6E1672213E9CE005BA40A /* home */ = {
+			isa = PBXGroup;
+			children = (
+				CFB6E1682213E9D9005BA40A /* HomeViewModel.h */,
+				CFB6E1692213E9D9005BA40A /* HomeViewModel.m */,
+			);
+			path = home;
 			sourceTree = "<group>";
 		};
 		CFEA38CB216B2B4D00FAE786 /* json */ = {
@@ -957,42 +958,12 @@
 			mainGroup = 003EDB1720C5360E00CFCFE9;
 			productRefGroup = 003EDB2120C5360E00CFCFE9 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = CF8E685D213D94DC00C2D214 /* Products */;
-					ProjectRef = CF8E685C213D94DC00C2D214 /* IJKMediaPlayer.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				003EDB1F20C5360E00CFCFE9 /* live */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		CF8E6863213D94DC00C2D214 /* IJKMediaFramework.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = IJKMediaFramework.framework;
-			remoteRef = CF8E6862213D94DC00C2D214 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CF8E6865213D94DC00C2D214 /* IJKMediaFrameworkWithSSL.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = IJKMediaFrameworkWithSSL.framework;
-			remoteRef = CF8E6864213D94DC00C2D214 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		CF8E6867213D94DC00C2D214 /* IJKMediaFrameworkTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = IJKMediaFrameworkTests.xctest;
-			remoteRef = CF8E6866213D94DC00C2D214 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		003EDB1E20C5360E00CFCFE9 /* Resources */ = {
@@ -1066,12 +1037,13 @@
 			files = (
 				003EDBC120C551AF00CFCFE9 /* STFileUtil.m in Sources */,
 				003EDBBF20C551AF00CFCFE9 /* STObserverManager.m in Sources */,
-				003EDB2820C5360E00CFCFE9 /* ViewController.m in Sources */,
+				CFB6E16A2213E9D9005BA40A /* HomeViewModel.m in Sources */,
 				002E23B3212D464B00E8B93D /* UserModel.m in Sources */,
 				0055784B20E24633003B8DB6 /* ChatModel.m in Sources */,
 				003EDBE820C551AF00CFCFE9 /* STResultView.m in Sources */,
 				0038F17C20CE294800094EB9 /* MainView.m in Sources */,
 				002E23AB212D45BA00E8B93D /* UILabel+Init.m in Sources */,
+				CF4B4E802174E58800636310 /* WechatPayPage.m in Sources */,
 				001965F820DCF91D00776E46 /* STAlertSheet.m in Sources */,
 				002E23AA212D45BA00E8B93D /* UIButton+Init.m in Sources */,
 				CFF73B1220E8CCB600091033 /* TitleContentModel.m in Sources */,
@@ -1086,6 +1058,7 @@
 				00AD859920EF6B95001D272C /* ChatViewCell.m in Sources */,
 				003EDB3320C5361700CFCFE9 /* main.m in Sources */,
 				002E23A6212D45BA00E8B93D /* UIImage+FixOrientation.m in Sources */,
+				CFB6E1622213E96E005BA40A /* HomePage.m in Sources */,
 				CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */,
 				003EDBE420C551AF00CFCFE9 /* STEdgeLabel.m in Sources */,
 				CF8C5F7C20DEAB5E001348A2 /* DetailViewModel.m in Sources */,
@@ -1136,6 +1109,7 @@
 				002E2384212D40C500E8B93D /* LoginView.m in Sources */,
 				CF8C5FA420E8B076001348A2 /* MinePage.m in Sources */,
 				CF8C5F7F20DEAED8001348A2 /* DetailModel.m in Sources */,
+				CFB6E1662213E9B8005BA40A /* HomeView.m in Sources */,
 				003EDBC820C551AF00CFCFE9 /* STTimeUtil.m in Sources */,
 				003EDBEA20C551AF00CFCFE9 /* STSwitchView.m in Sources */,
 			);
@@ -1281,6 +1255,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_SWIFT_SYMBOLS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};
@@ -1313,6 +1288,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				STRIP_SWIFT_SYMBOLS = YES;
 				TARGETED_DEVICE_FAMILY = 1;
 				VALID_ARCHS = "arm64 armv7s armv7";
 			};

@@ -7,38 +7,11 @@
 //
 
 #import "MainViewModel.h"
-#import "STNetUtil.h"
 
 @implementation MainViewModel
 
--(instancetype)init{
-    if(self == [super init]){
-        _datas = [[NSMutableArray alloc]init];
-    }
-    return self;
-}
 
 
--(void)requestData{
-    if(_delegate){
-        [_delegate onRequestBegin];
-        
-        WS(weakSelf)
-        [STNetUtil get:URL_LIVE_LIST parameters:nil success:^(RespondModel *respondModel) {
-            weakSelf.datas = [MainModel mj_objectArrayWithKeyValuesArray:respondModel.data];
-            [weakSelf.delegate onRequestSuccess:respondModel data:weakSelf.datas];
-        } failure:^(int errorCode) {
-            [weakSelf.delegate onRequestFail:[NSString stringWithFormat:MSG_ERROR,errorCode]];
-        }];
-    }
-}
-
-
--(void)goDetailPage:(MainModel *)mainModel{
-    if(_delegate){
-        [_delegate onGoDetailPage:mainModel];
-    }
-}
 
 
 @end

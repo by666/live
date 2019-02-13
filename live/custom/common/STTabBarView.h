@@ -1,18 +1,15 @@
 #import <UIKit/UIKit.h>
 
-typedef void (^IndexBlock)(NSString *title,NSInteger index);
+
+@protocol STTabBarViewDelegate <NSObject>
+
+-(void)onTabBarSelected:(NSInteger)index;
+
+@end
 
 @interface STTabBarView : UIView
 
-@property (nonatomic, strong) UIColor    *lineColor;
-@property (nonatomic, assign) CGFloat    lineHeight;
-@property (nonatomic, assign) CGFloat    lineCornerRadius;
-@property (nonatomic, copy  ) IndexBlock indexBlock;
-
-
--(instancetype)initWithTitles:(NSArray *)titles;
--(void)setData:(UIColor *)normal_color SelectColor:(UIColor *)select_color Font:(UIFont *)font;
--(void)getViewIndex:(IndexBlock)block;
--(void)setViewIndex:(NSInteger)index;
+@property(weak, nonatomic)id<STTabBarViewDelegate> delegate;
+-(instancetype)initWithTitles:(NSArray *)titles centerBtn:(Boolean)hidden;
 
 @end

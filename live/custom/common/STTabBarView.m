@@ -2,115 +2,102 @@
 
 @interface STTabBarView()
 
-@property (nonatomic, strong) NSArray *mTitles;
-@property (nonatomic, strong) UIView *lineView;
-@property (nonatomic, strong) UIButton *selectedBtn;
+@property (strong,nonatomic)NSArray *mTitles;
+@property (assign,nonatomic)Boolean mCenterHidden;
+@property (strong,nonatomic)UIButton *addBtn;
+@property (strong,nonatomic)UIView *lineView;
 
 @end
 
-@implementation STTabBarView
+@implementation STTabBarView{
+    CGFloat TabBarHeight;
+    UIButton *selectBtn;
+}
 
-
-
-- (instancetype)initWithTitles:(NSArray *)titles
-{
-    self = [super init];
-    if (self) {
+- (instancetype)initWithTitles:(NSArray *)titles centerBtn:(Boolean)hidden{
+    if (self == [super init]) {
         _mTitles = titles;
-        self.frame = CGRectMake(0, ScreenWidth * 3 / 4, ScreenWidth, STHeight(44));
-        self.backgroundColor = [UIColor whiteColor];
+        _mCenterHidden = hidden;
+        [self initView];
     }
     return self;
 }
 
+-(void)initView{
+    [self initContentView];
+    [self initTitlesView];
+}
 
-- (void)setData:(UIColor *)normal_color SelectColor:(UIColor *)select_color Font:(UIFont *)font{
-    
-    CGFloat width = ScreenWidth / _mTitles.count;
-    
-    for (int i=0; i<_mTitles.count; i++) {
-        UIButton *item = [UIButton buttonWithType:UIButtonTypeCustom];
-        item.frame = CGRectMake(i * width, 0, width, STHeight(44));
-        [item setTitle:_mTitles[i] forState:UIControlStateNormal];
-        [item setTitleColor:normal_color forState:UIControlStateNormal];
-        [item setTitleColor:select_color forState:UIControlStateSelected];
-        item.titleLabel.font = font;
-        item.tag = i + 10;
-        [item addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:item];
-        
-        if (i == 0) {
-            
-            item.selected = YES;
-            self.selectedBtn = item;
-            self.lineView = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetHeight(self.frame) - 3, width, 3)];
-            self.lineView.layer.cornerRadius = 3.0;
-            self.lineView.backgroundColor = cline;
-            self.lineView.layer.masksToBounds = YES;
-            [self addSubview:self.lineView];
+-(void)initContentView{
+    CGFloat homeHeight = 0;
+    if (@available(iOS 11.0, *)) {
+        homeHeight = HomeIndicatorHeight;
+    } else {
+        homeHeight = 0;
+    }
+    TabBarHeight = STHeight(44) + homeHeight;
+    self.frame = CGRectMake(0, ScreenHeight - TabBarHeight, ScreenWidth, TabBarHeight);
+    self.backgroundColor = c15;
+}
+
+-(void)initTitlesView{
+    NSInteger count = [_mTitles count];
+    CGFloat perWidth = ScreenWidth / 5;
+    for(int i = 0; i< count ; i ++){
+        UIButton *labelBtn = [[UIButton alloc]initWithFont:STFont(14) text:_mTitles[i] textColor:cwhite backgroundColor:nil corner:0 borderWidth:0 borderColor:nil];
+        labelBtn.tag = i;
+        [labelBtn addTarget:self action:@selector(onLabelBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+        if(i == 0){
+            selectBtn = labelBtn;
+            [labelBtn setTitleColor:cwhite forState:UIControlStateNormal];
+            [labelBtn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:STFont(16)]];
+        }else{
+            [labelBtn setTitleColor:c03 forState:UIControlStateNormal];
+            [labelBtn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:STFont(14)]];
         }
+        if(i > 1){
+            labelBtn.frame = CGRectMake(perWidth * (i+1), 0, perWidth, STHeight(44));
+        }else{
+            labelBtn.frame = CGRectMake(perWidth * i, 0, perWidth, STHeight(44));
+        }
+        [self addSubview:labelBtn];
     }
     
-}
-
-- (void)clickItem:(UIButton *)button{
+    _lineView = [[UIView alloc]initWithFrame:CGRectMake(perWidth/4, STHeight(44)-LineHeight*2, perWidth/2, LineHeight*2)];
+    _lineView.backgroundColor = cwhite;
+    [self addSubview:_lineView];
     
-    [self setAnimation:button.tag-10];
-    
-    if (self.indexBlock != nil) {
-        self.indexBlock(_mTitles[button.tag-10],button.tag-10);
-    }
+    _addBtn = [[UIButton alloc]init];
+    [_addBtn setImage:[UIImage imageNamed:@"live"] forState:UIControlStateNormal];
+    _addBtn.frame = CGRectMake(perWidth*2 + (perWidth - STHeight(40))/2 ,0, STHeight(40), STHeight(40));
+    [_addBtn addTarget:self action:@selector(onAddBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self addSubview:_addBtn];
+
 }
 
-
-- (void)setLineColor:(UIColor *)lineColor{
-    self.lineView.backgroundColor = lineColor;
-}
-
-- (void)setLineHeight:(CGFloat)lineHeight{
-    CGRect frame = self.lineView.frame;
-    frame.size.height = lineHeight;
-    frame.origin.y = CGRectGetHeight(self.frame) - lineHeight;
-    self.lineView.frame = frame;
-}
-
-- (void)setLineCornerRadius:(CGFloat)lineCornerRadius{
-    self.lineView.layer.cornerRadius = lineCornerRadius;
-}
-
-
-- (void)getViewIndex:(IndexBlock)block{
-    self.indexBlock = block;
-}
-
-
-- (void)setViewIndex:(NSInteger)index{
-    if (index < 0) {
-        index = 0;
-    }
-    
-    if (index > _mTitles.count - 1) {
-        index = _mTitles.count - 1;
-    }
-    
-    [self setAnimation:index];
-}
-
-
-- (void)setAnimation:(NSInteger)index{
-    
-    UIButton *tempBtn = (UIButton *)[self viewWithTag:index+10];
-    self.selectedBtn.selected = NO;
-    tempBtn.selected = YES;
-    self.selectedBtn = tempBtn;
-    
-    CGFloat x = index * (ScreenWidth / _mTitles.count);
-    [UIView animateWithDuration:0.3 animations:^{
-        CGRect frame = self.lineView.frame;
-        frame.origin.x = x;
-        self.lineView.frame = frame;
+-(void)onLabelBtnClicked:(id)sender{
+    CGFloat perWidth = ScreenWidth / 5;
+    UIButton *btn = ((UIButton *)sender);
+    NSInteger tag = btn.tag;
+    WS(weakSelf)
+    [UIView animateWithDuration:0.3f animations:^{
+        [btn setTitleColor:cwhite forState:UIControlStateNormal];
+        [btn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:STFont(16)]];
+        [self->selectBtn setTitleColor:c03 forState:UIControlStateNormal];
+        [self->selectBtn.titleLabel setFont:[UIFont fontWithName:@"PingFangSC-Medium" size:STFont(14)]];
+        self->selectBtn = btn;
+        if(tag > 1){
+            weakSelf.lineView.frame = CGRectMake((tag+1) *perWidth + perWidth/4, STHeight(44)-LineHeight*2, perWidth/2, LineHeight*2);
+        }else{
+            weakSelf.lineView.frame = CGRectMake(tag *perWidth + perWidth/4, STHeight(44)-LineHeight*2, perWidth/2, LineHeight*2);
+        }
     }];
 }
+
+-(void)onAddBtnClick{
+    
+}
+
 
 
 @end

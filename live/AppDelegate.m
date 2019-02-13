@@ -31,11 +31,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
     id controller;
-    if([[AccountManager sharedAccountManager] isLogin]){
+//    if([[AccountManager sharedAccountManager] isLogin]){
         controller = [[MainPage alloc]init];
-    }else{
-        controller = [[LoginPage alloc]init];
-    }
+//    }else{
+//        controller = [[LoginPage alloc]init];
+//    }
     UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:controller];
     self.window.rootViewController = navigationController;
     [self.window makeKeyAndVisible];
@@ -84,6 +84,7 @@
 }
 
 -(void)initNet{
+    
     NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
     [NSURLCache setSharedURLCache:URLCache];
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];

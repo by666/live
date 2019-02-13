@@ -90,6 +90,13 @@
         dic[@"phone"] = phoneNum;
         dic[@"sms_code"] = verifyCode;
         NSString *jsonStr = [dic mj_JSONString];
+        
+        //测试
+        RespondModel *repondModel = [[RespondModel alloc]init];
+        repondModel.requestUrl = URL_LOGIN;
+        [_delegate onRequestSuccess:repondModel data:nil];
+        return;
+        //测试
         WS(weakSelf)
         [STNetUtil post:URL_LOGIN content:jsonStr success:^(RespondModel *repondModel) {
             if(repondModel.code == CODE_SUCCESS){

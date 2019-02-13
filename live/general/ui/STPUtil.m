@@ -21,7 +21,7 @@
         return height * 1.1;
         
     }
-    return (ScreenHeight * height) / 676;
+    return (ScreenHeight * height) / 667;
 }
 
 +(double)getAppVersion{
