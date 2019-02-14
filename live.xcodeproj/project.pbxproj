@@ -104,6 +104,9 @@
 		CFF3E16D22142330005AFE88 /* source.json in Resources */ = {isa = PBXBuildFile; fileRef = CFF3E16C2214232F005AFE88 /* source.json */; };
 		CFF3E17022150C1F005AFE88 /* STDouYinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E16F22150C1F005AFE88 /* STDouYinScrollView.m */; };
 		CFF3E17322154C56005AFE88 /* STTopTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E17222154C56005AFE88 /* STTopTabView.m */; };
+		CFF3E18022155BEA005AFE88 /* IJKMediaFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CFF3E17B22155BDC005AFE88 /* IJKMediaFramework.framework */; };
+		CFF3E18322155CEC005AFE88 /* STPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E18222155CEC005AFE88 /* STPlayerView.m */; };
+		CFF3E186221563C2005AFE88 /* VideoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E185221563C2005AFE88 /* VideoModel.m */; };
 		CFF73B0C20E8CC5400091033 /* MineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B0B20E8CC5400091033 /* MineViewCell.m */; };
 		CFF73B1220E8CCB600091033 /* TitleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1020E8CCB600091033 /* TitleContentModel.m */; };
 		CFF73B1520E8D46900091033 /* AboutPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1420E8D46900091033 /* AboutPage.m */; };
@@ -113,6 +116,30 @@
 		CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B2120E8D97400091033 /* AdMobModel.m */; };
 		CFF73B2620EBEAA300091033 /* agreement.txt in Resources */ = {isa = PBXBuildFile; fileRef = CFF73B2520EBEAA200091033 /* agreement.txt */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CFF3E17A22155BDC005AFE88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFF3E17422155BDC005AFE88 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E654EA8A1B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFramework;
+		};
+		CFF3E17C22155BDC005AFE88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFF3E17422155BDC005AFE88 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5450B0431E63EA4300568494;
+			remoteInfo = IJKMediaFrameworkWithSSL;
+		};
+		CFF3E17E22155BDC005AFE88 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CFF3E17422155BDC005AFE88 /* IJKMediaPlayer.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E654EA941B6B27E600B0F2D0;
+			remoteInfo = IJKMediaFrameworkTests;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		001965EA20DCEE4100776E46 /* MainModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainModel.h; sourceTree = "<group>"; };
@@ -298,6 +325,11 @@
 		CFF3E16F22150C1F005AFE88 /* STDouYinScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDouYinScrollView.m; sourceTree = "<group>"; };
 		CFF3E17122154C56005AFE88 /* STTopTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTopTabView.h; sourceTree = "<group>"; };
 		CFF3E17222154C56005AFE88 /* STTopTabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTopTabView.m; sourceTree = "<group>"; };
+		CFF3E17422155BDC005AFE88 /* IJKMediaPlayer.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = IJKMediaPlayer.xcodeproj; path = "../Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer.xcodeproj"; sourceTree = "<group>"; };
+		CFF3E18122155CEC005AFE88 /* STPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STPlayerView.h; sourceTree = "<group>"; };
+		CFF3E18222155CEC005AFE88 /* STPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STPlayerView.m; sourceTree = "<group>"; };
+		CFF3E184221563C2005AFE88 /* VideoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoModel.h; sourceTree = "<group>"; };
+		CFF3E185221563C2005AFE88 /* VideoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoModel.m; sourceTree = "<group>"; };
 		CFF73B0A20E8CC5400091033 /* MineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewCell.h; sourceTree = "<group>"; };
 		CFF73B0B20E8CC5400091033 /* MineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewCell.m; sourceTree = "<group>"; };
 		CFF73B1020E8CCB600091033 /* TitleContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleContentModel.m; sourceTree = "<group>"; };
@@ -321,6 +353,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFF3E18022155BEA005AFE88 /* IJKMediaFramework.framework in Frameworks */,
 				CF8C5F6F20DEA905001348A2 /* VideoToolbox.framework in Frameworks */,
 				003EDC0420C5536600CFCFE9 /* QuartzCore.framework in Frameworks */,
 				CF8C5F6D20DEA8FA001348A2 /* OpenGLES.framework in Frameworks */,
@@ -679,6 +712,8 @@
 				CFF3E16F22150C1F005AFE88 /* STDouYinScrollView.m */,
 				CFF3E17122154C56005AFE88 /* STTopTabView.h */,
 				CFF3E17222154C56005AFE88 /* STTopTabView.m */,
+				CFF3E18122155CEC005AFE88 /* STPlayerView.h */,
+				CFF3E18222155CEC005AFE88 /* STPlayerView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -714,6 +749,8 @@
 				002E238E212D420C00E8B93D /* LoginModel.m */,
 				CFEA38C3216B06F300FAE786 /* AppInfoModel.h */,
 				CFEA38C4216B06F300FAE786 /* AppInfoModel.m */,
+				CFF3E184221563C2005AFE88 /* VideoModel.h */,
+				CFF3E185221563C2005AFE88 /* VideoModel.m */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -755,6 +792,7 @@
 		3E592FEA5C30DC9688CF0142 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				CFF3E17422155BDC005AFE88 /* IJKMediaPlayer.xcodeproj */,
 				CF8C5F9A20E7EC71001348A2 /* GoogleMobileAds.framework */,
 				CF8C5F6E20DEA905001348A2 /* VideoToolbox.framework */,
 				CF8C5F6C20DEA8FA001348A2 /* OpenGLES.framework */,
@@ -886,6 +924,16 @@
 			path = json;
 			sourceTree = "<group>";
 		};
+		CFF3E17522155BDC005AFE88 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CFF3E17B22155BDC005AFE88 /* IJKMediaFramework.framework */,
+				CFF3E17D22155BDC005AFE88 /* IJKMediaFrameworkWithSSL.framework */,
+				CFF3E17F22155BDC005AFE88 /* IJKMediaFrameworkTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		CFF73B0F20E8CC9900091033 /* extra */ = {
 			isa = PBXGroup;
 			children = (
@@ -958,12 +1006,42 @@
 			mainGroup = 003EDB1720C5360E00CFCFE9;
 			productRefGroup = 003EDB2120C5360E00CFCFE9 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = CFF3E17522155BDC005AFE88 /* Products */;
+					ProjectRef = CFF3E17422155BDC005AFE88 /* IJKMediaPlayer.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				003EDB1F20C5360E00CFCFE9 /* live */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		CFF3E17B22155BDC005AFE88 /* IJKMediaFramework.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IJKMediaFramework.framework;
+			remoteRef = CFF3E17A22155BDC005AFE88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFF3E17D22155BDC005AFE88 /* IJKMediaFrameworkWithSSL.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = IJKMediaFrameworkWithSSL.framework;
+			remoteRef = CFF3E17C22155BDC005AFE88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		CFF3E17F22155BDC005AFE88 /* IJKMediaFrameworkTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = IJKMediaFrameworkTests.xctest;
+			remoteRef = CFF3E17E22155BDC005AFE88 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		003EDB1E20C5360E00CFCFE9 /* Resources */ = {
@@ -1063,9 +1141,11 @@
 				003EDBE420C551AF00CFCFE9 /* STEdgeLabel.m in Sources */,
 				CF8C5F7C20DEAB5E001348A2 /* DetailViewModel.m in Sources */,
 				003EDBC920C551AF00CFCFE9 /* STAlertUtil.m in Sources */,
+				CFF3E18322155CEC005AFE88 /* STPlayerView.m in Sources */,
 				CFF73B1B20E8D4A400091033 /* DisclaimerPage.m in Sources */,
 				001965EC20DCEE4100776E46 /* MainModel.m in Sources */,
 				0038F18720CE295C00094EB9 /* MainPage.m in Sources */,
+				CFF3E186221563C2005AFE88 /* VideoModel.m in Sources */,
 				003EDBE520C551AF00CFCFE9 /* STLayerView.m in Sources */,
 				003EDBC220C551AF00CFCFE9 /* STUserDefaults.m in Sources */,
 				002E23A4212D45BA00E8B93D /* UITextView+Placeholder.m in Sources */,

@@ -7,7 +7,7 @@
 //
 
 #import "DetailView.h"
-//#import <IJKMediaFramework/IJKMediaFramework.h>
+#import <IJKMediaFramework/IJKMediaFramework.h>
 #import "DetailContentView.h"
 
 @interface DetailView()<UIScrollViewDelegate>

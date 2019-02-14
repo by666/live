@@ -1,0 +1,88 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphoneos/IJKMediaFramework.framework/Headers",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "IJKAVMoviePlayerController.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKAVMoviePlayerController.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKFFMonitor.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKFFMonitor.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKFFMoviePlayerController.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKFFMoviePlayerController.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKFFOptions.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKFFOptions.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKKVOController.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKKVOController.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKMPMoviePlayerController.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKMPMoviePlayerController.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKMediaFramework-Swift.h",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphoneos/IJKMediaFramework.framework/Headers/IJKMediaFramework-Swift.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKMediaFramework.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaFramework/IJKMediaFramework.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKMediaModule.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKMediaModule.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKMediaPlayback.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKMediaPlayback.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKMediaPlayer.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKMediaPlayer.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKNotificationManager.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKNotificationManager.h"
+        },
+        {
+          'type': 'file',
+          'name': "IJKSDLGLViewProtocol.h",
+          'external-contents': "/Users/by.huang/Desktop/Util/ijkplayer-ios/ijkplayer-ios/ios/IJKMediaPlayer/IJKMediaPlayer/IJKSDLGLViewProtocol.h"
+        }
+      ]
+    },
+    {
+      'type': 'directory',
+      'name': "/Users/by.huang/Desktop/live/Build/Products/Debug-iphoneos/IJKMediaFramework.framework/Modules",
+      'contents': [
+        {
+          'type': 'file',
+          'name': "module.modulemap",
+          'external-contents': "/Users/by.huang/Desktop/live/Build/Intermediates/IJKMediaPlayer.build/Debug-iphoneos/IJKMediaFramework.build/module.modulemap"
+        }
+      ]
+    }
+  ]
+}
