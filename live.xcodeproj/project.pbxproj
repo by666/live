@@ -97,11 +97,13 @@
 		CF8C5FA420E8B076001348A2 /* MinePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA320E8B076001348A2 /* MinePage.m */; };
 		CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */; };
 		CF8C5FAC20E8B17A001348A2 /* MineView.m in Sources */ = {isa = PBXBuildFile; fileRef = CF8C5FAB20E8B17A001348A2 /* MineView.m */; };
-		CFB6E1622213E96E005BA40A /* HomePage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6E1612213E96E005BA40A /* HomePage.m */; };
 		CFB6E1662213E9B8005BA40A /* HomeView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6E1652213E9B8005BA40A /* HomeView.m */; };
 		CFB6E16A2213E9D9005BA40A /* HomeViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFB6E1692213E9D9005BA40A /* HomeViewModel.m */; };
 		CFEA38C5216B06F300FAE786 /* AppInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFEA38C4216B06F300FAE786 /* AppInfoModel.m */; };
 		CFEA38CA216B2B1800FAE786 /* login.json in Resources */ = {isa = PBXBuildFile; fileRef = CFEA38C9216B2B1800FAE786 /* login.json */; };
+		CFF3E16D22142330005AFE88 /* source.json in Resources */ = {isa = PBXBuildFile; fileRef = CFF3E16C2214232F005AFE88 /* source.json */; };
+		CFF3E17022150C1F005AFE88 /* STDouYinScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E16F22150C1F005AFE88 /* STDouYinScrollView.m */; };
+		CFF3E17322154C56005AFE88 /* STTopTabView.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF3E17222154C56005AFE88 /* STTopTabView.m */; };
 		CFF73B0C20E8CC5400091033 /* MineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B0B20E8CC5400091033 /* MineViewCell.m */; };
 		CFF73B1220E8CCB600091033 /* TitleContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1020E8CCB600091033 /* TitleContentModel.m */; };
 		CFF73B1520E8D46900091033 /* AboutPage.m in Sources */ = {isa = PBXBuildFile; fileRef = CFF73B1420E8D46900091033 /* AboutPage.m */; };
@@ -284,8 +286,6 @@
 		CF8C5FA820E8B0D6001348A2 /* MineViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewModel.m; sourceTree = "<group>"; };
 		CF8C5FAA20E8B17A001348A2 /* MineView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineView.h; sourceTree = "<group>"; };
 		CF8C5FAB20E8B17A001348A2 /* MineView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineView.m; sourceTree = "<group>"; };
-		CFB6E1602213E96E005BA40A /* HomePage.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomePage.h; sourceTree = "<group>"; };
-		CFB6E1612213E96E005BA40A /* HomePage.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomePage.m; sourceTree = "<group>"; };
 		CFB6E1642213E9B8005BA40A /* HomeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeView.h; sourceTree = "<group>"; };
 		CFB6E1652213E9B8005BA40A /* HomeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeView.m; sourceTree = "<group>"; };
 		CFB6E1682213E9D9005BA40A /* HomeViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewModel.h; sourceTree = "<group>"; };
@@ -293,6 +293,11 @@
 		CFEA38C3216B06F300FAE786 /* AppInfoModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppInfoModel.h; sourceTree = "<group>"; };
 		CFEA38C4216B06F300FAE786 /* AppInfoModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppInfoModel.m; sourceTree = "<group>"; };
 		CFEA38C9216B2B1800FAE786 /* login.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = login.json; sourceTree = "<group>"; };
+		CFF3E16C2214232F005AFE88 /* source.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = source.json; sourceTree = "<group>"; };
+		CFF3E16E22150C1F005AFE88 /* STDouYinScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STDouYinScrollView.h; sourceTree = "<group>"; };
+		CFF3E16F22150C1F005AFE88 /* STDouYinScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STDouYinScrollView.m; sourceTree = "<group>"; };
+		CFF3E17122154C56005AFE88 /* STTopTabView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STTopTabView.h; sourceTree = "<group>"; };
+		CFF3E17222154C56005AFE88 /* STTopTabView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STTopTabView.m; sourceTree = "<group>"; };
 		CFF73B0A20E8CC5400091033 /* MineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MineViewCell.h; sourceTree = "<group>"; };
 		CFF73B0B20E8CC5400091033 /* MineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MineViewCell.m; sourceTree = "<group>"; };
 		CFF73B1020E8CCB600091033 /* TitleContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TitleContentModel.m; sourceTree = "<group>"; };
@@ -670,6 +675,10 @@
 				003EDBB720C551AF00CFCFE9 /* STTabBarView.m */,
 				003EDBB820C551AF00CFCFE9 /* TouchScrollView.h */,
 				003EDBB920C551AF00CFCFE9 /* TouchScrollView.m */,
+				CFF3E16E22150C1F005AFE88 /* STDouYinScrollView.h */,
+				CFF3E16F22150C1F005AFE88 /* STDouYinScrollView.m */,
+				CFF3E17122154C56005AFE88 /* STTopTabView.h */,
+				CFF3E17222154C56005AFE88 /* STTopTabView.m */,
 			);
 			path = common;
 			sourceTree = "<group>";
@@ -712,7 +721,6 @@
 		003EDBEF20C5524500CFCFE9 /* page */ = {
 			isa = PBXGroup;
 			children = (
-				CFB6E15F2213E95F005BA40A /* home */,
 				002E2385212D40C900E8B93D /* login */,
 				CF8C5F9F20E8B06A001348A2 /* mine */,
 				CF8C5F7120DEA996001348A2 /* detail */,
@@ -851,15 +859,6 @@
 			path = mine;
 			sourceTree = "<group>";
 		};
-		CFB6E15F2213E95F005BA40A /* home */ = {
-			isa = PBXGroup;
-			children = (
-				CFB6E1602213E96E005BA40A /* HomePage.h */,
-				CFB6E1612213E96E005BA40A /* HomePage.m */,
-			);
-			path = home;
-			sourceTree = "<group>";
-		};
 		CFB6E1632213E9AC005BA40A /* home */ = {
 			isa = PBXGroup;
 			children = (
@@ -881,6 +880,7 @@
 		CFEA38CB216B2B4D00FAE786 /* json */ = {
 			isa = PBXGroup;
 			children = (
+				CFF3E16C2214232F005AFE88 /* source.json */,
 				CFEA38C9216B2B1800FAE786 /* login.json */,
 			);
 			path = json;
@@ -974,6 +974,7 @@
 				CF43E41520CDA3230069AAFA /* Launch Screen.storyboard in Resources */,
 				003EDB2D20C5361700CFCFE9 /* Assets.xcassets in Resources */,
 				CFEA38CA216B2B1800FAE786 /* login.json in Resources */,
+				CFF3E16D22142330005AFE88 /* source.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,7 +1059,6 @@
 				00AD859920EF6B95001D272C /* ChatViewCell.m in Sources */,
 				003EDB3320C5361700CFCFE9 /* main.m in Sources */,
 				002E23A6212D45BA00E8B93D /* UIImage+FixOrientation.m in Sources */,
-				CFB6E1622213E96E005BA40A /* HomePage.m in Sources */,
 				CF8C5FA920E8B0D6001348A2 /* MineViewModel.m in Sources */,
 				003EDBE420C551AF00CFCFE9 /* STEdgeLabel.m in Sources */,
 				CF8C5F7C20DEAB5E001348A2 /* DetailViewModel.m in Sources */,
@@ -1074,6 +1074,7 @@
 				CF8C5F7820DEAB37001348A2 /* DetailView.m in Sources */,
 				002E23A9212D45BA00E8B93D /* UILabel+StringFrame.m in Sources */,
 				003EDBC320C551AF00CFCFE9 /* STLog.m in Sources */,
+				CFF3E17022150C1F005AFE88 /* STDouYinScrollView.m in Sources */,
 				002E23B0212D462700E8B93D /* AccountManager.m in Sources */,
 				002E238C212D40E700E8B93D /* LoginViewModel.m in Sources */,
 				003EDBEB20C551AF00CFCFE9 /* STTabBarView.m in Sources */,
@@ -1104,6 +1105,7 @@
 				002E23AD212D45BA00E8B93D /* UITableView+Init.m in Sources */,
 				003EDBC520C551AF00CFCFE9 /* STUpdateUtil.m in Sources */,
 				CFF73B2220E8D97400091033 /* AdMobModel.m in Sources */,
+				CFF3E17322154C56005AFE88 /* STTopTabView.m in Sources */,
 				00AD85A220F0A466001D272C /* GiftViewCell.m in Sources */,
 				003EDBE620C551AF00CFCFE9 /* STNavigationView.m in Sources */,
 				002E2384212D40C500E8B93D /* LoginView.m in Sources */,

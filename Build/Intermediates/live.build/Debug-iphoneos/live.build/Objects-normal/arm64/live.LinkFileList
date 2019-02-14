@@ -21,7 +21,6 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/ChatViewCell.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/main.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UIImage+FixOrientation.o
-/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/HomePage.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/MineViewModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STEdgeLabel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/DetailViewModel.o
@@ -37,6 +36,7 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/DetailView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UILabel+StringFrame.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STLog.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STDouYinScrollView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/AccountManager.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/LoginViewModel.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STTabBarView.o
@@ -67,6 +67,7 @@
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/UITableView+Init.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STUpdateUtil.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/AdMobModel.o
+/Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STTopTabView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/GiftViewCell.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/STNavigationView.o
 /Users/by.huang/Desktop/live/Build/Intermediates/live.build/Debug-iphoneos/live.build/Objects-normal/arm64/LoginView.o

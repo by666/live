@@ -7,12 +7,16 @@
 //
 
 #import "HomeView.h"
+#import "STDouYinScrollView.h"
+#import "STTopTabView.h"
 
-@interface HomeView()
+@interface HomeView()<STTopTabViewDelegate>
     
-    @property(strong, nonatomic)HomeViewModel *mViewModel;
-    
-    @end
+@property(strong, nonatomic)HomeViewModel *mViewModel;
+@property(strong, nonatomic)STDouYinScrollView *scrollView;
+@property(strong, nonatomic)STTopTabView *topTabView;
+
+@end
 
 @implementation HomeView
     
@@ -25,12 +29,20 @@
 }
     
 -(void)initView{
+    _scrollView = [[STDouYinScrollView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    [self addSubview:_scrollView];
+    
+    _topTabView = [[STTopTabView alloc]initWithTitles:@[MSG_RECOMMAND_TITLE,MSG_CITYWIDE_TITLE]];
+    [self addSubview:_topTabView];
+}
+
+-(void)onTopTabSelected:(NSInteger)index{
     
 }
-    
+
 -(void)updateView{
     
 }
     
-    @end
+@end
 

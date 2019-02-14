@@ -11,5 +11,7 @@
 
 @property(weak, nonatomic)id<STTabBarViewDelegate> delegate;
 -(instancetype)initWithTitles:(NSArray *)titles centerBtn:(Boolean)hidden;
+-(void)setTabBarTransparent:(Boolean)transparent;
+-(CGFloat)getTabBarHeight;
 
 @end

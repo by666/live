@@ -13,7 +13,13 @@
 #import "MinePage.h"
 #import "STTabBarView.h"
 #import "AdMobManager.h"
-@interface MainPage ()<STTabBarViewDelegate>
+#import "HomeView.h"
+@interface MainPage ()<STTabBarViewDelegate,HomeViewDelegate>
+
+@property(strong, nonatomic)UIView *contentView;
+@property(strong, nonatomic)id currentView;
+@property(strong, nonatomic)STTabBarView *tabBarView;
+@property(strong, nonatomic)HomeView *homeView;
 
 @end
 
@@ -39,15 +45,52 @@
 
 -(void)initView{
     NSArray *titles = @[MSG_HOME_TITLE,MSG_FOLLOW_TITLE,MSG_MSG_TITLE,MSG_MINE_TITLE];
-    STTabBarView *tabbarView = [[STTabBarView alloc]initWithTitles:titles centerBtn:YES];
-    tabbarView.delegate = self;
-    [self.view addSubview:tabbarView];
+    _tabBarView = [[STTabBarView alloc]initWithTitles:titles centerBtn:YES];
+    _tabBarView.delegate = self;
+    [self.view addSubview:_tabBarView];
+    
+    _contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight)];
+    _contentView.backgroundColor = cblack;
+    [self.view addSubview:_contentView];
+
+    [_contentView addSubview:[self homeView]];
+    [_tabBarView setTabBarTransparent:YES];
+    
+    [self.view bringSubviewToFront:_tabBarView];
+}
+
+
+-(HomeView *)homeView{
+    if(_homeView == nil){
+        HomeViewModel *homeVM = [[HomeViewModel alloc]init];
+        homeVM.delegate = self;
+        _homeView = [[HomeView alloc]initWithViewModel:homeVM];
+        _homeView.frame = _contentView.frame;
+    }
+    return _homeView;
 }
 
 -(void)onTabBarSelected:(NSInteger)index{
+    if(index == 0){
+        [_tabBarView setTabBarTransparent:YES];
+    }else{
+        [_tabBarView setTabBarTransparent:NO];
+    }
+}
+
+
+
+-(void)onRequestBegin{
     
 }
 
+-(void)onRequestSuccess:(RespondModel *)respondModel data:(id)data{
+    
+}
+
+-(void)onRequestFail:(NSString *)msg{
+    
+}
 
 
 @end

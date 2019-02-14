@@ -75,6 +75,14 @@
 
 }
 
+-(void)setTabBarTransparent:(Boolean)transparent{
+    if(transparent){
+        self.backgroundColor = [STColorUtil colorWithHexString:@"#141518" alpha:0.3f];
+    }else{
+        self.backgroundColor = c15;
+    }
+}
+
 -(void)onLabelBtnClicked:(id)sender{
     CGFloat perWidth = ScreenWidth / 5;
     UIButton *btn = ((UIButton *)sender);
@@ -92,10 +100,17 @@
             weakSelf.lineView.frame = CGRectMake(tag *perWidth + perWidth/4, STHeight(44)-LineHeight*2, perWidth/2, LineHeight*2);
         }
     }];
+    if(_delegate){
+        [_delegate onTabBarSelected:tag];
+    }
 }
 
 -(void)onAddBtnClick{
     
+}
+
+-(CGFloat)getTabBarHeight{
+    return TabBarHeight;
 }
 
 

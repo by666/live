@@ -32,6 +32,11 @@
 #define MSG_MSG_TITLE @"消息"
 #define MSG_MINE_TITLE @"我的"
 
+#define MSG_RECOMMAND_TITLE @"推荐"
+#define MSG_CITYWIDE_TITLE @"同城"
+
+
+
 #define MSG_DETAIL_CHAT @"聊天"
 #define MSG_DETAIL_GIFT @"礼物"
 #define MSG_DETAIL_REPORT @"举报"
